@@ -26,8 +26,9 @@ From there, we activate it using
 Now we can clone over this repository.  The following command was used for such:
 \
 `git clone https://github.com/Stone-Snevets/BQ_Question_ReadIn.git`
-\
+
 
 # Resources
+* [Newlines in Markdown](https://www.w3schools.io/file/markdown-line-break/)
 * [Setting up Virtual Environment](https://github.com/denisecase/datafun-01-textbook)
 * [Understanding Virtual Environment](https://code.tutsplus.com/understanding-virtual-environments-in-python--cms-28272t)

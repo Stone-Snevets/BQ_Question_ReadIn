@@ -15,12 +15,18 @@ Bible Quiz is a ministry based out of the Assembly of God denomination. It encou
 
 # Initial Setup
 NOTE: The author is using a WINDOWS machine.  All code-related steps are for Windows
-We begin by creating a virtual environment in which to create and run the code.  The point of a virtual environment is to keep different projects from interfering with other projects that may be on the same physical machine.
-- `python -m venv .bqquestions2tablevenv`
+We begin by creating a virtual environment in which to create and run the code.  The point of a virtual environment is to keep different projects from interfering with other projects that may be on the same physical machine. 
+\
+`python -m venv .bqquestions2tablevenv`
+\
 From there, we activate it using
-- `.bqquestions2tablevenv\Scripts\activate`
+\
+`.bqquestions2tablevenv\Scripts\activate`
+\
 Now we can clone over this repository.  The following command was used for such:
-- `git clone https://github.com/Stone-Snevets/BQ_Question_ReadIn.git`
+\
+`git clone https://github.com/Stone-Snevets/BQ_Question_ReadIn.git`
+\
 
 # Resources
 * [Setting up Virtual Environment](https://github.com/denisecase/datafun-01-textbook)

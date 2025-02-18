@@ -1,0 +1,73 @@
+===== LIST OF INTRODUCTORY REMARKS =====
+
+--- Question INTRODUCTORY REMARKS ---
+Statement and Question (S)
+- A statement comes before the actual question
+- This statement may be interrupted
+
+Two-Part Question [Three-Part Question, etc.] (2 [3, etc])
+- The question itself asks multiple questions
+- These questions have something to do with each other, so they are combined into one question to ask quizzers
+
+Scripture-Text Question (T)
+- The question contains a phrase from the scripture at the end of the question
+- This phrase is preceded by the word "quote"
+- This is usually a sign to quizzers to be slower on buzzing in
+
+Application Question (APP)
+- These questions are pre-determined and have little to do with the scripture
+- Only found in certain meets, they can usually be ignored
+
+Quotation Question (Q)
+- This question requires a quizzer to PERFECTLY quote one or more verses of the scripture
+
+Essence Question (E)
+- Requires a quizzer to say one or more verses
+- However, the quizzer does not need to perfectly quote it. As long as it means the same thing, the quizzer is correct
+
+Quotation Completion Question (QC)
+- A quizzer is given the beginning of a verse and must PERFECTLY finish that verse
+- Completion questions can also ask for verses that follow the verse the question starts
+
+Essence Completion Question (EC)
+- A quizzer is given the beginning of a verse and must finish that verse (and any verses that may follow)
+- Unlike a Quotation Completion Question, the quizzer only needs to give the verses(s) in essence
+
+
+--- Answer INTRODUCTORY REMARKS ---
+Give a Complete Answer (C)
+- Requires the answer to be more than one word
+- Articles (a, an, the) don't count as valid words. "A prophet" does NOT count as a Complete Answer
+
+Two-Part Answer [Three-Part Answer, etc.] (2 [3, etc])
+- The question requires multiple answers to be given by the quizzer
+
+Chapter Analysis Answer (A)
+- The scripture portions that quizzers are given to study from emphasize different parts of the material
+    -> Individuals
+    -> Geographical Locations
+    -> Parenthetical Statements
+    -> Exclamations
+    -> Old Testament Scripture (if the material being studied is from the New Testament)
+    -> Questions
+- These are what the question is looking for when asking for a Chapter Analysis Answer
+
+--- LOCATION INTRODUCTORY REMARKS ---
+Book (bk)
+- The answer is coming from a specific book being studied
+
+Chapter (ch)
+- The answer is coming from a specified Chapter
+
+Section (sec)
+- Chapters are usually broken into sections
+- Quizzers are informed that the answer to the upcoming question is from a specific section
+
+NOTE: The question may come from multiple books (bks), chapters (chs), or sections (secs). 
+      These aren't very frequent, but can be asked
+
+Consecutive Verses (c)
+- The answer to the question spans multiple consecutive verses
+
+Separate Verses (s)
+- The answer comes from multiple separate verses or a combination of consecutive and separate verses

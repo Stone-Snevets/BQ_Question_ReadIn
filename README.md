@@ -9,11 +9,11 @@ Receive Bible Quiz questions in PDF, DOC, DOCX format and break them down to spe
 * Git installed and configured correctly
 
 # What is Bible Quiz
-Bible Quiz is a ministry based out of the Assembly of God denomination. It encourages students ranging from 1st - 12th grade to engage in God's word through memorization. For the older levels of quizzing (6th-12th grade), portions of the Bible are selected each year, and questions are written based on the chosen portion. Throughout the schoolyear, teams from all over the country gather to compete in various levels of competition. Each round pits two teams against each other. There are twenty questions in each round, some 10 points, some 20 points, and some 30 points. Whichever team has more points at the end of the twenty questions is declared the winner of the round. There are a wide variety of introductory remarks designed to clue quizzers in as to what the question may be. To keep a competitive edge, teams may try to analyze past questions and look for patterns to help their quizzers even more.
+Bible Quiz is a ministry based out of the Assembly of God denomination. It encourages students ranging from 1st - 12th grade to engage in God's word through memorization. For the older levels of quizzing (6th-12th grade), portions of the Bible are selected each year, and questions are written based on the chosen portion. Throughout the schoolyear, teams from all over the country gather to compete in various levels of competition. Each round pits two teams against each other. There are twenty questions in each round, some 10 points, some 20 points, and some 30 points. Whichever team has more points at the end of the twenty questions is declared the winner of the round. There are a wide variety of introductory remarks designed to clue quizzers in as to what the question may be (see [list_of_intros]() for a complete list of introductory remarks and what they mean). To keep a competitive edge, teams may try to analyze past questions and look for patterns to help their quizzers even more.
 
 # Basic Steps
 1. Receive link to PDF, DOC, or DOCX file contianing Bible Quiz questions
-   NOTE: the questions MUST be formatted correctly. See [proper question format]() for specifications as to how questions need to be formatted.
+   NOTE: the questions MUST be formatted correctly. See [question_formatting_rules]() for specifications as to how questions need to be formatted.
 2. Open a csv file to write the question summary to
 3. Begin reading in each question, examining the introduction parts and the question itself
    1. Determine what question parts are present

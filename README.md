@@ -13,10 +13,10 @@ Bible Quiz is a ministry based out of the Assembly of God denomination. It encou
 
 # Basic Steps
 1. Receive link to PDF, DOC, or DOCX file contianing Bible Quiz questions
-   NOTE: the questions MUST be formatted correctly. See [question_formatting_rules]() for specifications as to how questions need to be formatted.
+   NOTE: the questions MUST be formatted correctly. See [question_formatting_rules](https://github.com/Stone-Snevets/BQ_Question_ReadIn/blob/main/question_formatting_rules.txt) for specifications as to how questions need to be formatted.
 2. Open a csv file to write the question summary to
 3. Begin reading in each question, examining the introduction parts and the question itself
-   1. Determine what question parts are present
+   1. Determine what question parts are present. See [list_of_intros](https://github.com/Stone-Snevets/BQ_Question_ReadIn/blob/main/list_of_intros.txt) for a full set of valid introdictory remarks
    2. Write the included question parts into the csv file
    3. Read in the question
    4. Read in the reference(s) as to where the answer comes from

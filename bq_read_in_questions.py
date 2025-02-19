@@ -29,8 +29,17 @@ Date Completed:
 
 # ===== Functions =================================================================================
 # --- Get Question File ---
-#-> Ask User for File
-#-> Read in File
+def get_question_file():
+   #-> Ask User for File
+   user_input = input('Enter the Full Path of the Question File: ')
+
+   #-> Read in File
+   print(f'File Name: {user_input}\n')
+
+   #---DUMMY----------------------------#
+   with open(user_input, 'r') as file:  #
+      print(file.read())                #
+   #---END_DUMMY------------------------#
 
 # --- Process Questions ---
 #-> Open a csv file to write to
@@ -41,7 +50,7 @@ Date Completed:
 #---> If none of any, skip that function
 #--> Copy over the question
 #--> Find the reference(s) of the answer
-#-> Close csv file once all questions are read in
+#-> Close both files once all questions are read in
 
 # --- Determine Question Introductory Remarks ---
 
@@ -50,5 +59,9 @@ Date Completed:
 # --- Determine Location Introductory Remarks ---
 
 # ===== Main ======================================================================================
-#-> Call function to get a question file
-#-> Inform User that process is complete
+if __name__ == "__main__":
+   #-> Call function to get a question file
+   get_question_file()
+
+   #-> Inform User that process is complete
+   print('Question Reading Process Complete')

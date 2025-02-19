@@ -39,7 +39,9 @@ Now we can clone over this repository.  The following command was used for such:
 
 # Resources
 * [Newlines in Markdown](https://www.w3schools.io/file/markdown-line-break/)
-* [Reading Files] (https://www.w3schools.com/python/python_file_open.asp)
+* [Reading Files](https://www.w3schools.com/python/python_file_open.asp)
+* [Reading Files Output]()
 * [Reading User Input](https://www.w3schools.com/python/python_user_input.asp)
 * [Setting up Virtual Environment](https://github.com/denisecase/datafun-01-textbook)
 * [Understanding Virtual Environment](https://code.tutsplus.com/understanding-virtual-environments-in-python--cms-28272t)
+* [Writing to a CSV File](https://www.pythontutorial.net/python-basics/python-write-csv-file/)

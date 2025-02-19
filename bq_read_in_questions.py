@@ -24,33 +24,58 @@ Date Completed:
 
 # ===== Preliminary ===============================================================================
 # --- Libraries to Include ---
+import csv # For Creating and Writing to a CSV File
 
 # --- Constants ---
+FILE_TO_WRITE_TO = 'output.csv'
+HEADER = ['Set_Num', 'Q_Num', 'Pt_Val', 'Q_Intro', 'A_Intro','Location','Question','Ans_Reference']
 
 # ===== Functions =================================================================================
 # --- Get Question File ---
 def get_question_file():
+   """
+   Function to ask user for the path of a file
+
+   """
    #-> Ask User for File
    user_input = input('Enter the Full Path of the Question File: ')
 
-   #-> Read in File
+   #-> Acknowledge to User that File Path was Received
    print(f'File Name: {user_input}\n')
 
-   #---DUMMY----------------------------#
-   with open(user_input, 'r') as file:  #
-      print(file.read())                #
-   #---END_DUMMY------------------------#
+   #-> Call process_questions and Pass the File Path
+   process_questions(user_input)
+
+   #-DUMMY-----------------------#
+   print('\nProcessing Complete\n')  #
+   #-END-DUMMY-------------------#
 
 # --- Process Questions ---
-#-> Open a csv file to write to
-#-> For each question
-#--> Determine Question number
+def process_questions(question_file_path):
+   """
+   Function to process all questions in a file received from "get_question_file"
+               send all findings to a csv file
+
+   """
+   #-> Open the user-given file
+   with open(question_file_path, "r") as input_file:
+
+      #-> Open a csv file to write to
+      with open(FILE_TO_WRITE_TO, 'w') as output_file:
+        
+         # Create a Writer Object to write with
+         writer = csv.writer(output_file)
+
+         # Write a Header Row
+         writer.writerow(HEADER)
+
+         #-> For each question
+#--> Determine Question Number
 #--> Determine Point Value
 #--> Check for Question, Answer, and/or Location Introductory Remarks
 #---> If none of any, skip that function
 #--> Copy over the question
 #--> Find the reference(s) of the answer
-#-> Close both files once all questions are read in
 
 # --- Determine Question Introductory Remarks ---
 

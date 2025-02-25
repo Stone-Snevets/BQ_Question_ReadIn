@@ -24,24 +24,37 @@ Bible Quiz is a ministry based out of the Assembly of God denomination. It encou
 
 # Initial Setup
 NOTE: The author is using a WINDOWS machine.  All code-related steps are for Windows
-We begin by creating a virtual environment in which to create and run the code.  The point of a virtual environment is to keep different projects from interfering with other projects that may be on the same physical machine. 
+The process begins by creating a virtual environment in which to create and run the code.  The point of a virtual environment is to keep different projects from interfering with other projects that may be on the same physical machine. 
 \
 `python -m venv .bqquestions2tablevenv`
 \
-From there, we activate it using
+The virtual machine can now be activated using
 \
 `.bqquestions2tablevenv\Scripts\activate`
 \
-Now we can clone over this repository.  The following command was used for such:
+Now clone over this repository.  The following command was used for such:
 \
 `git clone https://github.com/Stone-Snevets/BQ_Question_ReadIn.git`
+\
+Before installing necessary packages (using pip), a good idea would be to first check if there is anything we can update.
+\
+`python -m pip install --upgrade pip`
+\
+Now everything is ready to install any external packages needed for this project
+* `pip install pypdf` - Extracts the text from PDF files
+* `pip install docx2txt` - Extract the text from DOCX files
+* `pip install pywin32` - Extract the text from DOC files
 
 
 # Resources
+* [docx2txt Documentation](https://pypi.org/project/docx2txt/)
 * [Newlines in Markdown](https://www.w3schools.io/file/markdown-line-break/)
+* [pywin32 Documentation](https://pypi.org/project/pywin32/)
 * [Reading Files](https://www.w3schools.com/python/python_file_open.asp)
-* [Reading Files Output]()
+* [Reading PDF Files](https://www.geeksforgeeks.org/working-with-pdf-files-in-python/)
 * [Reading User Input](https://www.w3schools.com/python/python_user_input.asp)
+* [Regular Expressions in Python](https://www.w3schools.com/python/python_regex.asp)
 * [Setting up Virtual Environment](https://github.com/denisecase/datafun-01-textbook)
 * [Understanding Virtual Environment](https://code.tutsplus.com/understanding-virtual-environments-in-python--cms-28272t)
+* [Why 'textract' Fails](https://stackoverflow.com/questions/67130147/textract-cannot-find-a-pdf-file-python)
 * [Writing to a CSV File](https://www.pythontutorial.net/python-basics/python-write-csv-file/)

@@ -54,18 +54,17 @@ def get_question_file():
 
    #-> Call appropriate function to extract the text from it
    try:
-      print('\n FILE EXTENSION: ', file_extension, '\n')
       # If the file extension is PDF, call text_from_pdf()
       if file_extension[0] == '.pdf':
-         text_from_pdf(user_input)
+         text_of_file = text_from_pdf(user_input)
 
       # If the file extension is DOC, call text_from_doc()
       elif file_extension[0] == '.doc':
-         text_from_doc(user_input)
+         text_of_file = text_from_doc(user_input)
 
       # If the file extension is DOCX, call text_from_docx()
       elif file_extension[0] == '.docx':
-         text_from_docx(user_input)
+         text_of_file = text_from_docx(user_input)
 
    except: # The file type was not PDF, DOC, or DOCX
       # Output an Error Message
@@ -79,10 +78,10 @@ def get_question_file():
 
 
    # Call process_questions and Pass the File Path
-   #process_questions(user_input)
+   #process_questions(text_of_file)
 
    #-DUMMY---------------------------#
-   print('\nProcessing Complete\n')  #
+   print(text_of_file)               #
    #-END-DUMMY-----------------------#
 
 # --- Extract the text from PDF files ---
@@ -91,15 +90,29 @@ def text_from_pdf(file_name):
    Function to pull and return the text from a PDF file for further processing
 
    """
-   # Import pypdf for working with the PDF file
+   # Import PdfReader from the pypdf library for working with the PDF file
+   from PyPDF2 import PdfReader
 
-   # Extract the text from the document
+   # Create a reader object and pass in the user-given file
+   reader = PdfReader(file_name)
 
-   # Return the extracted text
-   
-   #-DUMMY--------#
-   print('pdf')   #
-   #-END-DUMMY----#
+   # Determine the number of pages the file is
+   num_pages = len(reader.pages)
+
+   # Create an empty string -> All extracted text will get appended to the string
+   text_of_pdf = ""
+
+   # For Each Page
+   for i in range(num_pages):
+      # Create a page object -> It contains the extract_text function we need to call
+      page = reader.pages[i]
+
+      # Extract the text from the document and append it to the string
+      text_of_pdf += page.extract_text()
+
+   # Return the text of the document
+   return text_of_pdf
+
 
 
 # --- Extract the text from DOC files ---

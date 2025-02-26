@@ -41,17 +41,18 @@ Before installing necessary packages (using pip), a good idea would be to first 
 `python -m pip install --upgrade pip`
 \
 Now everything is ready to install any external packages needed for this project
-* `pip install pypdf` - Extracts the text from PDF files
+* `pip install pypdf2` - Extracts the text from PDF files
 * `pip install docx2txt` - Extract the text from DOCX files
 * `pip install pywin32` - Extract the text from DOC files
 
 
 # Resources
+* [Appending to Strings](https://www.geeksforgeeks.org/initialize-empty-string-in-python/)
 * [docx2txt Documentation](https://pypi.org/project/docx2txt/)
 * [Newlines in Markdown](https://www.w3schools.io/file/markdown-line-break/)
 * [pywin32 Documentation](https://pypi.org/project/pywin32/)
 * [Reading Files](https://www.w3schools.com/python/python_file_open.asp)
-* [Reading PDF Files](https://www.geeksforgeeks.org/working-with-pdf-files-in-python/)
+* [Reading PDF Files](https://pypdf2.readthedocs.io/en/3.x/user/extract-text.html)
 * [Reading User Input](https://www.w3schools.com/python/python_user_input.asp)
 * [Regular Expressions in Python](https://www.w3schools.com/python/python_regex.asp)
 * [Setting up Virtual Environment](https://github.com/denisecase/datafun-01-textbook)

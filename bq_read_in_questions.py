@@ -66,12 +66,14 @@ def get_question_file():
       elif file_extension[0] == '.docx':
          text_of_file = text_from_docx(user_input)
 
-   except: # The file type was not PDF, DOC, or DOCX
+   except Exception as e: # The file type was not PDF, DOC, or DOCX
       # Output an Error Message
       print('------------------------------------------------------------------')
       print('ERROR: File Type Not Supported')
       print('Make sure the file you want to submit is either PDF, DOC, or DOCX')
       print('------------------------------------------------------------------\n')
+
+      print(e)
 
       # Return back to Main - There's nothing more the program can do
       return
@@ -91,7 +93,7 @@ def text_from_pdf(file_name):
 
    """
    # Import PdfReader from the pypdf library for working with the PDF file
-   from PyPDF2 import PdfReader
+   from PyPDF2 import PdfReader # type: ignore
 
    # Create a reader object and pass in the user-given file
    reader = PdfReader(file_name)
@@ -121,15 +123,21 @@ def text_from_doc(file_name):
    Function to pull and return the text from a DOC file for further processing
 
    """
-   # Import pywin32 for working with the DOC file
+   # Import the necessary Spire Libraries for reading DOC files
+   from spire.doc import Document #type: ignore
 
-   # Extract the text from the document
+   # Create a Document Object
+   doc = Document()
 
-   # Return the extracted text
+   # Load in the DOC file
+   doc.LoadFromFile(file_name)
+
+   # Extract the Text from the Document
+   text_of_doc = doc.GetText()
+
+   # Return the Extracted Text
+   return text_of_doc
    
-   #-DUMMY--------#
-   print('doc')   #
-   #-END-DUMMY----#
 
 
 # --- Extract the text from DOCX files ---

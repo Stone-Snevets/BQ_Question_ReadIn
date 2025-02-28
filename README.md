@@ -43,14 +43,15 @@ Before installing necessary packages (using pip), a good idea would be to first 
 Now everything is ready to install any external packages needed for this project
 * `pip install pypdf2` - Extracts the text from PDF files
 * `pip install docx2txt` - Extract the text from DOCX files
-* `pip install pywin32` - Extract the text from DOC files
+* `pip install Spire.Doc` - Extract the text from DOC files
 
 
 # Resources
 * [Appending to Strings](https://www.geeksforgeeks.org/initialize-empty-string-in-python/)
 * [docx2txt Documentation](https://pypi.org/project/docx2txt/)
 * [Newlines in Markdown](https://www.w3schools.io/file/markdown-line-break/)
-* [pywin32 Documentation](https://pypi.org/project/pywin32/)
+* [pywin32 Doesn't Work on Machines without MS Office](https://stackoverflow.com/questions/62427468/com-error-2147221005-invalid-class-string-none-none)
+* [Reading DOC Files](https://www.e-iceblue.com/Tutorials/Python/Spire.Doc-for-Python/Program-Guide/Document-Operation/Python-Create-Read-or-Update-a-Word-Document.html)
 * [Reading Files](https://www.w3schools.com/python/python_file_open.asp)
 * [Reading PDF Files](https://pypdf2.readthedocs.io/en/3.x/user/extract-text.html)
 * [Reading User Input](https://www.w3schools.com/python/python_user_input.asp)

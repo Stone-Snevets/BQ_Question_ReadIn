@@ -82,9 +82,10 @@ def get_question_file():
    # Call process_questions and Pass the File Path
    #process_questions(text_of_file)
 
-   #-DUMMY---------------------------#
-   print(text_of_file)               #
-   #-END-DUMMY-----------------------#
+   #-DUMMY-----------------------------------------------#
+   print(text_of_file)                                   #
+   print('\nType of text: ', type(text_of_file), '\n')   #
+   #-END-DUMMY-------------------------------------------#
 
 # --- Extract the text from PDF files ---
 def text_from_pdf(file_name):
@@ -121,6 +122,8 @@ def text_from_pdf(file_name):
 def text_from_doc(file_name):
    """
    Function to pull and return the text from a DOC file for further processing
+   NOTE: Currently adding following line to output:
+         "Evaluation Warning: The document was created with Spire.Doc for Python."
 
    """
    # Import the necessary Spire Libraries for reading DOC files

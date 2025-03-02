@@ -31,62 +31,6 @@ FILE_TO_WRITE_TO = 'output.csv'
 HEADER = ['Set_Num', 'Q_Num', 'Pt_Val', 'Q_Intro', 'A_Intro','Location','Question','Ans_Reference']
 
 # ===== Functions =================================================================================
-# --- Get Question File ---
-def get_question_file():
-   """
-   Function to ask user for the path of a file
-
-   """
-   # Ask User for File
-   user_input = input('Enter the Full Path of the Question File: ')
-
-   # Acknowledge to User that File Path was Received
-   print(f'File Name: {user_input}\n')
-
-   # Determine what kind of file is being entered
-   #-> Figure out the file extension
-   file_extension = re.findall('\.pdf|\.docx|\.doc', user_input)
-      # returns a list containing the file extension
-      # NOTE: DOCX must come before DOC in the search
-      #       because the or (|) clause sees 'doc' without
-      #       the x in 'docx' and automatically lists it
-      #       as a DOC file rather than a DOCX file
-
-   #-> Call appropriate function to extract the text from it
-   try:
-      # If the file extension is PDF, call text_from_pdf()
-      if file_extension[0] == '.pdf':
-         text_of_file = text_from_pdf(user_input)
-
-      # If the file extension is DOC, call text_from_doc()
-      elif file_extension[0] == '.doc':
-         text_of_file = text_from_doc(user_input)
-
-      # If the file extension is DOCX, call text_from_docx()
-      elif file_extension[0] == '.docx':
-         text_of_file = text_from_docx(user_input)
-
-   except Exception as e: # The file type was not PDF, DOC, or DOCX
-      # Output an Error Message
-      print('------------------------------------------------------------------')
-      print('ERROR: File Type Not Supported')
-      print('Make sure the file you want to submit is either PDF, DOC, or DOCX')
-      print('------------------------------------------------------------------\n')
-
-      print(e)
-
-      # Return back to Main - There's nothing more the program can do
-      return
-
-
-   # Call process_questions and Pass the File Path
-   #process_questions(text_of_file)
-
-   #-DUMMY-----------------------------------------------#
-   print(text_of_file)                                   #
-   print('\nType of text: ', type(text_of_file), '\n')   #
-   #-END-DUMMY-------------------------------------------#
-
 # --- Extract the text from PDF files ---
 def text_from_pdf(file_name):
    """
@@ -150,14 +94,76 @@ def text_from_docx(file_name):
 
    """
    # Import docx2txt for working with the DOCX file
+   print('* Importing')
+   import docx2txt #type: ignore
 
    # Extract the text from the document
+   print('* Extracting the text')
+   text_of_docx = docx2txt.process(file_name)
 
    # Return the extracted text
-   
-   #-DUMMY---------#
-   print('docx')   #
-   #-END-DUMMY-----#
+   print('* Returning extracted text')
+   return text_of_docx
+
+
+
+# --- Get Question File ---
+def get_question_file():
+   """
+   Function to ask user for the path of a file
+
+   """
+   # Ask User for File
+   user_input = input('Enter the Full Path of the Question File: ')
+
+   # Acknowledge to User that File Path was Received
+   print(f'File Name: {user_input}\n')
+
+   # Determine what kind of file is being entered
+   #-> Figure out the file extension
+   file_extension = re.findall('\.pdf|\.docx|\.doc', user_input)
+      # returns a list containing the file extension
+      # NOTE: DOCX must come before DOC in the search
+      #       because the or (|) clause sees 'doc' without
+      #       the x in 'docx' and automatically lists it
+      #       as a DOC file rather than a DOCX file
+
+   #-> Call appropriate function to extract the text from it
+   try:
+      # If the file extension is PDF, call text_from_pdf()
+      if file_extension[0] == '.pdf':
+         text_of_file = text_from_pdf(user_input)
+
+      # If the file extension is DOC, call text_from_doc()
+      elif file_extension[0] == '.doc':
+         text_of_file = text_from_doc(user_input)
+
+      # If the file extension is DOCX, call text_from_docx()
+      elif file_extension[0] == '.docx':
+         text_of_file = text_from_docx(user_input)
+
+   except Exception as e: # The file type was not PDF, DOC, or DOCX
+      # Output an Error Message
+      print('------------------------------------------------------------------')
+      print('ERROR: File Type Not Supported')
+      print('Make sure the file you want to submit is either PDF, DOC, or DOCX')
+      print('------------------------------------------------------------------\n')
+
+      print(e)
+
+      # Return back to Main - There's nothing more the program can do
+      return
+
+
+   # Call process_questions and Pass the File Path
+   #process_questions(text_of_file)
+
+   #-DUMMY-----------------------------------------------#
+   print(text_of_file)                                   #
+   print('\nType of text: ', type(text_of_file), '\n')   #
+   #-END-DUMMY-------------------------------------------#
+
+
 
 # --- Process Questions ---
 def process_questions(question_file_path):

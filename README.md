@@ -53,7 +53,7 @@ Now everything is ready to install any external packages needed for this project
 * [Newlines in Markdown](https://www.w3schools.io/file/markdown-line-break/)
 * [pywin32 Doesn't Work on Machines without MS Office](https://stackoverflow.com/questions/62427468/com-error-2147221005-invalid-class-string-none-none)
 * [Reading DOC Files](https://www.e-iceblue.com/Tutorials/Python/Spire.Doc-for-Python/Program-Guide/Document-Operation/Python-Create-Read-or-Update-a-Word-Document.html)
-* [Reading Files](https://www.w3schools.com/python/python_file_open.asp)
+* [Reading DOCX Files](https://theautomatic.net/2019/10/14/how-to-read-word-documents-with-python/)
 * [Reading PDF Files](https://pypdf2.readthedocs.io/en/3.x/user/extract-text.html)
 * [Reading User Input](https://www.w3schools.com/python/python_user_input.asp)
 * [Regular Expressions in Python](https://www.w3schools.com/python/python_regex.asp)

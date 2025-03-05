@@ -31,7 +31,7 @@ FILE_TO_WRITE_TO = 'output.csv'
 HEADER = ['Set_Num', 'Q_Num', 'Pt_Val', 'Q_Intro', 'A_Intro','Location','Question','Ans_Reference']
 
 # ===== Functions =================================================================================
-# --- Extract the text from PDF files ---
+# --- Extract the text from PDF files -------------------------------------------------------------
 def text_from_pdf(file_name):
    """
    Function to pull and return the text from a PDF file for further processing
@@ -62,7 +62,7 @@ def text_from_pdf(file_name):
 
 
 
-# --- Extract the text from DOC files ---
+# --- Extract the text from DOC files -------------------------------------------------------------
 def text_from_doc(file_name):
    """
    Function to pull and return the text from a DOC file for further processing
@@ -87,7 +87,7 @@ def text_from_doc(file_name):
    
 
 
-# --- Extract the text from DOCX files ---
+# --- Extract the text from DOCX files ------------------------------------------------------------
 def text_from_docx(file_name):
    """
    Function to pull and return the text from a DOCX file for further processing
@@ -107,7 +107,7 @@ def text_from_docx(file_name):
 
 
 
-# --- Get Question File ---
+# --- Get Question File ---------------------------------------------------------------------------
 def get_question_file():
    """
    Function to ask user for the path of a file
@@ -142,31 +142,25 @@ def get_question_file():
       elif file_extension[0] == '.docx':
          text_of_file = text_from_docx(user_input)
 
-   except Exception as e: # The file type was not PDF, DOC, or DOCX
+   except: # The file type was not PDF, DOC, or DOCX
       # Output an Error Message
       print('------------------------------------------------------------------')
       print('ERROR: File Type Not Supported')
       print('Make sure the file you want to submit is either PDF, DOC, or DOCX')
       print('------------------------------------------------------------------\n')
 
-      print(e)
-
       # Return back to Main - There's nothing more the program can do
       return
 
 
    # Call process_questions and Pass the File Path
-   #process_questions(text_of_file)
-
-   #-DUMMY-----------------------------------------------#
-   print(text_of_file)                                   #
-   print('\nType of text: ', type(text_of_file), '\n')   #
-   #-END-DUMMY-------------------------------------------#
+   process_questions(text_of_file)
 
 
 
-# --- Process Questions ---
-def process_questions(question_file_path):
+
+# --- Process Questions ---------------------------------------------------------------------------
+def process_questions(text_of_input_file):
    """
    Function to -> process all questions in a file received from "get_question_file"
                -> send all findings to a csv file
@@ -181,20 +175,97 @@ def process_questions(question_file_path):
       # Write a Header Row
       writer.writerow(HEADER)
 
-      #-> For each question
-      #--> Determine Question Number
-      #--> Determine Point Value
-      #--> Check for Question, Answer, and/or Location Introductory Remarks
-      #---> If none of any, skip that function
-      #--> Copy over the question
-      #--> Find the reference(s) of the answer
+      # Find the first question  
+      find_q = re.search('Question ', text_of_input_file)
+
+      # For each question
+      while find_q != None:
+         # Find the index of the question
+         q_num_index = find_q.end()
+  
+         # If it is 'n' -> number
+         if text_of_input_file[q_num_index] == 'n':
+            # Parse through 'number' to get to the question number
+            q_num = re.search('number (\d+)', text_of_input_file).group(1)
+            print('Question Number:', q_num)
+    
+            # Keep parsing through to get the point value
+            pt_value = re.search('for (\d+)', text_of_input_file).group(1)
+  
+         # If it is 'f' -> for -> It's a Substitute Question
+         elif text_of_input_file[q_num_index] == 'f':
+            # Parse through 'for' to get to the point value
+            #-> 10 points = question number is 21
+            #-> 20 points = question number is 22
+            #-> 30 points = question number is 23
+            pt_value = re.search('for (\d+)', text_of_input_file).group(1)
+            if pt_value == 10:
+               q_num = 21
+            elif pt_value == 20:
+               q_num = 22
+            else: #pt_value == 30
+               q_num = 23
+            print('Number:', q_num)
+    
+         else:
+            print('uuuhhhhh')
+  
+         # Display the Point Value of the Question
+         print('Point Value:', pt_value)
+  
+         # Determine the Index of the Reference containing the answer
+         ref_index = re.search('(\S+) (\d+):(\d+)', text_of_input_file)
+         book = ref_index.group(1)
+         chapter = ref_index.group(2)
+         verse = ref_index.group(3)
+         print(f'Reference: {book} {chapter}:{verse}')
+  
+         # Determine if there are Question intros
+         #-> Look for 'question.'
+         q_part_index = re.search('([^.]+ question\.|[^.]+ Question\.)', text_of_input_file)
+  
+         #-> Calculate if the index is before the reference index
+         #-> Determine if the index exists
+         if q_part_index != None and q_part_index.start() < ref_index.start():
+            #--> If yes, there is a question part
+            print(q_part_index.group(1))
+  
+         # Determine if there are Answer Intros
+         #-> Look for 'answer.'
+         a_part_index = re.search('([^.]+ answer[s.]|[^.]+ Answer[s.])', text_of_input_file)
+  
+         #-> Calculate if the index exists and is before the reference index
+         if a_part_index != None and a_part_index.start() < ref_index.start():
+            #--> If yes, there is an answer part
+            print(a_part_index.group(1))
+  
+         # Determine if there are Location Intros
+         #-> Look for '. From'
+         location_index = re.search('\. (From [^.]+)', text_of_input_file)
+  
+         #-> Calculate if the index exists and is before the reference index
+         if location_index != None and location_index.end() < ref_index.start():
+            #--> If yes, there is an intro part
+            print(location_index.group(1))
+      
+         print()
+    
+         # Eliminate the previously-used text as it has now been processed
+         #-> Use the last index we have on hand (probably reference)
+         text_of_input_file = text_of_input_file[ref_index.end():]
+  
+         # Move on to the next question
+         find_q = re.search('Question ', text_of_input_file)
+    
+  
 
 
-# --- Determine Question Introductory Remarks ---
 
-# --- Determine Answer Introductory Remarks ---
+# --- Determine Question Introductory Remarks -----------------------------------------------------
 
-# --- Determine Location Introductory Remarks ---
+# --- Determine Answer Introductory Remarks -------------------------------------------------------
+
+# --- Determine Location Introductory Remarks -----------------------------------------------------
 
 # ===== Main ======================================================================================
 if __name__ == "__main__":

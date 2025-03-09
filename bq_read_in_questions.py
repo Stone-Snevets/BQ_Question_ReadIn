@@ -132,14 +132,17 @@ def get_question_file():
    try:
       # If the file extension is PDF, call text_from_pdf()
       if file_extension[0] == '.pdf':
+         print('Type of File: PDF')
          text_of_file = text_from_pdf(user_input)
 
       # If the file extension is DOC, call text_from_doc()
       elif file_extension[0] == '.doc':
+         print('Type of File: DOC')
          text_of_file = text_from_doc(user_input)
 
       # If the file extension is DOCX, call text_from_docx()
       elif file_extension[0] == '.docx':
+         print('Type of File: DOCX')
          text_of_file = text_from_docx(user_input)
 
    except: # The file type was not PDF, DOC, or DOCX
@@ -154,6 +157,7 @@ def get_question_file():
 
 
    # Call process_questions and Pass the File Path
+   print('\nCalling Function to Process Questions\n')
    process_questions(text_of_file)
 
 
@@ -167,6 +171,7 @@ def process_questions(text_of_input_file):
 
    """
    # Open a csv file to write to
+   print('Opening Output File\n')
    with open(FILE_TO_WRITE_TO, 'w') as output_file:
        
       # Create a Writer Object to write with
@@ -175,90 +180,115 @@ def process_questions(text_of_input_file):
       # Write a Header Row
       writer.writerow(HEADER)
 
-      # Find the first question  
-      find_q = re.search('Question ', text_of_input_file)
+      # Find First Question's Point Value
+      pt_val_index = re.search('(\d+) points', text_of_input_file)
 
-      # For each question
-      while find_q != None:
-         # Find the index of the question
-         q_num_index = find_q.end()
+      # While not end of file
+      while pt_val_index != None:  
+      # Use Point Value to Find Question Number
+         q_begins = pt_val_index.end()
+         #-> Find the Point Value
+         #--> Cast it to an integer rather than a string
+         pt_value = int(pt_val_index.group(1))
+         #-> Back up to find Question Number
+         q_num_index = re.search('Question number (\d+)', text_of_input_file)
   
-         # If it is 'n' -> number
-         if text_of_input_file[q_num_index] == 'n':
-            # Parse through 'number' to get to the question number
-            q_num = re.search('number (\d+)', text_of_input_file).group(1)
-            print('Question Number:', q_num)
-    
-            # Keep parsing through to get the point value
-            pt_value = re.search('for (\d+)', text_of_input_file).group(1)
-  
-         # If it is 'f' -> for -> It's a Substitute Question
-         elif text_of_input_file[q_num_index] == 'f':
-            # Parse through 'for' to get to the point value
-            #-> 10 points = question number is 21
-            #-> 20 points = question number is 22
-            #-> 30 points = question number is 23
-            pt_value = re.search('for (\d+)', text_of_input_file).group(1)
+         #-> If number doesn't exist, Assign appropriate Sub Question Number
+         if q_num_index == None or q_num_index.end() > pt_val_index.start():
+            # If 10 Points -> Question Number = 21
             if pt_value == 10:
                q_num = 21
+            # If 20 Points -> Question Number = 22
             elif pt_value == 20:
                q_num = 22
-            else: #pt_value == 30
+            # If 30 Points -> Question Number = 23
+            else:
                q_num = 23
-            print('Number:', q_num)
     
+         # If number DOES exist, Find it and Assign it
          else:
-            print('uuuhhhhh')
+            q_num = q_num_index.group(1)
   
-         # Display the Point Value of the Question
+     
+         print('Question Number:', q_num)
          print('Point Value:', pt_value)
   
-         # Determine the Index of the Reference containing the answer
-         ref_index = re.search('(\S+) (\d+):(\d+)', text_of_input_file)
-         book = ref_index.group(1)
-         chapter = ref_index.group(2)
-         verse = ref_index.group(3)
-         print(f'Reference: {book} {chapter}:{verse}')
   
-         # Determine if there are Question intros
-         #-> Look for 'question.'
-         q_part_index = re.search('([^.]+ question\.|[^.]+ Question\.)', text_of_input_file)
+         # Find the (first) Reference for the Answer
+         ref_index = re.search('\n(|\s+)(\[?)(\S+) (\d+):(\d+)', text_of_input_file)
+         print(f'Reference: {ref_index.group(3)} {ref_index.group(4)}:{ref_index.group(5)}')
   
-         #-> Calculate if the index is before the reference index
-         #-> Determine if the index exists
-         if q_part_index != None and q_part_index.start() < ref_index.start():
-            #--> If yes, there is a question part
+  
+         # See if Question Intros exist in Current Question
+         #-> Grab the next Question Intros' Index
+         q_part_index = re.search('([^.]+ question.|[^.]+ Question.)', text_of_input_file)
+  
+         #-> If that index is before the reference index, we have a question part
+         if q_part_index != None and q_part_index.end() < ref_index.start():
+            # Send the q_part_index's contents to the get_question_part()
+            q_begins = q_part_index.end()
             print(q_part_index.group(1))
   
-         # Determine if there are Answer Intros
-         #-> Look for 'answer.'
+  
+         # See if Answer Intros exist in Current Question
+         #-> Grab the next Answer Intros' Index
          a_part_index = re.search('([^.]+ answer[s.]|[^.]+ Answer[s.])', text_of_input_file)
   
-         #-> Calculate if the index exists and is before the reference index
-         if a_part_index != None and a_part_index.start() < ref_index.start():
-            #--> If yes, there is an answer part
+         #-> If that index is before the reference index, we have an answer part
+         if a_part_index != None and a_part_index.end() < ref_index.start():
+            # Send the Answer Intros to get_answer_part()
+            q_begins = a_part_index.end()
             print(a_part_index.group(1))
   
-         # Determine if there are Location Intros
-         #-> Look for '. From'
-         location_index = re.search('\. (From [^.]+)', text_of_input_file)
   
-         #-> Calculate if the index exists and is before the reference index
+         # See if Location(s) exist in Current Question
+         #-> Grab the next location's index
+         location_index = re.search('. (From [^.]+)', text_of_input_file)
+  
+         #-> If that index is before the reference index, we have a location in the intros
          if location_index != None and location_index.end() < ref_index.start():
-            #--> If yes, there is an intro part
+            # Send the Location to get_location()
+            q_begins = location_index.end()
             print(location_index.group(1))
-      
-         print()
-    
-         # Eliminate the previously-used text as it has now been processed
-         #-> Use the last index we have on hand (probably reference)
-         text_of_input_file = text_of_input_file[ref_index.end():]
   
-         # Move on to the next question
-         find_q = re.search('Question ', text_of_input_file)
-    
   
+         # Copy Over Question
+         question = re.search('([^.].+)', text_of_input_file[q_begins:ref_index.start()])
+         print(question.group(1))
 
+  
+         # Consume the Used Question Parts
+         text_of_input_file = text_of_input_file[ref_index.end():]
+         
+  
+         # Check for Additional References in the Answer
+         #-> Find next Question Index
+         pt_val_index = re.search('(\d+) points', text_of_input_file)
+         #print('-> pt_val_index:', pt_val_index.start())
+         #print('-> Point Value:', pt_val_index.group(1))
+
+         #-> Find the next Reference Index
+         ref_index = re.search('\n(|\s+)(\[?)(\S+) (\d+):(\d+)', text_of_input_file)
+         #print('-> ref_index:', ref_index.end())
+
+         #-> Determine if the Reference Index is Less than the Point Value Index
+         #--> Also determine if both actually exist
+         while pt_val_index != None and ref_index != None and ref_index.end() < pt_val_index.start():
+            # If all checks out, we have another reference to paste
+            print(f'Additional Reference: {ref_index.group(3)} {ref_index.group(4)}:{ref_index.group(5)}')
+
+            # Consume the Text before the reference
+            text_of_input_file = text_of_input_file[ref_index.end():]
+
+            # Check for the next reference index
+            ref_index = re.search('\n(|\s+)(\[?)(\S+) (\d+):(\d+)', text_of_input_file)
+
+            # Check for the new index of the next Point Value
+            pt_val_index = re.search('(\d+) points\.', text_of_input_file)
+               
+    
+         # Move on to Next Question
+         print()
 
 
 # --- Determine Question Introductory Remarks -----------------------------------------------------

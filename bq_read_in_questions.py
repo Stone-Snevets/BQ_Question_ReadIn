@@ -107,59 +107,122 @@ def text_from_docx(file_name):
 
 
 
-# --- Get Question File ---------------------------------------------------------------------------
-def get_question_file():
-   """
-   Function to ask user for the path of a file
+# --- Determine Question Introductory Remarks -----------------------------------------------------
+def list_question_intro(q_intro):
+   # Create an output variable to append things to
+   q_shorthand = ''
 
-   """
-   # Ask User for File
-   user_input = input('Enter the Full Path of the Question File: ')
-
-   # Acknowledge to User that File Path was Received
-   print(f'File Name: {user_input}\n')
-
-   # Determine what kind of file is being entered
-   #-> Figure out the file extension
-   file_extension = re.findall('\.pdf|\.docx|\.doc', user_input)
-      # returns a list containing the file extension
-      # NOTE: DOCX must come before DOC in the search
-      #       because the or (|) clause sees 'doc' without
-      #       the x in 'docx' and automatically lists it
-      #       as a DOC file rather than a DOCX file
-
-   #-> Call appropriate function to extract the text from it
-   try:
-      # If the file extension is PDF, call text_from_pdf()
-      if file_extension[0] == '.pdf':
-         print('Type of File: PDF')
-         text_of_file = text_from_pdf(user_input)
-
-      # If the file extension is DOC, call text_from_doc()
-      elif file_extension[0] == '.doc':
-         print('Type of File: DOC')
-         text_of_file = text_from_doc(user_input)
-
-      # If the file extension is DOCX, call text_from_docx()
-      elif file_extension[0] == '.docx':
-         print('Type of File: DOCX')
-         text_of_file = text_from_docx(user_input)
-
-   except: # The file type was not PDF, DOC, or DOCX
-      # Output an Error Message
-      print('------------------------------------------------------------------')
-      print('ERROR: File Type Not Supported')
-      print('Make sure the file you want to submit is either PDF, DOC, or DOCX')
-      print('------------------------------------------------------------------\n')
-
-      # Return back to Main - There's nothing more the program can do
-      return
+   # Search for the following key intros in the question intro
+   # Appened the shorthand to the output variable if the intro exists
+   #-> Statement and question
+   if 'tatament' in q_intro:
+      q_shorthand += 'S'
+  
+   #-> #-part question
+   if re.search('(\d+)', q_intro):
+      q_shorthand += str(re.search('(\d+)', q_intro).group(1))
+  
+   #-> Scripture-text question
+   if 'ext' in q_intro:
+      q_shorthand += 'T'
+  
+     #-> Application question
+   if 'pplication' in q_intro:
+      q_shorthand += 'A'
+  
+     #-> Quotation question
+   if 'uotation' in q_intro:
+      q_shorthand += 'Q'
+  
+     #-> Essence question
+   if 'ssence' in q_intro:
+      q_shorthand += 'E'
+  
+     #-> Quotation/Essence Completion question
+   if 'ompletion' in q_intro:
+      q_shorthand += 'C'
+    
+     # Return the question intro's shorthand
+   return q_shorthand
 
 
-   # Call process_questions and Pass the File Path
-   print('\nCalling Function to Process Questions\n')
-   process_questions(text_of_file)
+#--- Determine Answer Introductory Remarks --------------------------------------------------------
+def list_answer_intro(a_intro):
+   # Create an empty string to appened the answers to
+   a_shorthand = ''
+  
+     # Check for the following intros
+   #-> #-part answer
+   if re.search('(\d+)', a_intro):
+      a_shorthand += str(re.search('(\d+)', a_intro).group(1))
+  
+   #-> Complete answer
+   if 'omplete' in a_intro:
+      a_shorthand += 'C'
+  
+     #-> Chapter Ananysis answer
+   if 'nalysis' in a_intro:
+      a_shorthand += 'A'
+  
+     # Return the shorthand string
+   return a_shorthand
 
+
+
+#--- Determine Location Introductory Remarks ------------------------------------------------------
+def list_location(location):
+   # Create the empty string to eventually return
+   loc_shorthand = ''
+  
+     # Create a flag for help determining multiple books, sections, or chapters
+   is_section = 0
+  
+   # Search for the following key words
+   #-> Number of verses
+   if re.search('From (\d+) [Cc]onsecutive', location):
+       loc_shorthand += str(re.search('From (\d+) [Cc]onsecutive', location).group(1))
+  
+   elif re.search('From (\d+) [Ss]eparate', location):
+      loc_shorthand += str(re.search('From (\d+) [Ss]eparate', location).group(1))
+  
+     #-> Consecutive Verses
+   if 'onsecutive verses' in location:
+      loc_shorthand += 'C'
+  
+     #-> Separate Verses
+   elif 'eparate verses' in location:	#NOTE: can't be both consecutive and separate
+      loc_shorthand += 'S'
+      
+     #-> Section
+   if 'section' in location or 'Section' in location:
+      loc_shorthand += 'sec'
+      # Set our flag to true
+      is_section = 1
+  
+     #-> Chapter
+   elif 'hapter' in location:
+      loc_shorthand += 'ch'
+  
+     #-> Book
+   elif 'verses.' not in location:
+      loc_shorthand += 'bk'
+  
+     #-> Multiple?
+   # Check if the flag is true or not
+   if is_section == 0:
+      # If not, simply look for the word 'and'
+      if ' and' in location:
+         loc_shorthand += 's'
+   else:
+      # If the flag was raised, check if there is an "and" before the section title
+      and_index = re.search(' and', location)
+      title_index = re.search('title', location)
+      if and_index != None and title_index != None and and_index.start() < title_index.start():
+         # If it is before, we can append the s
+         loc_shorthand += 's'
+  
+   # Return the shorthand
+   return loc_shorthand
 
 
 
@@ -291,11 +354,62 @@ def process_questions(text_of_input_file):
          print()
 
 
-# --- Determine Question Introductory Remarks -----------------------------------------------------
 
-# --- Determine Answer Introductory Remarks -------------------------------------------------------
+         # --- Get Question File ---------------------------------------------------------------------------
+def get_question_file():
+   """
+   Function to ask user for the path of a file
 
-# --- Determine Location Introductory Remarks -----------------------------------------------------
+   """
+   # Ask User for File
+   user_input = input('Enter the Full Path of the Question File: ')
+
+   # Acknowledge to User that File Path was Received
+   print(f'File Name: {user_input}\n')
+
+   # Determine what kind of file is being entered
+   #-> Figure out the file extension
+   file_extension = re.findall('\.pdf|\.docx|\.doc', user_input)
+      # returns a list containing the file extension
+      # NOTE: DOCX must come before DOC in the search
+      #       because the or (|) clause sees 'doc' without
+      #       the x in 'docx' and automatically lists it
+      #       as a DOC file rather than a DOCX file
+
+   #-> Call appropriate function to extract the text from it
+   try:
+      # If the file extension is PDF, call text_from_pdf()
+      if file_extension[0] == '.pdf':
+         print('Type of File: PDF')
+         text_of_file = text_from_pdf(user_input)
+
+      # If the file extension is DOC, call text_from_doc()
+      elif file_extension[0] == '.doc':
+         print('Type of File: DOC')
+         text_of_file = text_from_doc(user_input)
+
+      # If the file extension is DOCX, call text_from_docx()
+      elif file_extension[0] == '.docx':
+         print('Type of File: DOCX')
+         text_of_file = text_from_docx(user_input)
+
+   except: # The file type was not PDF, DOC, or DOCX
+      # Output an Error Message
+      print('------------------------------------------------------------------')
+      print('ERROR: File Type Not Supported')
+      print('Make sure the file you want to submit is either PDF, DOC, or DOCX')
+      print('------------------------------------------------------------------\n')
+
+      # Return back to Main - There's nothing more the program can do
+      return
+
+
+   # Call process_questions and Pass the File Path
+   print('\nCalling Function to Process Questions\n')
+   process_questions(text_of_file)
+
+
+
 
 # ===== Main ======================================================================================
 if __name__ == "__main__":

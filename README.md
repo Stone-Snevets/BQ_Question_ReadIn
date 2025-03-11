@@ -61,6 +61,7 @@ Now everything is ready to install any external packages needed for this project
 * [Regular Expressions Documentation](https://docs.python.org/3/library/re.html)
 * [Regular Expressions in the Middle of a String](#https://stackoverflow.com/questions/28840903/python-regex-match-middle-of-string)
 * [Remove the First n Characters from a String](#https://stackoverflow.com/questions/11806559/removing-first-x-characters-from-string)
+* [Searching for Text within a String](https://www.w3schools.com/python/python_strings.asp)
 * [Setting up Virtual Environment](https://github.com/denisecase/datafun-01-textbook)
 * [Understanding Virtual Environment](https://code.tutsplus.com/understanding-virtual-environments-in-python--cms-28272t)
 * [Why 'textract' Fails](https://stackoverflow.com/questions/67130147/textract-cannot-find-a-pdf-file-python)

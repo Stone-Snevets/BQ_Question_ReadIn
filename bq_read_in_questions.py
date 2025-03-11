@@ -108,7 +108,7 @@ def text_from_docx(file_name):
 
 
 # --- Determine Question Introductory Remarks -----------------------------------------------------
-def list_question_intro(q_intro):
+def get_question_part(q_intro):
    # Create an output variable to append things to
    q_shorthand = ''
 
@@ -147,7 +147,7 @@ def list_question_intro(q_intro):
 
 
 #--- Determine Answer Introductory Remarks --------------------------------------------------------
-def list_answer_intro(a_intro):
+def get_answer_part(a_intro):
    # Create an empty string to appened the answers to
    a_shorthand = ''
   
@@ -170,7 +170,7 @@ def list_answer_intro(a_intro):
 
 
 #--- Determine Location Introductory Remarks ------------------------------------------------------
-def list_location(location):
+def get_location(location):
    # Create the empty string to eventually return
    loc_shorthand = ''
   
@@ -238,6 +238,9 @@ def process_questions(text_of_input_file):
                -> send all findings to a csv file
 
    """
+   # --- Local Variable Initiation ---
+   set_num = 0
+
    # Open a csv file to write to
    print('Opening Output File\n')
    with open(FILE_TO_WRITE_TO, 'w') as output_file:
@@ -253,8 +256,8 @@ def process_questions(text_of_input_file):
 
       # While not end of file
       while pt_val_index != None:  
-      # Use Point Value to Find Question Number
          q_begins = pt_val_index.end()
+         # Use the Point Value to find the Question Number
          #-> Find the Point Value
          #--> Cast it to an integer rather than a string
          pt_value = int(pt_val_index.group(1))
@@ -275,16 +278,21 @@ def process_questions(text_of_input_file):
     
          # If number DOES exist, Find it and Assign it
          else:
-            q_num = q_num_index.group(1)
+            q_num = int(q_num_index.group(1))
   
      
-         print('Question Number:', q_num)
-         print('Point Value:', pt_value)
-  
+         # Determine the Set Number
+         #-> if the question number == 1, we started a new set
+         if q_num == 1:
+            set_num += 1
+
+            # Display Status to User
+            print('Processing Set', set_num)
+
   
          # Find the (first) Reference for the Answer
          ref_index = re.search('\n(|\s+)(\[?)(\S+) (\d+):(\d+)', text_of_input_file)
-         print(f'Reference: {ref_index.group(3)} {ref_index.group(4)}:{ref_index.group(5)}')
+         ref = (f'{ref_index.group(3)} {ref_index.group(4)}:{ref_index.group(5)}')
   
   
          # See if Question Intros exist in Current Question
@@ -293,9 +301,13 @@ def process_questions(text_of_input_file):
   
          #-> If that index is before the reference index, we have a question part
          if q_part_index != None and q_part_index.end() < ref_index.start():
-            # Send the q_part_index's contents to the get_question_part()
             q_begins = q_part_index.end()
-            print(q_part_index.group(1))
+            # Sent the Question Intros to get_question_part()
+            q_part = get_question_part(q_part_index.group(1))
+
+         #-> If not, assign an underscore "_" to q_part
+         else:
+            q_part = '_'
   
   
          # See if Answer Intros exist in Current Question
@@ -304,9 +316,13 @@ def process_questions(text_of_input_file):
   
          #-> If that index is before the reference index, we have an answer part
          if a_part_index != None and a_part_index.end() < ref_index.start():
-            # Send the Answer Intros to get_answer_part()
             q_begins = a_part_index.end()
-            print(a_part_index.group(1))
+            # Sent the Answer Intros to get_answer_part()
+            a_part = get_answer_part(a_part_index.group(1))
+
+         #-> If not, assign the underscore
+         else:
+            a_part = '_'
   
   
          # See if Location(s) exist in Current Question
@@ -315,14 +331,17 @@ def process_questions(text_of_input_file):
   
          #-> If that index is before the reference index, we have a location in the intros
          if location_index != None and location_index.end() < ref_index.start():
-            # Send the Location to get_location()
             q_begins = location_index.end()
-            print(location_index.group(1))
+            # Send the Location to get_location()
+            location = get_location(location_index.group(1))
+
+         #-> If not, assign the underscore
+         else:
+            location = '_'
   
   
          # Copy Over Question
-         question = re.search('([^.].+)', text_of_input_file[q_begins:ref_index.start()])
-         print(question.group(1))
+         question = re.search('([^.].+)', text_of_input_file[q_begins:ref_index.start()]).group(1)
 
   
          # Consume the Used Question Parts
@@ -332,18 +351,16 @@ def process_questions(text_of_input_file):
          # Check for Additional References in the Answer
          #-> Find next Question Index
          pt_val_index = re.search('(\d+) points', text_of_input_file)
-         #print('-> pt_val_index:', pt_val_index.start())
-         #print('-> Point Value:', pt_val_index.group(1))
+
 
          #-> Find the next Reference Index
          ref_index = re.search('\n(|\s+)(\[?)(\S+) (\d+):(\d+)', text_of_input_file)
-         #print('-> ref_index:', ref_index.end())
 
          #-> Determine if the Reference Index is Less than the Point Value Index
          #--> Also determine if both actually exist
          while pt_val_index != None and ref_index != None and ref_index.end() < pt_val_index.start():
             # If all checks out, we have another reference to paste
-            print(f'Additional Reference: {ref_index.group(3)} {ref_index.group(4)}:{ref_index.group(5)}')
+            ref += (f' / {ref_index.group(3)} {ref_index.group(4)}:{ref_index.group(5)}')
 
             # Consume the Text before the reference
             text_of_input_file = text_of_input_file[ref_index.end():]
@@ -355,8 +372,8 @@ def process_questions(text_of_input_file):
             pt_val_index = re.search('(\d+) points\.', text_of_input_file)
                
     
-         # Move on to Next Question
-         print()
+         # Write this Question's Information to the Output File
+         print(f'{set_num}\t{q_num}\t{pt_value}\t{q_part}\t{a_part}\t{location}\t{question}\t{ref}')
 
 
 

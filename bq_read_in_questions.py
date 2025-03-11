@@ -126,23 +126,23 @@ def list_question_intro(q_intro):
    if 'ext' in q_intro:
       q_shorthand += 'T'
   
-     #-> Application question
+   #-> Application question
    if 'pplication' in q_intro:
       q_shorthand += 'A'
   
-     #-> Quotation question
+   #-> Quotation question
    if 'uotation' in q_intro:
       q_shorthand += 'Q'
   
-     #-> Essence question
+   #-> Essence question
    if 'ssence' in q_intro:
       q_shorthand += 'E'
   
-     #-> Quotation/Essence Completion question
+   #-> Quotation/Essence Completion question
    if 'ompletion' in q_intro:
       q_shorthand += 'C'
     
-     # Return the question intro's shorthand
+   # Return the question intro's shorthand
    return q_shorthand
 
 
@@ -151,7 +151,7 @@ def list_answer_intro(a_intro):
    # Create an empty string to appened the answers to
    a_shorthand = ''
   
-     # Check for the following intros
+   # Check for the following intros
    #-> #-part answer
    if re.search('(\d+)', a_intro):
       a_shorthand += str(re.search('(\d+)', a_intro).group(1))
@@ -160,11 +160,11 @@ def list_answer_intro(a_intro):
    if 'omplete' in a_intro:
       a_shorthand += 'C'
   
-     #-> Chapter Ananysis answer
+   #-> Chapter Ananysis answer
    if 'nalysis' in a_intro:
       a_shorthand += 'A'
   
-     # Return the shorthand string
+   # Return the shorthand string
    return a_shorthand
 
 
@@ -185,29 +185,29 @@ def list_location(location):
    elif re.search('From (\d+) [Ss]eparate', location):
       loc_shorthand += str(re.search('From (\d+) [Ss]eparate', location).group(1))
   
-     #-> Consecutive Verses
+   #-> Consecutive Verses
    if 'onsecutive verses' in location:
       loc_shorthand += 'C'
   
-     #-> Separate Verses
+   #-> Separate Verses
    elif 'eparate verses' in location:	#NOTE: can't be both consecutive and separate
       loc_shorthand += 'S'
       
-     #-> Section
+   #-> Section
    if 'section' in location or 'Section' in location:
       loc_shorthand += 'sec'
       # Set our flag to true
       is_section = 1
   
-     #-> Chapter
+   #-> Chapter
    elif 'hapter' in location:
       loc_shorthand += 'ch'
   
-     #-> Book
+   #-> Book
    elif 'verses.' not in location:
       loc_shorthand += 'bk'
   
-     #-> Multiple?
+   #-> Multiple?
    # Check if the flag is true or not
    if is_section == 0:
       # If not, simply look for the word 'and'
@@ -219,6 +219,11 @@ def list_location(location):
       title_index = re.search('title', location)
       if and_index != None and title_index != None and and_index.start() < title_index.start():
          # If it is before, we can append the s
+         loc_shorthand += 's'
+
+      # Also check if the word "sections" is found in the intro
+      elif 'ections' in location:
+         # If so, append the s
          loc_shorthand += 's'
   
    # Return the shorthand

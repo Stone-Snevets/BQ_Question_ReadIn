@@ -1,1 +1,97 @@
-Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference
+Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference
+1,1,10,_,_,sec,Who were amazed that the gift of the Holy Spirit had been poured out on the Gentiles?,A 10:45
+1,2,20,T,3,bk,"How does Luke complete the phrase, quote, “two of”?",A 5:9 / A 10:7 / A 15:22
+1,3,30,4,7,ch,"The word “far” is used to describe whom and what, the word “ farther” is used to describe what, ",A 2:39 / A 7:43 / A 8:40 / A 11:19 / A 13:47
+1,4,10,_,C,_,The word “permanent” is used to describe what?,A 7:46
+1,5,20,Q,2,Sbk,Two verses state that God anointed Jesus. Quote these verses.,A 4:27 / A 10:38
+1,6,10,_,C,sec,Who hadn’t yet come upon the new believers?,A 8:16
+1,7,20,2,C,Cch,How do verses 20 and 21 describe Moses?,A 7:20 / A 7:21
+1,8,30,,6,_,The high priest is mentioned in six verses. Give the complete references for these verses.,Acts 4:6
+1,9,20,,2A,_,From separate verses of Acts chapter 3. ,A 3:8 / A 3:10
+1,10,10,T,C,sec,"What did Paul urge believers to, quote, “continue to rely on”?",A 13:43
+1,11,10,_,C,_,"According to Acts 7:21, how did Pharaoh’s daughter raise Moses?",A 7:21
+1,12,20,_,4,_,The Sabbath is mentioned in which chapters?,A 13:14
+1,13,20,2,C,Sbk,"What disturbed the Jewish leaders, and what disturbed the city of Thessalonica ?",A 4:2 / A 17:6
+1,14,30,QC,_,ch,"Finish this verse and the four that follow, quote, “None of them....”",A 6:10 / A 6:11 / A 6:12 / A 6:13 / A 6:14
+1,15,10,T,_,ch,"How does Luke complete the phrase, quote, “people of”?",A 10:36
+1,16,10,_,A,sec,"Traveling inland, where did Paul and Barnabas go?",A 13:14
+1,17,20,_,2C,2Sbk,Which celebrations are mentioned?,A 7:41 / A 12:3
+1,18,20,_,C,3Csec,What astounded the people?,A 3:8 / A 3:9 / A 3:10
+1,19,20,3,8,sec,"Who sent whom, where?",A 15:22
+1,20,10,_,C,sec,What spread to all the people of Jerusalem?,A 1:19
+2,1,10,_,C,sec,What were cast out?,A 8:7
+2,2,20,Q,2,Sbk,Daughters are mentioned in two verses. Quote these verses.,A 2:17 / A 7:21
+2,3,30,6,C,Cch,"How do verses 18, 19, 20, 21, 22, and 23 describe Simon?",A 8:18 / A 8:19 / A 8:20 / A 8:21 / A 8:22 / A 8:23
+2,4,20,,2,chs,The word “first” is used as an adjective two times. What does it describe?,A 1:1 / A 12:10
+2,5,10,_,A,ch,The 58th verse names which individual?,A 7:58
+2,6,10,,_,_,The unique word “Psalms” is found in one verse. Give the complete reference for this verse.,A 1:20
+2,7,20,3,4,Schs,"Elymas begged for what, the people begged for what, and the city officials begged for what?",A 13:11 / A 13:21 / A 13:42 / A 16:39
+2,8,20,2Q,_,_,Apollonia is named in one verse. Quote and give the complete reference for this verse.,A 17:1
+2,9,10,T,_,sec,"Who wasn’t recognized as the, quote, “one the prophets had spoken about”?",A 13:27
+2,10,20,_,C,3Csec,"When the day arrived, what happened?",A 12:21 / A 12:22 / A 12:23
+2,11,30,E,4,Sbk,The three-word phrase “heaven and earth” is found in four verses. Give in essence these verses.,A 4:24 / A 7:50 / A 14:15 / A 17:24
+2,12,20,T,C,Cch,"Why were the high priest and his officials, quote, “filled with jealousy”?",A 5:14 / A 5:15 / A 5:16
+2,13,10,_,_,ch,The word “public” is used to describe what?,A 5:18
+2,14,10,T,C,sec,"Where did some of the Jews watch for Saul, quote, “day and night”?",A 9:24
+2,15,20,_,4,chs,What was accepted?,A 5:40 / A 8:14 / A 12:23 / A 16:14
+2,16,30,T,C,Csec,"Referring to the apostles, when did the high council decide to, quote, “kill them”?",A 5:29 / A 5:30 / A 5:31 / A 5:32 / A 5:33
+2,17,20,,4A,Sch,Which questions are contained?,A 9:4 / A 9:5 / A 9:21 / A 9:21
+2,18,20,_,C,3Csec,"Calling a meeting of all the believers, what did the Twelve say?",A 6:2 / A 6:3 / A 6:4
+2,19,10,T,2,sec,"The believers sold what so that they could share the money with, quote, “those in need”?",A 2:45
+2,20,10,_,_,ch,Barnabas encouraged the believers to stay true to whom?,A 11:23
+3,1,10,_,C,_,"According to Acts 11:27, who traveled from Jerusalem to Antioch?",A 11:27
+3,2,20,2,6,Schs,Who bought what?,A 1:18 / A 7:12 / A 7:16
+3,3,30,_,6A,Sch,Peter exclaimed what?,A 2:14 / A 2:22 / A 2:26 / A 2:29 / A 2:36 / A 2:40
+3,4,20,_,6C,3Cch,"According to the opening three verses, what did Ananias do?",A 5:1 / A 5:2 / A 5:3
+3,5,10,_,C,ch,The Jewish leaders forever resisted whom?,A 7:51
+3,6,10,_,C,sec,Who shared everything they had?,A 4:32
+3,7,20,Q,2,Sbk,The phrase “converts to Judaism” is found in two verses. Quote these verses.,A 2:11 / A 13:43
+3,8,10,2,_,sec,"The crowd decided that Barnabas was whom, and Paul was whom?",A 14:12
+3,9,20,_,C,2Csec,On what mission was Saul approaching Damascus?,A 9:1 / A 9:2
+3,10,20,T,C,Cch,"Referring to Barnabas and Saul, what happened after the men sent them, quote, “on their way”?",A 13:4 / A 13:5 / A 13:6
+3,11,30,Q,4,Sbk,Meals are mentioned in four verses. Quote these verses.,A 2:42 / A 2:46 / A 10:10 / A 16:34
+3,12,10,_,_,sec,What was incited against Paul and Barnabas?,A 13:50
+3,13,20,,4,Ssec,"Which individuals and geographical locations are named, and which parenthetical statements are ",A 6:5 / A 6:5 / A 6:5 / A 6:5 / A 6:5 / A 6:5 / A 6:5 / A 6:5 / A 6:7 / A 6:5 / A 6:5
+3,15,30,_,C,4Sch,Give all Jesus’s words.,A 1:4 / A 1:5 / A 1:7 / A 1:8
+3,16,10,T,_,_,"How does Luke complete the phrase, quote, “Savior of”?",A 13:23
+3,17,10,_,C,sec,What continued to spread?,A 12:24
+3,18,20,_,2A,Sbk,Who were replaced?,A 1:25 / A 13:22
+3,19,20,_,C,2Csec,"One day, what happened?",A 16:16 / A 16:17
+3,20,10,_,C,ch,By whom was Cornelius well respected?,A 10:22
+4,1,10,_,_,ch,When was there a great commotion among the soldiers?,A 12:18
+4,2,20,Q,2,Sbk,Two verses state that David died. Quote these verses.,A 2:29 / A 13:36
+4,3,20,_,C,4Cch,Describe the selection of Matthias.,A 1:23 / A 1:24 / A 1:25 / A 1:26
+4,4,30,2,C,Csec,"One day, what happened, and the next day, what happened?",A 7:23 / A 7:24 / A 7:25 / A 7:26 / A 7:27 / A 7:28 / A 7:29
+4,5,10,_,_,ch,"In the 30th verse, how does the jailer address Paul and Silas?",A 16:30
+4,6,20,_,5,Sbk,Who were in prison?,A 8:3 / A 12:5 / A 16:23
+4,7,20,T,C,Cch,"What did Peter say after asking, quote, “Do you want to know how he was healed?”",A 4:10 / A 4:11 / A 4:12
+4,8,30,Q,_,5Cbk,"Quote verses 30, 31, 32, 33, and 35 from the 15th chapter.",A 15:30 / A 15:31 / A 15:32 / A 15:33 / A 15:35
+4,9,10,_,_,sec,Who were devout?,A 2:5
+4,10,20,2,A,Sch,"What was exclaimed to the city officials, and what was exclaimed by the city officials?",A 16:20 / A 16:35
+4,11,10,,_,_,The unique word “Molech” is found in one verse. Give the complete reference for this verse.,A 7:43
+4,12,20,2Q,_,_,Theudas is named in one verse. Quote and give the complete reference for this verse.,A 5:36
+4,13,30,2,11,Sbk,Who visited whom?,A 7:23 / A 9:32 / A 13:7 / A 15:3 / A 15:14
+4,14,10,_,A,_,"Who remains in heaven, who remained in Damascus, and who remained behind?",Acts 5:34 / A 9:9 / A 17:14
+4,18,10,T,_,ch,"How does Luke complete the phrase, quote, “way of”?",A 2:28
+4,19,10,_,A,sec,Who handed down customs?,A 6:14
+4,20,20,2,C,Cch,Describe the persecution of James and the persecution of Peter.,A 12:2 / A 12:3 / A 12:4
+5,1,20,T,3C,Sbk,"How does Luke complete the phrase, quote, “many of”?",A 4:4 / A 6:7 / A 17:12
+5,2,10,_,_,ch,The high council might be fighting against whom?,A 5:39
+5,3,20,T,C,Csec,"What happened during the forty days after Jesus, quote, “suffered and died”?",A 1:3 / A 1:4 / A 1:5
+5,4,30,Q,3,Sbk,Debates are mentioned in three verses. Quote these verses.,A 6:9 / A 9:29 / A 17:18
+5,5,10,_,A,_,"According to Acts 15:38, where had John Mark deserted Paul and Barnabas?",A 15:38
+5,6,20,_,C,2Sch,"About Saul, what did Luke say?",A 8:1 / A 8:3
+5,7,20,,4A,_,From separate verses. ,A 3:4 / A 7:56 / A 8:36 / A 13:41
+5,8,10,_,C,_,What was spurned?,A 14:2
+5,9,30,_,7,_,Barnabas is named in which chapters?,A 4:36
+5,10,20,E,2,Sch,Give in essence the verses in which Abraham is named.,A 3:13 / A 3:25
+5,11,10,_,_,sec,Who went at once to Antioch?,A 15:30
+5,12,20,QC,_,ch,"Finish this verse and the two that follow, quote, “Jacob....”",A 7:12 / A 7:13 / A 7:14
+5,13,20,2,C,Sch,"What did happen everywhere, and what should happen everywhere?",A 17:16 / A 17:30
+5,14,10,_,_,ch,The word “public” is used to describe what?,A 17:17
+5,15,30,6,C,Cch,"How do verses 3, 4, 5, 6, 7, and 8 describe the healing of the man lame from birth?",A 3:3 / A 3:4 / A 3:5 / A 3:6 / A 3:7 / A 3:8
+5,16,10,_,C,sec,How far was Jerusalem from the Mount of Olives?,A 1:12
+5,17,20,_,3,Sbk,The possessive word “people’s” is used to describe what?,A 12:23 / A 15:8 / A 17:30
+5,18,10,_,_,sec,What became stronger as the believers lived in the fear of the Lord?,A 9:31
+5,19,10,_,2,sec,By means of what did Moses lead the Israelites out of Egypt?,A 7:36
+5,20,20,2,6,sec,The Holy Spirit said what to whom?,A 13:1

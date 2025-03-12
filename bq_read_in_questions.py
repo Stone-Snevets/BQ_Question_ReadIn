@@ -342,8 +342,23 @@ def process_questions(text_of_input_file):
   
   
          # Copy Over Question
-         question = re.search('\n(.+)', text_of_input_file[q_begins:ref_index.start()]).group(1)
-         print(question)
+         q_index = re.search('\n(.+)', text_of_input_file[q_begins:ref_index.start()])
+         
+         # If q_index doesn't exist, go to the next reference to expand the horizon
+         #-> The question itself may have started with a reference
+         while q_index == None:
+            # Consume the text up to the reference
+            text_of_input_file = text_of_input_file[ref_index.end():]
+
+            # Find the next reference
+            ref_index = re.search('\n(|\s+)(\[?)(\S+) (\d+):(\d+)', text_of_input_file)
+
+            # Recheck the question index
+            q_index = re.search('\n(.+)', text_of_input_file[q_begins:ref_index.start()])
+
+         # Grab the contents of the question index
+         question = q_index.group(1)
+
 
   
          # Consume the Used Question Parts

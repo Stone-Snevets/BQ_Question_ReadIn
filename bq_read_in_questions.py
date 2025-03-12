@@ -242,8 +242,9 @@ def process_questions(text_of_input_file):
    set_num = 0
 
    # Open a csv file to write to
+   #-> Set the 'newline' flag to a space to avoid gap rows between each input
    print('Opening Output File\n')
-   with open(FILE_TO_WRITE_TO, 'w') as output_file:
+   with open(FILE_TO_WRITE_TO, 'w', newline='') as output_file:
        
       # Create a Writer Object to write with
       writer = csv.writer(output_file)
@@ -341,7 +342,8 @@ def process_questions(text_of_input_file):
   
   
          # Copy Over Question
-         question = re.search('([^.].+)', text_of_input_file[q_begins:ref_index.start()]).group(1)
+         question = re.search('\n(.+)', text_of_input_file[q_begins:ref_index.start()]).group(1)
+         print(question)
 
   
          # Consume the Used Question Parts
@@ -373,7 +375,8 @@ def process_questions(text_of_input_file):
                
     
          # Write this Question's Information to the Output File
-         print(f'{set_num}\t{q_num}\t{pt_value}\t{q_part}\t{a_part}\t{location}\t{question}\t{ref}')
+         #-> set 'newline' to a whitespace to avoid gaps between inputs
+         writer.writerow([set_num, q_num, pt_value, q_part, a_part, location, question, ref])
 
 
 

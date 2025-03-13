@@ -38,15 +38,18 @@ def text_from_pdf(file_name):
 
    """
    # Import PdfReader from the pypdf library for working with the PDF file
+   print('* Importing')
    from PyPDF2 import PdfReader # type: ignore
 
    # Create a reader object and pass in the user-given file
+   print('* Reading in document')
    reader = PdfReader(file_name)
 
    # Determine the number of pages the file is
    num_pages = len(reader.pages)
 
    # Create an empty string -> All extracted text will get appended to the string
+   print('* Extracting text from the document')
    text_of_pdf = ""
 
    # For Each Page
@@ -71,15 +74,18 @@ def text_from_doc(file_name):
 
    """
    # Import the necessary Spire Libraries for reading DOC files
+   print('* Importing')
    from spire.doc import Document #type: ignore
 
    # Create a Document Object
    doc = Document()
 
    # Load in the DOC file
+   print('* Reading in document')
    doc.LoadFromFile(file_name)
 
    # Extract the Text from the Document
+   print('* Extracting text from the document')
    text_of_doc = doc.GetText()
 
    # Return the Extracted Text
@@ -98,11 +104,10 @@ def text_from_docx(file_name):
    import docx2txt #type: ignore
 
    # Extract the text from the document
-   print('* Extracting the text')
+   print('* Extracting text from the document')
    text_of_docx = docx2txt.process(file_name)
 
    # Return the extracted text
-   print('* Returning extracted text')
    return text_of_docx
 
 

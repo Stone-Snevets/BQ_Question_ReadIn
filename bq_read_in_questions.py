@@ -67,29 +67,13 @@ def text_from_pdf(file_name):
 
 # --- Extract the text from DOC files -------------------------------------------------------------
 def text_from_doc(file_name):
-   """
-   Function to pull and return the text from a DOC file for further processing
-   NOTE: Currently adding following line to output:
-         "Evaluation Warning: The document was created with Spire.Doc for Python."
-
-   """
-   # Import the necessary Spire Libraries for reading DOC files
-   print('* Importing')
-   from spire.doc import Document #type: ignore
-
-   # Create a Document Object
-   doc = Document()
-
-   # Load in the DOC file
-   print('* Reading in document')
-   doc.LoadFromFile(file_name)
-
-   # Extract the Text from the Document
-   print('* Extracting text from the document')
-   text_of_doc = doc.GetText()
+   #TODO: Convert DOC to DOCX file
+   #      -> Pass that DOCX file to text_from_docx()
+   #      -> Return received text
 
    # Return the Extracted Text
-   return text_of_doc
+   #return text_of_doc
+   return 'Temp_return'
    
 
 
@@ -373,6 +357,8 @@ def process_questions(text_of_input_file):
          # Check for Additional References in the Answer
          #-> Find next Question Index
          pt_val_index = re.search('(\d+) points', text_of_input_file)
+         if pt_val_index == None:
+            print('->', text_of_input_file)
 
 
          #-> Find the next Reference Index

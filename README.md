@@ -43,7 +43,6 @@ Before installing necessary packages (using pip), a good idea would be to first 
 Now everything is ready to install any external packages needed for this project
 * `pip install pypdf2` - Extracts the text from PDF files
 * `pip install docx2txt` - Extract the text from DOCX files
-* `pip install Spire.Doc` - Extract the text from DOC files
 
 
 # Resources
@@ -64,5 +63,6 @@ Now everything is ready to install any external packages needed for this project
 * [Searching for Text within a String](https://www.w3schools.com/python/python_strings.asp)
 * [Setting up Virtual Environment](https://github.com/denisecase/datafun-01-textbook)
 * [Understanding Virtual Environment](https://code.tutsplus.com/understanding-virtual-environments-in-python--cms-28272t)
+* [Why Spire.Doc Fails](https://www.e-iceblue.com/forum/limitation-t10856.html)
 * [Why 'textract' Fails](https://stackoverflow.com/questions/67130147/textract-cannot-find-a-pdf-file-python)
 * [Writing to a CSV File](https://www.pythontutorial.net/python-basics/python-write-csv-file/)

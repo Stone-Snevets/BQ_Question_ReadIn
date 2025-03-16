@@ -6,8 +6,12 @@ Written by Solomon Stevens
 Date Completed:
 
 ------- Basic Steps -------
-1. Ask user for PDF, DOC, or DOCX file containing questions
+1. Ask user for file containing questions
    -> See "question_formatting_rules" for how questions should be formatted
+   -> File should be one of the following types:
+      - PDF
+      - TXT
+      - DOCX (note the x at the end)
 2. Open given file
 3. Open csv file to write information to
 4. For each question
@@ -65,19 +69,7 @@ def text_from_pdf(file_name):
 
 
 
-# --- Extract the text from DOC files -------------------------------------------------------------
-def text_from_doc(file_name):
-   #TODO: Convert DOC to DOCX file
-   #      -> Pass that DOCX file to text_from_docx()
-   #      -> Return received text
-
-   # Return the Extracted Text
-   #return text_of_doc
-   return 'Temp_return'
-   
-
-
-# --- Extract the text from DOCX files ------------------------------------------------------------
+   # --- Extract the text from DOCX files ------------------------------------------------------------
 def text_from_docx(file_name):
    """
    Function to pull and return the text from a DOCX file for further processing
@@ -93,6 +85,24 @@ def text_from_docx(file_name):
 
    # Return the extracted text
    return text_of_docx
+
+
+
+# --- Extract the text from TXT files -------------------------------------------------------------
+def text_from_txt(file_name):
+   """
+   Function to pull and return the text from a TXT file for further processing
+   
+   """
+   # Open the file
+   print('* Opening file')
+   with open(file_name, 'r') as input_file:
+      # Send the contents of the file to our string
+      print('* Extracting text from file')
+      text_of_txt = input_file.read()
+
+   # Return our text
+   return text_of_txt
 
 
 
@@ -357,8 +367,6 @@ def process_questions(text_of_input_file):
          # Check for Additional References in the Answer
          #-> Find next Question Index
          pt_val_index = re.search('(\d+) points', text_of_input_file)
-         if pt_val_index == None:
-            print('->', text_of_input_file)
 
 
          #-> Find the next Reference Index
@@ -396,39 +404,37 @@ def get_question_file():
    user_input = input('Enter the Full Path of the Question File: ')
 
    # Acknowledge to User that File Path was Received
-   print(f'File Name: {user_input}\n')
+   print(f'\nFile Name: {user_input}')
 
    # Determine what kind of file is being entered
    #-> Figure out the file extension
-   file_extension = re.findall('\.pdf|\.docx|\.doc', user_input)
+   file_extension = re.findall('\.pdf|\.docx|\.txt', user_input)
       # returns a list containing the file extension
-      # NOTE: DOCX must come before DOC in the search
-      #       because the or (|) clause sees 'doc' without
-      #       the x in 'docx' and automatically lists it
-      #       as a DOC file rather than a DOCX file
+
 
    #-> Call appropriate function to extract the text from it
    try:
       # If the file extension is PDF, call text_from_pdf()
       if file_extension[0] == '.pdf':
-         print('Type of File: PDF')
+         print('Type of File: PDF\n')
          text_of_file = text_from_pdf(user_input)
 
-      # If the file extension is DOC, call text_from_doc()
-      elif file_extension[0] == '.doc':
-         print('Type of File: DOC')
-         text_of_file = text_from_doc(user_input)
+      # If the file extension is TXT, call text_from_txt()
+      elif file_extension[0] == '.txt':
+         print('Type of File: TXT\n')
+         text_of_file = text_from_txt(user_input)
 
       # If the file extension is DOCX, call text_from_docx()
       elif file_extension[0] == '.docx':
-         print('Type of File: DOCX')
+         print('Type of File: DOCX\n')
          text_of_file = text_from_docx(user_input)
 
-   except: # The file type was not PDF, DOC, or DOCX
+   except Exception as e: # The file type was not PDF, TXT, or DOCX
       # Output an Error Message
       print('------------------------------------------------------------------')
       print('ERROR: File Type Not Supported')
-      print('Make sure the file you want to submit is either PDF, DOC, or DOCX')
+      print('Make sure the file you want to submit is either PDF, TXT, or DOCX')
+      print(e)
       print('------------------------------------------------------------------\n')
 
       # Return back to Main - There's nothing more the program can do

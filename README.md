@@ -1,5 +1,5 @@
 # BQ_Question_ReadIn
-Receive Bible Quiz questions in PDF, DOC, DOCX format and break them down to specific introductions for analyzing
+Receive Bible Quiz questions in PDF, TXT, DOCX format and break them down to specific introductions for analyzing
 
 ### Author: Solomon Stevens
 ### Date: *Enter Date Completed*
@@ -9,10 +9,10 @@ Receive Bible Quiz questions in PDF, DOC, DOCX format and break them down to spe
 * Git installed and configured correctly
 
 # What is Bible Quiz
-Bible Quiz is a ministry based out of the Assembly of God denomination. It encourages students ranging from 1st - 12th grade to engage in God's word through memorization. For the older levels of quizzing (6th-12th grade), portions of the Bible are selected each year, and questions are written based on the chosen portion. Throughout the schoolyear, teams from all over the country gather to compete in various levels of competition. Each round pits two teams against each other. There are twenty questions in each round, some 10 points, some 20 points, and some 30 points. Whichever team has more points at the end of the twenty questions is declared the winner of the round. There are a wide variety of introductory remarks designed to clue quizzers in as to what the question may be (see [list_of_intros]() for a complete list of introductory remarks and what they mean). To keep a competitive edge, teams may try to analyze past questions and look for patterns to help their quizzers even more.
+Bible Quiz is a ministry based out of the Assembly of God denomination. It encourages students ranging from 1st - 12th grade to engage in God's word through memorization. For the older levels of quizzing (6th-12th grade), portions of the Bible are selected each year, and questions are written based on the chosen portion. Throughout the schoolyear, teams from all over the country gather to compete in various levels of competition. Each round pits two teams against each other. There are twenty questions in each round, some 10 points, some 20 points, and some 30 points. Whichever team has more points at the end of the twenty questions is declared the winner of the round. There are a wide variety of introductory remarks designed to clue quizzers in as to what the question may be (see [list_of_intros](https://github.com/Stone-Snevets/BQ_Question_ReadIn/blob/main/list_of_intros.txt) for a complete list of introductory remarks and what they mean). To keep a competitive edge, teams may try to analyze past questions and look for patterns to help their quizzers even more.
 
 # Basic Steps
-1. Receive link to PDF, DOC, or DOCX file contianing Bible Quiz questions
+1. Receive link to PDF, TXT, or DOCX file contianing Bible Quiz questions
    NOTE: the questions MUST be formatted correctly. See [question_formatting_rules](https://github.com/Stone-Snevets/BQ_Question_ReadIn/blob/main/question_formatting_rules.txt) for specifications as to how questions need to be formatted.
 2. Open a csv file to write the question summary to
 3. Begin reading in each question, examining the introduction parts and the question itself
@@ -52,7 +52,6 @@ Now everything is ready to install any external packages needed for this project
 * [Multi-Conditional If Statements](#https://www.w3schools.com/python/python_conditions.asp)
 * [Newlines in Markdown](https://www.w3schools.io/file/markdown-line-break/)
 * [pywin32 Doesn't Work on Machines without MS Office](https://stackoverflow.com/questions/62427468/com-error-2147221005-invalid-class-string-none-none)
-* [Reading DOC Files](https://www.e-iceblue.com/Tutorials/Python/Spire.Doc-for-Python/Program-Guide/Document-Operation/Python-Create-Read-or-Update-a-Word-Document.html)
 * [Reading DOCX Files](https://theautomatic.net/2019/10/14/how-to-read-word-documents-with-python/)
 * [Reading PDF Files](https://pypdf2.readthedocs.io/en/3.x/user/extract-text.html)
 * [Reading User Input](https://www.w3schools.com/python/python_user_input.asp)

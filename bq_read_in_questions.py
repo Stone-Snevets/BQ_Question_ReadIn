@@ -262,7 +262,7 @@ def process_questions(text_of_input_file):
          #--> Cast it to an integer rather than a string
          pt_value = int(pt_val_index.group(1))
          #-> Back up to find Question Number
-         q_num_index = re.search('Question number (\d+)', text_of_input_file)
+         q_num_index = re.search('Question (number|#) (\d+)', text_of_input_file)
   
          #-> If number doesn't exist, Assign appropriate Sub Question Number
          if q_num_index == None or q_num_index.end() > pt_val_index.start():
@@ -278,7 +278,7 @@ def process_questions(text_of_input_file):
     
          # If number DOES exist, Find it and Assign it
          else:
-            q_num = int(q_num_index.group(1))
+            q_num = int(q_num_index.group(2))
   
      
          # Determine the Set Number
@@ -364,6 +364,7 @@ def process_questions(text_of_input_file):
          text_of_input_file = text_of_input_file[ref_index.end():]
          
   
+  
          # Check for Additional References in the Answer
          #-> Find next Question Index
          pt_val_index = re.search('(\d+) points', text_of_input_file)
@@ -374,18 +375,35 @@ def process_questions(text_of_input_file):
 
          #-> Determine if the Reference Index is Less than the Point Value Index
          #--> Also determine if both actually exist
-         while pt_val_index != None and ref_index != None and ref_index.end() < pt_val_index.start():
-            # If all checks out, we have another reference to paste
-            ref += (f' / {ref_index.group(3)} {ref_index.group(4)}:{ref_index.group(5)}')
+         if pt_val_index != None:
+            while pt_val_index != None and ref_index != None and ref_index.end() < pt_val_index.start(): 
+               # If all checks out, we have another reference to paste
+               #-> Check if it is already there
+               if f'{ref_index.group(3)} {ref_index.group(4)}:{ref_index.group(5)}' not in ref:
+                  # If not, write in the new reference
+                  ref += (f' / {ref_index.group(3)} {ref_index.group(4)}:{ref_index.group(5)}')
 
-            # Consume the Text before the reference
-            text_of_input_file = text_of_input_file[ref_index.end():]
+               # Consume the Text before the reference
+               text_of_input_file = text_of_input_file[ref_index.end():]
 
-            # Check for the next reference index
-            ref_index = re.search('\n(|\s+)(\[?)(\S+) (\d+):(\d+)', text_of_input_file)
+               # Check for the next reference index
+               ref_index = re.search('\n(|\s+)(\[?)(\S+) (\d+):(\d+)', text_of_input_file)
 
-            # Check for the new index of the next Point Value
-            pt_val_index = re.search('(\d+) points\.', text_of_input_file)
+               # Check for the new index of the next Point Value
+               pt_val_index = re.search('(\d+) points\.', text_of_input_file)
+      
+         else: # We could be at the end of the set -> Check for more reference indices
+            while ref_index != None:
+               # Check if reference already exists
+               if f'{ref_index.group(3)} {ref_index.group(4)}:{ref_index.group(5)}' not in ref:
+                  # If not, add in new reference
+                  ref += (f' / {ref_index.group(3)} {ref_index.group(4)}:{ref_index.group(5)}')
+
+                  # Consume the Text before the reference
+                  text_of_input_file = text_of_input_file[ref_index.end():]
+
+                  # Check for the next reference index
+                  ref_index = re.search('\n(|\s+)(\[?)(\S+) (\d+):(\d+)', text_of_input_file)
                
     
          # Write this Question's Information to the Output File

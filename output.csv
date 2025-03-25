@@ -3,13 +3,13 @@ Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference
 1,2,20,_,C,sec,By whose name was the man healed?,A 4:10
 1,3,30,QC,_,ch,"Finish this verse, quote, ""While Paul and Barnabas....""",A 15:1
 1,4,20,_,2A,Sbk,Who were called Barsabbas?,A 1:23 / A 15:22
-1,5,10,_,_,sec,"After eating some food, Saul regained what?",A 9:19
+1,5,10,_,_,_,"After eating some food, Saul regained what?",A 9:19
 1,6,10,T,C,sec,"When would the disciples be, quote, ""baptized with the Holy Spirit""?",A 1:5
 1,7,20,T,2,Sbk,"How does Luke complete the phrase, quote, ""angel of""?",A 5:19 / A 10:3
 1,8,10,_,C,sec,The governor wanted to hear what?,A 13:7
 1,9,20,T,C,ch,"Where is Jesus, quote, ""referred to""?",A 4:11
-1,10,20,_,3A,ch,The 13th verse contains which parenthetical statements?,A 1:13 / A 1:13 / A 1:13
-1,11,30,E,2,Sbk,Two verses state that God doesn’t live in physical temples. Give in essence these verses.,A 7:48 / A 17:24
+1,10,20,_,3A,ch,The 13th verse contains which parenthetical statements?,A 1:13
+1,11,30,SE,2,Sbk,Two verses state that God doesn’t live in physical temples. Give in essence these verses.,A 7:48 / A 17:24
 1,12,10,_,A,ch,The 39th verse names which individual?,A 13:39
 1,13,20,E,_,bk,Give in essence verse 11 from the 2nd chapter.,A 2:11
 1,14,10,_,_,sec,What was convened?,A 5:21
@@ -24,7 +24,7 @@ Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference
 2,3,30,2E,_,Sbk,Give in essence the verse in which Peter’s chains fell off and the verse in which the prisoners’ chains fell off.,A 12:7 / A 16:26
 2,4,20,_,3C,sec,"During the forty days after he suffered and died, what did Jesus do?",A 1:3
 2,5,10,_,C,sec,What rested in hope?,A 2:26
-2,6,10,,_,_,Caiaphas is named in one verse. Give the complete reference for this verse.,A 4:6
+2,6,10,S,_,_,Caiaphas is named in one verse. Give the complete reference for this verse.,A 4:6
 2,7,20,_,2A,chs,Paul reached where?,A 13:6 / A 16:12
 2,8,20,2T,3C,ch,"What did Abraham and what did God do after God told Abraham to, quote, ""Leave your native land""?",A 7:4
 2,9,10,_,C,ch,"The possessive word ""Lord’s"" is used to describe what?",A 15:40
@@ -44,14 +44,14 @@ Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference
 3,3,30,_,A,Csec,Which Old Testament Scripture is contained?,A 4:25 / A 4:26
 3,4,20,_,2,Sch,Jesus is indeed whom?,A 9:20 / A 9:22
 3,5,10,_,C,_,"According to Acts 16:16, for whom did the slave girl earn a lot of money?",A 16:16
-3,6,30,Q,2,Sch,The Lord’s Supper is mentioned in two verses. Quote these verses.,A 2:42 / A 2:46
+3,6,30,SQ,2,Sch,The Lord’s Supper is mentioned in two verses. Quote these verses.,A 2:42 / A 2:46
 3,7,20,2,C,ch,"According to the 12th verse, what did the apostles do, and what did the believers do?",A 5:12
 3,8,20,EC,_,ch,"Finish in essence this verse, quote, ""God overlooked people’s...""",A 17:30
 3,9,10,T,C,_,"How does Luke complete the phrase, quote, ""patriarchs of""?",A 7:8
 3,10,10,_,C,sec,Whose relatives met in Jerusalem?,A 4:6
 3,11,20,_,2A,Sbk,Paul landed where?,A 13:13 / A 16:11
 3,12,20,2,3A,Ssec,"Which individuals are named, and which geographical location is named?",A 5:12 / A 5:15 / A 5:16
-3,13,20,Q,_,_,Timon is named in one verse. Quote this verse.,A 6:5
+3,13,20,SQ,_,_,Timon is named in one verse. Quote this verse.,A 6:5
 3,14,30,_,C,sec,"About circumcision, what did Stephen say?",A 7:8
 3,15,10,_,_,_,"The word ""wooden"" is used to describe what?",A 16:22
 3,16,20,_,2C,sec,Jesus ordered the apostles do to what?,A 10:42
@@ -70,16 +70,17 @@ Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference
 4,9,30,2T,4C,2Csec,"What did Stephen do and see when the Jewish leaders, quote, ""shook their fists at him""?",A 7:55 / A 7:56
 4,10,10,T,_,ch,"How does Luke complete the phrase, quote, ""word of""?",A 17:13
 4,11,20,E,_,bk,Give in essence verse 10 from the 11th chapter.,A 11:10
-4,12,10,,_,_,"The unique word ""passage"" is found in one verse. Give the complete reference for this verse.",A 8:32
-4,13,20,,2A,Sbk,"Defined as a male sibling, the word ""brother"" describes two individuals. Who were they?",A 7:9 / A 12:2
+4,12,10,S,_,_,"The unique word ""passage"" is found in one verse. Give the complete reference for this verse.",A 8:32
+4,13,20,S,2A,Sbk,"Defined as a male sibling, the word ""brother"" describes two individuals. Who were they?",A 7:9 / A 12:2
 4,14,20,QC,_,ch,"Finish this verse, quote, ""Barnabas was a...""",A 11:24
-4,15,30,_,3,sec,Barnabas means what?,A 4:36
+4,15,30,_,3,_,Abraham is named in which chapters?,_
+4,16,10,_,C,sec,Barnabas means what?,A 4:36
 4,17,10,_,C,sec,Philip preached what?,A 8:40
 4,18,20,T,C,sec,"What happened after Peter’s conversation with the voice, quote, ""happened three times""?",A 11:10
 4,19,20,_,C,sec,"Going from town to town, what did Paul and Timothy do?",A 16:4
 4,20,10,_,2,sec,"Besides praising God, what was the man doing?",A 3:8
 5,1,10,_,C,sec,Who will come upon you?,A 1:8
-5,2,30,,14,2Cch,Fourteen people or groups of people are mentioned in Luke’s list of believers. Who were they?,A 1:13 / A 1:14
+5,2,30,S,14,2Cch,Fourteen people or groups of people are mentioned in Luke’s list of believers. Who were they?,A 1:13 / A 1:14
 5,3,20,T,2,Sbk,"Who were, quote, ""filled with joy""?",A 11:23 / A 13:52
 5,4,20,_,A,ch,The 7th verse contains which Old Testament Scripture?,A 7:7
 5,5,10,T,C,ch,"How does Luke complete the phrase, quote, ""name of""?",A 15:26
@@ -87,20 +88,21 @@ Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference
 5,7,20,T,C,ch,"What happened when Peter, quote, ""couldn’t be found""?",A 12:19
 5,8,30,2,C,2Sbk,"According to Acts 3:1 and 10:3, what happened one afternoon?",A 3:1 / A 10:3
 5,9,10,_,C,sec,Who respected Gamaliel?,A 5:34
-5,10,20,Q,_,_,Pontus is named in one verse. Quote this verse.,A 2:9
+5,10,20,SQ,_,_,Pontus is named in one verse. Quote this verse.,A 2:9
 5,11,10,_,_,sec,The sheet was pulled back up to where?,A 11:10
 5,12,20,_,C,sec,The Good News was preached where?,A 14:6
 5,13,10,_,C,_,"According to Acts 11:19, during what had believers been scattered?",A 11:19
 5,14,20,QC,_,bk,"Finish this verse, quote, ""Stretch...""",A 4:30
 5,15,30,_,2C,2Ssec,"Years later, what happened?",A 7:45
-5,16,10,,_,_,"One verse contains the unique one-word exclamation ""Quick!"" Give the complete reference for this verse.",A 12:7
+5,16,10,S,_,_,"One verse contains the unique one-word exclamation ""Quick!"" Give the complete reference for this verse.",A 12:7
 5,17,20,2,A,Sbk,"Who bought a field, and who sold a field?",A 1:18 / A 4:37
-5,18,10,_,_,sec,How quickly did the believers multiply?,A 6:1
+5,18,10,_,_,_,How quickly did the believers multiply?,A 6:1
 5,19,20,T,C,sec,"Why did Paul and Barnabas offer the word of God, quote, ""to the Gentiles""?",A 13:47
 5,20,10,_,_,sec,Paul used what to reason with the people?,A 17:2
 6,1,10,_,C,sec,A spirit enabled the slave girl to do what?,A 16:16
-6,2,20,,2,ch,"Finish this verse and the one that follows, quote, ""After saying this...""",A 1:9 / A 1:10
-6,4,10,,A,sec,One individual is named within a parenthetical statement. Name this individual.,A 15:22
+6,2,20,S,2,_,A man named Ananias is named in two chapters. List these chapters.,_
+6,3,30,QC,_,ch,"Finish this verse and the one that follows, quote, ""After saying this...""",A 1:9 / A 1:10
+6,4,10,S,A,sec,One individual is named within a parenthetical statement. Name this individual.,A 15:22
 6,5,20,_,C,sec,David knew what?,A 2:30
 6,6,20,_,2,Sbk,Who lied?,A 5:3 / A 6:11
 6,7,10,2,_,ch,God told Abraham to leave what and whom?,A 7:3
@@ -119,7 +121,7 @@ Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference
 6,20,10,2,C,_,"Young men will do what, and old men will do what?",A 2:17
 7,1,10,_,C,_,What was sharp?,A 15:39
 7,2,20,_,3C,sec,Who were among the believers?,A 17:34
-7,3,20,Q,_,_,The individual Justus is named in one verse. Quote this verse.,A 1:23
+7,3,20,SQ,_,_,The individual Justus is named in one verse. Quote this verse.,A 1:23
 7,4,30,Q,_,2Cbk,Quote verses 42 and 43 from the 2nd chapter.,A 2:42 / A 2:43
 7,5,10,_,C,sec,Who conspired to test the Spirit of the Lord?,A 5:9
 7,6,20,2,3,Schs,Who and what were attacked?,A 14:5 / A 17:5
@@ -132,16 +134,16 @@ Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference
 7,13,10,_,A,_,"According to Acts 6:12, who was arrested?",A 6:12
 7,14,20,2,C,2Sch,"Moses took off what, and Stephen’s accusers took off what?",A 7:33 / A 7:58
 7,15,30,_,C,2Csec,"Conferring among themselves, what did the council say?",A 4:16 / A 4:17
-7,16,20,_,4A,Ssec,Which geographical locations are contained?,A 14:1 / A 14:6 / A 14:6 / A 14:6
+7,16,20,_,4A,Ssec,Which geographical locations are contained?,A 14:1 / A 14:6
 7,17,10,_,C,sec,Who couldn’t refute Saul’s proofs that Jesus was the Messiah?,A 9:22
 7,18,20,_,C,sec,Give all the Holy Spirit’s words.,A 13:2
 7,19,10,2,A,sec,Who laid his hands on whom?,A 9:17
 7,20,20,2,C,sec,Who were amazed by what?,A 10:45
 8,1,20,T,2,Schs,"How does Luke begin the phrase, quote, ""of food""?",A 6:1 / A 7:11
-8,2,10,_,_,ch,"Besides in Jesus, in whom is salvation found?",A 4:12
+8,2,10,_,_,_,"Besides in Jesus, in whom is salvation found?",A 4:12
 8,3,20,E,_,bk,Give in essence verse 3 from the 12th chapter.,A 12:3
 8,4,30,_,C,2Csec,What seemed good to the Holy Spirit?,A 15:28 / A 15:29
-8,5,10,,_,_,Procorus is named in one verse. Give the complete reference for this verse.,A 6:5
+8,5,10,S,_,_,Procorus is named in one verse. Give the complete reference for this verse.,A 6:5
 8,6,20,_,2C,sec,"As soon as they were freed, what did Peter and John do?",A 4:23
 8,7,20,,2A,Ssec,Which questions are contained?,A 10:17 / A 10:21
 8,8,10,_,A,sec,Who shook with terror?,A 7:32
@@ -149,7 +151,7 @@ Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference
 8,10,20,_,3C,ch,"According to the 28th verse, what did Saul do?",A 9:28
 8,11,10,T,_,ch,"How does Luke complete the phrase, quote, ""word of""?",A 8:25
 8,12,20,T,C,sec,"What was the result of the, quote, ""apostles’ work""?",A 5:15
-8,13,20,Q,_,_,The number 450 is found in one verse. Quote this verse.,A 13:20
+8,13,20,SQ,_,_,The number 450 is found in one verse. Quote this verse.,A 13:20
 8,14,10,_,2A,ch,The 10th verse names which individuals?,A 17:10
 8,15,30,QC,_,ch,"Finish this verse, quote, ""Among....""",A 13:1
 8,16,10,_,_,ch,"The possessive word ""apostles’"" is used to describe what?",A 2:42
@@ -170,14 +172,14 @@ Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference
 9,11,10,_,_,_,"The word ""Sovereign"" is used to describe whom?",A 4:24
 9,12,30,_,C,3Csec,"Speaking to Ananias in a vision, what did the Lord say?",A 9:10 / A 9:11 / A 9:12
 9,13,20,2,C,_,"Where will God cause wonders, and where will He cause signs?",A 2:19
-9,14,20,,2,Sbk,The color red is used to describe two things. What were they?,A 2:20 / A 7:36
+9,14,20,S,2,Sbk,The color red is used to describe two things. What were they?,A 2:20 / A 7:36
 9,15,30,_,2A,Cch,Give all Moses’ words.,A 3:22 / A 3:23
 9,16,10,_,C,sec,When did all the believers meet together in one place?,A 2:1
 9,17,10,T,C,ch,"Where did Paul and Barnabas preach with, quote, ""such power""?",A 14:1
 9,18,20,2,C,ch,"What caused the church to become stronger, and what caused it to grow in numbers?",A 9:31
 9,19,20,_,C,sec,Peter clearly stated what?,A 4:10
 9,20,10,T,C,sec,"Who criticized Peter when he, quote, ""arrived back in Jerusalem""?",A 11:2
-10,1,10,,_,_,"The unique word ""boat"" is found in one verse. Give the complete reference for this verse.",A 16:11
+10,1,10,S,_,_,"The unique word ""boat"" is found in one verse. Give the complete reference for this verse.",A 16:11
 10,2,20,2,A,Sch,"Who lived in Haran, and who lived in Midian?",A 7:4 / A 7:29
 10,3,20,_,C,sec,Who are the Lord’s?,A 15:17
 10,4,30,_,C,2Csec,David knew what?,A 2:30 / A 2:31
@@ -185,20 +187,20 @@ Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference
 10,6,20,_,2,chs,Who were selected?,A 1:26 / A 6:3
 10,7,20,_,C,ch,"Meanwhile, what happened?",A 8:40
 10,8,30,T,C,3Csec,"What did Peter say immediately after exclaiming, quote, ""May your money be destroyed with you for thinking God’s gift can be bought!""?",A 8:21 / A 8:22 / A 8:23
-10,9,10,_,_,sec,Who were God-fearing?,A 13:16
+10,9,10,_,_,_,Who were God-fearing?,A 13:16
 10,10,20,E,_,bk,Give in essence verse 31 from the 8th chapter.,A 8:31
 10,11,10,T,C,sec,"Returning to Jerusalem, where did Peter and John stop, quote, ""along the way""?",A 8:25
-10,12,20,,2A,Sch,Two individuals are named within exclamations. List these individuals.,A 12:11 / A 12:14
+10,12,20,S,2A,Sch,Two individuals are named within exclamations. List these individuals.,A 12:11 / A 12:14
 10,13,30,2Q,_,Sch,"Quote the verse that contains the phrase ""day of Pentecost"" and the verse that contains the phrase ""day of the Lord.""",A 2:1 / A 2:20
-10,14,10,_,_,ch,"The word ""newborn"" is used to describe what?",A 7:19
+10,14,10,_,_,_,"The word ""newborn"" is used to describe what?",A 7:19
 10,15,10,_,A,sec,Who was the mother of John Mark?,A 12:12
-10,16,20,Q,_,_,Amphipolis is named in one verse. Quote this verse.,A 17:1
+10,16,20,SQ,_,_,Amphipolis is named in one verse. Quote this verse.,A 17:1
 10,17,20,_,C,ch,How does the 23rd verse describe Jesus?,A 13:23
 10,18,10,_,_,ch,With whom was David buried?,A 13:36
 10,19,10,_,A,sec,Who was replaced?,A 1:25
 10,20,20,_,C,sec,Saul was chosen to do what?,A 9:15
 11,1,10,_,C,sec,Tongues of fire settled on whom?,A 2:3
-11,2,20,Q,_,_,Benjamin is named in one verse. Quote this verse.,A 13:21
+11,2,20,SQ,_,_,Benjamin is named in one verse. Quote this verse.,A 13:21
 11,3,20,_,2A,Sbk,Who were stoned?,A 7:58 / A 14:19
 11,4,10,_,C,_,"The possessive word ""Pilate’s"" is used to describe what?",A 3:13
 11,5,30,_,A,Cch,"Concerning Judas, which parenthetical statement is contained?",A 1:18 / A 1:19
@@ -223,15 +225,15 @@ Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference
 12,4,10,_,A,_,"According to Acts 1:12, to where did the apostles return?",A 1:12
 12,5,20,2,A,ch,The 10th verse contains which exclamation and which question?,A 13:10
 12,6,20,2,4C,2Csec,An angel of the Lord did what and said what?,A 5:19 / A 5:20
-12,7,30,,_,Sbk,"The contraction ""that’s"" is found in two exclamations. Give these exclamations.",A 2:13 / A 7:51
+12,7,30,S,_,Sbk,"The contraction ""that’s"" is found in two exclamations. Give these exclamations.",A 2:13 / A 7:51
 12,8,20,T,C,sec,"Why did God choose Peter, quote, ""some time ago""?",A 15:7
 12,9,10,T,2,sec,"With what did Paul and Barnabas turn the elders over to the, quote, ""care of the Lord""?",A 14:23
 12,10,20,2,_,chs,"What were around Cyrene, and what were around Jerusalem?",A 2:10 / A 5:16
-12,11,10,,_,_,Dionysius is named in one verse. Give the complete reference for this verse.,A 17:34
+12,11,10,S,_,_,Dionysius is named in one verse. Give the complete reference for this verse.,A 17:34
 12,12,20,Q,_,bk,Quote verse 21 from the 15th chapter.,A 15:21
 12,13,20,_,3,Schs,Believers were united in what?,A 1:14 / A 4:32
 12,14,30,2,C,2Csec,Gamaliel gave what advice and why?,A 5:38 / A 5:39
-12,15,10,_,_,sec,The Jews demanded the release of whom?,A 3:14
+12,15,10,_,_,_,The Jews demanded the release of whom?,A 3:14
 12,16,10,2,_,sec,Some of the believers preached to whom about whom?,A 11:20
 12,17,20,_,C,sec,The brothers knew what?,A 15:7
 12,18,10,T,A,ch,"Who offered money to, quote, ""buy this power""?",A 8:18

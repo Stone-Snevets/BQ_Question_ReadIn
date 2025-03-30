@@ -47,9 +47,10 @@ Now everything is ready to install any external packages needed for this project
 
 # Resources
 * [Appending to Strings](https://www.geeksforgeeks.org/initialize-empty-string-in-python/)
+* [Browsing for a File](https://www.geeksforgeeks.org/file-explorer-in-python-using-tkinter/)
 * [Determine the type of a variable](https://r.search.yahoo.com/_ylt=AwrFDNsJ48Fn2AIAe8NXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1741969418/RO=10/RU=https%3a%2f%2fstackoverflow.com%2fquestions%2f402504%2fhow-to-determine-a-python-variables-type/RK=2/RS=U5bQmz1DCApWoOYTwkb0TkqPJcU-)
 * [docx2txt Documentation](https://pypi.org/project/docx2txt/)
-* [Multi-Conditional If Statements](#https://www.w3schools.com/python/python_conditions.asp)
+* [Multi-Conditional If Statements](https://www.w3schools.com/python/python_conditions.asp)
 * [Newlines in Markdown](https://www.w3schools.io/file/markdown-line-break/)
 * [pywin32 Doesn't Work on Machines without MS Office](https://stackoverflow.com/questions/62427468/com-error-2147221005-invalid-class-string-none-none)
 * [Reading DOCX Files](https://theautomatic.net/2019/10/14/how-to-read-word-documents-with-python/)
@@ -57,8 +58,8 @@ Now everything is ready to install any external packages needed for this project
 * [Reading User Input](https://www.w3schools.com/python/python_user_input.asp)
 * [Regular Expressions in Python](https://www.w3schools.com/python/python_regex.asp)
 * [Regular Expressions Documentation](https://docs.python.org/3/library/re.html)
-* [Regular Expressions in the Middle of a String](#https://stackoverflow.com/questions/28840903/python-regex-match-middle-of-string)
-* [Remove the First n Characters from a String](#https://stackoverflow.com/questions/11806559/removing-first-x-characters-from-string)
+* [Regular Expressions in the Middle of a String](https://stackoverflow.com/questions/28840903/python-regex-match-middle-of-string)
+* [Remove the First n Characters from a String](https://stackoverflow.com/questions/11806559/removing-first-x-characters-from-string)
 * [Searching for Text within a String](https://www.w3schools.com/python/python_strings.asp)
 * [Setting up Virtual Environment](https://github.com/denisecase/datafun-01-textbook)
 * [Understanding Virtual Environment](https://code.tutsplus.com/understanding-virtual-environments-in-python--cms-28272t)

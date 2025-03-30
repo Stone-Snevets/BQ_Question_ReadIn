@@ -29,6 +29,7 @@ Date Completed:
 # --- Libraries to Include ---
 import csv # For Creating and Writing to a CSV File
 import re # For working with Regular Expressions (RegEx)
+from tkinter import filedialog # For Having User Browse for a File
 
 # --- Constants ---
 FILE_TO_WRITE_TO = 'output.csv'
@@ -42,18 +43,18 @@ def text_from_pdf(file_name):
 
    """
    # Import PdfReader from the pypdf library for working with the PDF file
-   print('* Importing')
+   print('* Importing Appropriate Modules...')
    from PyPDF2 import PdfReader # type: ignore
 
    # Create a reader object and pass in the user-given file
-   print('* Reading in document')
+   print('* Reading in document...')
    reader = PdfReader(file_name)
 
    # Determine the number of pages the file is
    num_pages = len(reader.pages)
 
    # Create an empty string -> All extracted text will get appended to the string
-   print('* Extracting text from the document')
+   print('* Extracting text from the document...')
    text_of_pdf = ""
 
    # For Each Page
@@ -76,11 +77,12 @@ def text_from_docx(file_name):
 
    """
    # Import docx2txt for working with the DOCX file
-   print('* Importing')
+   print('* Importing Appropriate Modules...')
    import docx2txt #type: ignore
 
+
    # Extract the text from the document
-   print('* Extracting text from the document')
+   print('* Extracting text from the document...')
    text_of_docx = docx2txt.process(file_name)
 
    # Return the extracted text
@@ -95,10 +97,10 @@ def text_from_txt(file_name):
    
    """
    # Open the file
-   print('* Opening file')
+   print('* Opening file...')
    with open(file_name, 'r') as input_file:
       # Send the contents of the file to our string
-      print('* Extracting text from file')
+      print('* Extracting text from file...')
       text_of_txt = input_file.read()
 
    # Return our text
@@ -346,7 +348,7 @@ def process_questions(text_of_input_file):
          if location_index != None and (pt_val_index == None or location_index.end() < pt_val_index.start()):
             # Assign the beginning of the question to the end of the location part of the intro
             q_begins = location_index.end()
-            
+
             # Send the Location to get_location()
             location = get_location(location_index.group(1))
 
@@ -373,17 +375,6 @@ def process_questions(text_of_input_file):
          # Grab the contents of the question index
          question = q_index.group(1)
 
-
-         """
-         # Consume up to the point value
-         text_of_input_file = text_of_input_file[pt_val_index.end():]
-  
-         # Grab the next point value
-         pt_val_index = re.search('(\d+) points', text_of_input_file)
-  
-         # Refresh the index of the reference
-         ref_index = re.search('\n(|\s+)(\[?)(\S+) (\d+):(\d+)', text_of_input_file)
-         """
 
          # Check if the reference is still after the new point value
          if pt_val_index != None and ref_index != None and ref_index.end() > pt_val_index.start():
@@ -446,10 +437,24 @@ def get_question_file():
 
    """
    # Ask User for File
-   user_input = input('Enter the Full Path of the Question File: ')
+   user_input = filedialog.askopenfile(initialdir='/',
+                                       title='Select a Question File to Open',
+                                       filetypes=(('Text File', '*.txt'),
+                                                  ('PDF File', '*.pdf'),
+                                                  ('DOCX File', '*.docx')))
+   
+   # Check if the File-Selecting Process was Aborted
+   if user_input == None:
+      # If so, Return back to main()
+      return
+   
+   # If not, Acknowledge to User that File Path was Received
+   print(f'\nFile Name: {user_input.name}\n')
 
-   # Acknowledge to User that File Path was Received
-   print(f'\nFile Name: {user_input}')
+
+   # Grab only the Name of the File
+   user_input = user_input.name
+   
 
    # Determine what kind of file is being entered
    #-> Figure out the file extension
@@ -461,17 +466,14 @@ def get_question_file():
    try:
       # If the file extension is PDF, call text_from_pdf()
       if file_extension[0] == '.pdf':
-         print('Type of File: PDF\n')
          text_of_file = text_from_pdf(user_input)
 
       # If the file extension is TXT, call text_from_txt()
       elif file_extension[0] == '.txt':
-         print('Type of File: TXT\n')
          text_of_file = text_from_txt(user_input)
 
       # If the file extension is DOCX, call text_from_docx()
       elif file_extension[0] == '.docx':
-         print('Type of File: DOCX\n')
          text_of_file = text_from_docx(user_input)
 
    except Exception as e: # The file type was not PDF, TXT, or DOCX
@@ -499,4 +501,4 @@ if __name__ == "__main__":
    get_question_file()
 
    #-> Inform User that process is complete
-   print('Question Reading Process Complete')
+   print('\nQuestion Reading Process Complete')

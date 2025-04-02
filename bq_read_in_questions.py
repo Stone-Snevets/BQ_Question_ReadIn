@@ -3,7 +3,7 @@ Program to read in and summarize Bible Quiz questions based on their introductor
 -> See "list_of_intros" in this repository for a full list / description of introductory remarks
 
 Written by Solomon Stevens
-Date Completed:
+Date Completed: April 2nd, 2025
 
 ------- Basic Steps -------
 1. Ask user for file containing questions
@@ -308,7 +308,7 @@ def process_questions(text_of_input_file):
   
          # See if Question Intros exist in Current Question
          #-> Grab the next Question Intros' Index
-         q_part_index = re.search('([^.]+ question.|[^.]+ Question.)', text_of_input_file)
+         q_part_index = re.search('([^.]+ question\.|[^.]+ Question\.)', text_of_input_file)
   
          #-> If that index is before the reference index, we have a question part
          if q_part_index != None and (pt_val_index == None or q_part_index.end() < pt_val_index.start()):

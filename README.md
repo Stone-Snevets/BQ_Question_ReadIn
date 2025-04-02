@@ -2,7 +2,7 @@
 Receive Bible Quiz questions in PDF, TXT, DOCX format and break them down to specific introductions for analyzing
 
 ### Author: Solomon Stevens
-### Date: *Enter Date Completed*
+### Date: April 2nd, 2025
 
 # Prerequisites
 * Python 3 installed

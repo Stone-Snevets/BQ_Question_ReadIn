@@ -48,6 +48,7 @@ Now everything is ready to install any external packages needed for this project
 # Resources
 * [Appending to Strings](https://www.geeksforgeeks.org/initialize-empty-string-in-python/)
 * [Browsing for a File](https://www.geeksforgeeks.org/file-explorer-in-python-using-tkinter/)
+* [Check Boxes using tkinter](https://www.geeksforgeeks.org/python-tkinter-checkbutton-widget/)
 * [Determine the type of a variable](https://r.search.yahoo.com/_ylt=AwrFDNsJ48Fn2AIAe8NXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1741969418/RO=10/RU=https%3a%2f%2fstackoverflow.com%2fquestions%2f402504%2fhow-to-determine-a-python-variables-type/RK=2/RS=U5bQmz1DCApWoOYTwkb0TkqPJcU-)
 * [docx2txt Documentation](https://pypi.org/project/docx2txt/)
 * [Multi-Conditional If Statements](https://www.w3schools.com/python/python_conditions.asp)

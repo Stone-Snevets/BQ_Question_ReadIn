@@ -30,6 +30,7 @@ Date Completed: April 2nd, 2025
 import csv # For Creating and Writing to a CSV File
 import re # For working with Regular Expressions (RegEx)
 from tkinter import filedialog # For Having User Browse for a File
+from tkinter import * # For Checkboxes when Checking for Auto-Notes and/or Auto-Concordance
 
 # --- Constants ---
 FILE_TO_WRITE_TO = 'output.csv'
@@ -430,6 +431,56 @@ def process_questions(text_of_input_file):
 
 
 
+# --- Check for Automatic Input of Notes and Concordance Types ------------------------------------
+def get_notes_and_conc():
+   """
+   Function to ask user if they want notes and/or concordance types automatically filled in
+
+   """
+   # Create a Pop-Up Window for the Checkboxes
+   root = Tk()
+   # Set the Size of the Window
+   root.geometry('700x200')
+
+
+   # Create a Label Telling the User What to Do
+   lbl = Label(root, 
+               text='Do you want the program to automatically take notes and/or log concordance types?',
+               font=40)
+   # Pack the Label
+   lbl.pack()
+
+
+   # Create Check Buttons
+   check_notes = IntVar()
+   check_concordance = IntVar()
+
+   button_notes = Checkbutton(root,
+                              text = 'Add Notes',
+                              variable = check_notes,
+                              onvalue = 1,
+                              offvalue = 0)
+      
+   button_concordance = Checkbutton(root,
+                                    text = 'Add Concordance',
+                                    variable = check_concordance,
+                                    onvalue = 1,
+                                    offvalue = 0)
+   
+   # Pack Each Button
+   button_notes.pack()
+   button_concordance.pack()
+
+
+   # End the Search Loop
+   mainloop()
+
+   # Return our resultsback to get_question_file()
+   return check_notes.get(), check_concordance.get()
+
+
+
+
 # --- Get Question File ---------------------------------------------------------------------------
 def get_question_file():
    """
@@ -450,6 +501,11 @@ def get_question_file():
    
    # If not, Acknowledge to User that File Path was Received
    print(f'\nFile Name: {user_input.name}\n')
+
+
+   # Call get_notes_and_conc() to See if User Wants Notes and Concordance Types Automatically Filled in
+   include_notes, include_concordance = get_notes_and_conc()
+
 
 
    # Grab only the Name of the File
@@ -491,6 +547,14 @@ def get_question_file():
    # Call process_questions and Pass the File Path
    print('\nCalling Function to Process Questions\n')
    process_questions(text_of_file)
+
+   
+   # Check if we Add in Notes and/or Concordance
+   if include_notes == 1:
+      print('* Include Notes')
+
+   if include_concordance == 1:
+      print('* Include Concordance')
 
 
 

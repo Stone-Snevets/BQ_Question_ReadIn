@@ -504,7 +504,7 @@ def get_question_file():
 
 
    # Call get_notes_and_conc() to See if User Wants Notes and Concordance Types Automatically Filled in
-   include_notes, include_concordance = get_notes_and_conc()
+   add_notes, include_concordance = get_notes_and_conc()
 
 
 
@@ -550,8 +550,13 @@ def get_question_file():
 
    
    # Check if we Add in Notes and/or Concordance
-   if include_notes == 1:
+   if add_notes == 1:
       print('* Include Notes')
+      # Call the 'add_notes' File to Add in Notes
+      import add_notes
+
+      # Run the Function to Add in the Notes
+      add_notes.add_in_notes()
 
    if include_concordance == 1:
       print('* Include Concordance')

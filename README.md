@@ -43,14 +43,17 @@ Before installing necessary packages (using pip), a good idea would be to first 
 Now everything is ready to install any external packages needed for this project
 * `pip install pypdf2` - Extracts the text from PDF files
 * `pip install docx2txt` - Extract the text from DOCX files
+* `pip install pandas` - Create and manipulate data using Pandas Dataframes
 
 
 # Resources
 * [Appending to Strings](https://www.geeksforgeeks.org/initialize-empty-string-in-python/)
 * [Browsing for a File](https://www.geeksforgeeks.org/file-explorer-in-python-using-tkinter/)
+* [Calling separate Python script](https://www.geeksforgeeks.org/run-one-python-script-from-another-in-python/#)
 * [Check Boxes using tkinter](https://www.geeksforgeeks.org/python-tkinter-checkbutton-widget/)
 * [Determine the type of a variable](https://r.search.yahoo.com/_ylt=AwrFDNsJ48Fn2AIAe8NXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1741969418/RO=10/RU=https%3a%2f%2fstackoverflow.com%2fquestions%2f402504%2fhow-to-determine-a-python-variables-type/RK=2/RS=U5bQmz1DCApWoOYTwkb0TkqPJcU-)
 * [docx2txt Documentation](https://pypi.org/project/docx2txt/)
+* [Fix utf-8 Error Reading in Quotation Marks](https://stackoverflow.com/questions/55563399/how-to-solve-unicodedecodeerror-utf-8-codec-cant-decode-byte-0xff-in-positio)
 * [Multi-Conditional If Statements](https://www.w3schools.com/python/python_conditions.asp)
 * [Newlines in Markdown](https://www.w3schools.io/file/markdown-line-break/)
 * [pywin32 Doesn't Work on Machines without MS Office](https://stackoverflow.com/questions/62427468/com-error-2147221005-invalid-class-string-none-none)

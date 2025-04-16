@@ -47,6 +47,7 @@ Now everything is ready to install any external packages needed for this project
 
 
 # Resources
+* [Add New Column to Pandas Dataframe](https://www.geeksforgeeks.org/how-to-add-empty-column-to-dataframe-in-pandas/#)
 * [Appending to Strings](https://www.geeksforgeeks.org/initialize-empty-string-in-python/)
 * [Browsing for a File](https://www.geeksforgeeks.org/file-explorer-in-python-using-tkinter/)
 * [Calling separate Python script](https://www.geeksforgeeks.org/run-one-python-script-from-another-in-python/#)

@@ -24,24 +24,48 @@ def add_in_notes():
     #-> NOTE: The 'latin' encoding allows the program to read in utf-8 quotation marks without an error
     df = pd.read_csv(FILE_RECEIVED, encoding='latin')
 
-    print('* File Received')
-
     # Add a Blank 'Notes' Column to the Dataframe
     df['Notes'] = ''
 
-    print(df.head())
-
-
     # Begin Adding Notes
-    # --- 'UWS' - Quotation Completion / Essence Completion Question ---
 
-    # --- 'ofs' - Questions asking to complete / begin an 'of' phrase ---
+    # ----- 'UWS' - Quotation Completion / Essence Completion Question -----
 
-    # --- 'ADJ' - Questions asking for something an adjective describes ---
+    # --- Quotation Completion Questions ---
+    # Search through the Question Introductory Remark to find 'QC'
+    list_QC = df.loc[df['Q_Intro'] == 'QC']
+    num_QC = len(list_QC)
+    
+    # Find the index of that instance of the intro
+    for i in range(num_QC):
+        index_QC = list_QC.index[i]
 
-    # --- 'acc' - Questions that start with 'According to *insert reference*' ---
+        # Assign 'UWS' to the Notes column in that row
+        df.loc[index_QC, 'Notes'] = 'UWS'
 
-    # --- 'besides' - Questions that begin with the word 'Besides' ---
+    # --- Essence Completion Questions ---
+    list_EC = df.loc[df['Q_Intro'] == 'EC']
+    num_EC = len(list_EC)
+    
+    # Find the index of that instance of the intro
+    for i in range(num_EC):
+        index_EC = list_EC.index[i]
+
+        # Assign 'UWS' to the Notes column in that row
+        df.loc[index_EC, 'Notes']= 'UWS'
+
+
+    # ----- 'ofs' - Questions asking to complete / begin an 'of' phrase -----
+
+    # ----- 'ADJ' - Questions asking for something an adjective describes -----
+
+    # ----- 'acc' - Questions that start with 'According to *insert reference*' -----
+
+    # ----- 'besides' - Questions that begin with the word 'Besides' -----
+
+
+    # Write the Dataframe to the File we Received
+    print(df.head(30))
 
 
 # DELETE WHEN DONE WITH PROGRAM

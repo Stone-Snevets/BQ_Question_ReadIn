@@ -4,6 +4,13 @@ Function to automatically include notes about some of the questions in the set t
 Author: Solomon Stevens
 Date: *Enter Date Completed*
 
+This program adds notes to the following types of questions:
+> acc - Questions that begin with 'According to *insert reference*'
+> Adj - Questions that ask for what a given adjective describes
+> besides - Questions that begin with the word 'besides'
+> of - Questions that ask the quizzer to complete / begin an 'of' phrase
+> UWS - Quotation Completion / Essence Completion questions
+
 """
 
 # ===== Preliminary ===============================================================================
@@ -21,7 +28,7 @@ def add_in_notes():
 
     """
     # Create a Dataframe Using the Output of the Question File
-    #-> NOTE: The 'latin' encoding allows the program to read in utf-8 quotation marks without an error
+    #-> The 'latin' encoding allows the program to read in utf-8 quotation marks without an error
     df = pd.read_csv(FILE_RECEIVED, encoding='latin')
 
     # Add a Blank 'Notes' Column to the Dataframe
@@ -85,6 +92,17 @@ def add_in_notes():
 
 
     # ----- 'besides' - Questions that begin with the word 'Besides' -----
+
+    # Search the Actual Question to find 'besides' questions
+    list_besides = df.loc[df['Question'].str.contains('Besides')]
+    num_bedides = len(list_besides)
+
+    # Find the index of each 'besides' question
+    for i in range(num_bedides):
+        index_besides = list_besides.index[i]
+
+        # Assign 'besides' to the Notes column in that row
+        df.loc[index_besides, 'Notes']  = 'besides'
 
 
 

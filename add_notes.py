@@ -42,10 +42,9 @@ def add_in_notes():
 
     # Search through the Question Introductory Remark to find 'QC' or 'EC'
     list_UWS = df.loc[(df['Q_Intro'] == 'QC') | (df['Q_Intro'] == 'EC')]
-    num_UWS = len(list_UWS)
     
     # Find the index of that instance of the intro
-    for i in range(num_UWS):
+    for i in range(len(list_UWS)):
         index_UWS = list_UWS.index[i]
 
         # Assign 'UWS' to the Notes column in that row
@@ -60,10 +59,9 @@ def add_in_notes():
     #-> 'begin the (#-word) phrase'
     list_ofs = df.loc[(df['Question'].str.contains('complete the phrase')) |
                       (df['Question'].str.contains('begin the') & df['Question'].str.contains('phrase'))]
-    num_ofs = len(list_ofs)
 
     # Find the Index of Each 'of' Phrase Question
-    for i in range(num_ofs):
+    for i in range(len(list_ofs)):
         index_ofs = list_ofs.index[i]
 
         # Assign 'of' to the Notes column in that row
@@ -76,10 +74,9 @@ def add_in_notes():
     # Search through the Actual Question to find Adjective questions
     #-> 'The word (adjective) is used to describe what/who/whom?'
     list_adj = df.loc[df['Question'].str.contains('is used to describe')]
-    num_adj = len(list_adj)
 
     # Find the index of each Adjective question
-    for i in range(num_adj):
+    for i in range(len(list_adj)):
         index_adj = list_adj.index[i]
 
         # Assign 'Adj' to the Notes column in that row
@@ -95,10 +92,9 @@ def add_in_notes():
 
     # Search the Actual Question to find 'besides' questions
     list_besides = df.loc[df['Question'].str.contains('Besides')]
-    num_bedides = len(list_besides)
 
     # Find the index of each 'besides' question
-    for i in range(num_bedides):
+    for i in range(len(list_besides)):
         index_besides = list_besides.index[i]
 
         # Assign 'besides' to the Notes column in that row
@@ -107,6 +103,16 @@ def add_in_notes():
 
 
     # ----- 'noun' - Questions that ask for the chapters in which a noun / verb is mentioned -----
+
+    # Search the Actual Question to find 'noun' questions
+    list_noun = df.loc[df['Question'].str.contains('in which chapters?')]
+
+    # Find the index of each 'noun' question
+    for i in range(len(list_noun)):
+        index_noun = list_noun.index[i]
+
+        # Assign 'noun' to the Notes column in that row
+        df.loc[index_noun, 'Notes'] = 'noun'
 
 
     # Write the Dataframe to the File we Received

@@ -37,20 +37,20 @@ def add_in_notes():
     list_UWS = df.loc[(df['Q_Intro'] == 'QC') | (df['Q_Intro'] == 'EC')]
     num_UWS = len(list_UWS)
     
-    # Find the INdex of that Instance of the Intro
+    # Find the index of that instance of the intro
     for i in range(num_UWS):
         index_UWS = list_UWS.index[i]
 
-        # Assign 'UWS' to the Notes Column in that Row
+        # Assign 'UWS' to the Notes column in that row
         df.loc[index_UWS, 'Notes'] = 'UWS'
 
 
 
     # ----- 'ofs' - Questions asking to complete / begin an 'of' phrase -----
 
-    # Search through the Actual Question to Find the 'of' Phrase Questions
-    #-> Complete the phrase
-    #-> Begin the (#-word) phrase
+    # Search through the Actual Question to find the 'of' phrase questions
+    #-> 'complete the phrase'
+    #-> 'begin the (#-word) phrase'
     list_ofs = df.loc[(df['Question'].str.contains('complete the phrase')) |
                       (df['Question'].str.contains('begin the') & df['Question'].str.contains('phrase'))]
     num_ofs = len(list_ofs)
@@ -59,15 +59,36 @@ def add_in_notes():
     for i in range(num_ofs):
         index_ofs = list_ofs.index[i]
 
-        # Assign 'of' to the Notes Column in that Row
+        # Assign 'of' to the Notes column in that row
         df.loc[index_ofs, 'Notes'] = 'of'
+
 
 
     # ----- 'ADJ' - Questions asking for something an adjective describes -----
 
+    # Search through the Actual Question to find Adjective questions
+    #-> 'The word (adjective) is used to describe what/who/whom?'
+    list_adj = df.loc[df['Question'].str.contains('is used to describe')]
+    num_adj = len(list_adj)
+
+    # Find the index of each Adjective question
+    for i in range(num_adj):
+        index_adj = list_adj.index[i]
+
+        # Assign 'Adj' to the Notes column in that row
+        df.loc[index_adj, 'Notes'] = 'Adj'
+
+
+
     # ----- 'acc' - Questions that start with 'According to *insert reference*' -----
 
+
+
     # ----- 'besides' - Questions that begin with the word 'Besides' -----
+
+
+
+    # ----- 'noun' - Questions that ask for the chapters in which a noun / verb is mentioned -----
 
 
     # Write the Dataframe to the File we Received

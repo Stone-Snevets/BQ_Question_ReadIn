@@ -9,9 +9,10 @@ This program adds notes to the following types of questions:
 > Adj - Questions that ask for what a given adjective describes
 > besides - Questions that begin with the word 'Besides'
 > convo - Questions asking for a conversation between two people / groups of people
+> mentioned - Questions that end with the word 'mentioned'
 > noun - Questions that ask for the chapters in which a noun / verb is contained
 > of - Questions that ask the quizzer to complete / begin an 'of' phrase
-> TODO true happened - Questions that begin / end with the phrase 'what is true' / 'what happened'
+> true / happened - Questions that begin / end with the phrase 'what is true' / 'what happened'
 > UWS - Quotation Completion / Essence Completion questions
 > TODO words of - Questions that ask for the words of a person / group of people
 
@@ -84,6 +85,20 @@ def add_in_notes():
 
         # Assign 'convo' to the Notes column in that row
         df.loc[index_convo, 'Notes'] = 'convo'
+    
+
+
+    # ----- 'mentioned' - Questions that end with the word 'mentioned'
+
+    # Search through the Actual Question to check the last word
+    list_mentioned = df.loc[df['Question'].str.contains('mentioned?')]
+
+    # Find the index of each Adjective question
+    for i in range(len(list_mentioned)):
+        index_mentioned = list_mentioned.index[i]
+
+        # Assign 'Adj' to the Notes column in that row
+        df.loc[index_mentioned, 'Notes'] = 'mentioned'
 
 
 
@@ -109,12 +124,27 @@ def add_in_notes():
     list_ofs = df.loc[(df['Question'].str.contains('complete the phrase')) |
                       (df['Question'].str.contains('begin the') & df['Question'].str.contains('phrase'))]
 
-    # Find the Index of Each 'of' Phrase Question
+    # Find the index of each 'of' phrase question
     for i in range(len(list_ofs)):
         index_ofs = list_ofs.index[i]
 
         # Assign 'of' to the Notes column in that row
         df.loc[index_ofs, 'Notes'] = 'of'
+    
+
+
+    # ----- 'true / happened' - Questions that begin / end with the phrase 'what is true' or 'what happened'
+
+    # Search through the Actual Question to find 'what is true' / 'what happened' questions
+    list_true_happened = df.loc[((df['Question'].str.contains('what is true?')) | (df['Question'].str.contains('What is true'))) |
+                                ((df['Question'].str.contains('what happened?')) | (df['Question'].str.contains('What happened')))]
+    
+    # Find the index of each instance of these phrases
+    for i in range(len(list_true_happened)):
+        index_true_happened = list_true_happened.index[i]
+
+        # Assign 'true / happened' to the Notes column in that row
+        df.loc[index_true_happened, 'Notes'] = 'true / happened'
         
         
         

@@ -5,11 +5,15 @@ Author: Solomon Stevens
 Date: *Enter Date Completed*
 
 This program adds notes to the following types of questions:
-> acc - Questions that begin with 'According to *insert reference*'
+> TODO acc - Questions that begin with 'According to *insert reference*'
 > Adj - Questions that ask for what a given adjective describes
 > besides - Questions that begin with the word 'besides'
+> TODO convo - Questions asking for a conversation between two people / groups of people
+> noun - Questions that ask for the chapters in which a noun / verb is contained
 > of - Questions that ask the quizzer to complete / begin an 'of' phrase
+> TODO true happened - Questions that begin / end with the phrase 'what is true' / 'what happened'
 > UWS - Quotation Completion / Essence Completion questions
+> TODO words of - Questions that ask for all the words of a person / group of people
 
 """
 
@@ -38,37 +42,8 @@ def add_in_notes():
 
     # Begin Adding Notes
 
-    # ----- 'UWS' - Quotation Completion / Essence Completion Question -----
 
-    # Search through the Question Introductory Remark to find 'QC' or 'EC'
-    list_UWS = df.loc[(df['Q_Intro'] == 'QC') | (df['Q_Intro'] == 'EC')]
     
-    # Find the index of that instance of the intro
-    for i in range(len(list_UWS)):
-        index_UWS = list_UWS.index[i]
-
-        # Assign 'UWS' to the Notes column in that row
-        df.loc[index_UWS, 'Notes'] = 'UWS'
-
-
-
-    # ----- 'ofs' - Questions asking to complete / begin an 'of' phrase -----
-
-    # Search through the Actual Question to find the 'of' phrase questions
-    #-> 'complete the phrase'
-    #-> 'begin the (#-word) phrase'
-    list_ofs = df.loc[(df['Question'].str.contains('complete the phrase')) |
-                      (df['Question'].str.contains('begin the') & df['Question'].str.contains('phrase'))]
-
-    # Find the Index of Each 'of' Phrase Question
-    for i in range(len(list_ofs)):
-        index_ofs = list_ofs.index[i]
-
-        # Assign 'of' to the Notes column in that row
-        df.loc[index_ofs, 'Notes'] = 'of'
-
-
-
     # ----- 'ADJ' - Questions asking for something an adjective describes -----
 
     # Search through the Actual Question to find Adjective questions
@@ -81,10 +56,6 @@ def add_in_notes():
 
         # Assign 'Adj' to the Notes column in that row
         df.loc[index_adj, 'Notes'] = 'Adj'
-
-
-
-    # ----- 'acc' - Questions that start with 'According to *insert reference*' -----
 
 
 
@@ -113,6 +84,39 @@ def add_in_notes():
 
         # Assign 'noun' to the Notes column in that row
         df.loc[index_noun, 'Notes'] = 'noun'
+
+
+    
+    # ----- 'ofs' - Questions asking to complete / begin an 'of' phrase -----
+
+    # Search through the Actual Question to find the 'of' phrase questions
+    #-> 'complete the phrase'
+    #-> 'begin the (#-word) phrase'
+    list_ofs = df.loc[(df['Question'].str.contains('complete the phrase')) |
+                      (df['Question'].str.contains('begin the') & df['Question'].str.contains('phrase'))]
+
+    # Find the Index of Each 'of' Phrase Question
+    for i in range(len(list_ofs)):
+        index_ofs = list_ofs.index[i]
+
+        # Assign 'of' to the Notes column in that row
+        df.loc[index_ofs, 'Notes'] = 'of'
+        
+        
+        
+    # ----- 'UWS' - Quotation Completion / Essence Completion Question -----
+
+    # Search through the Question Introductory Remark to find 'QC' or 'EC'
+    list_UWS = df.loc[(df['Q_Intro'] == 'QC') | (df['Q_Intro'] == 'EC')]
+    
+    # Find the index of that instance of the intro
+    for i in range(len(list_UWS)):
+        index_UWS = list_UWS.index[i]
+
+        # Assign 'UWS' to the Notes column in that row
+        df.loc[index_UWS, 'Notes'] = 'UWS'
+
+
 
 
     # Write the Dataframe to the File we Received

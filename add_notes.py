@@ -27,26 +27,40 @@ def add_in_notes():
     # Add a Blank 'Notes' Column to the Dataframe
     df['Notes'] = ''
 
+
+
     # Begin Adding Notes
 
     # ----- 'UWS' - Quotation Completion / Essence Completion Question -----
-    # Search through the Question Introductory Remark to find 'QC'
+
+    # Search through the Question Introductory Remark to find 'QC' or 'EC'
     list_UWS = df.loc[(df['Q_Intro'] == 'QC') | (df['Q_Intro'] == 'EC')]
     num_UWS = len(list_UWS)
     
-    # Find the index of that instance of the intro
+    # Find the INdex of that Instance of the Intro
     for i in range(num_UWS):
         index_UWS = list_UWS.index[i]
 
-        # Assign 'UWS' to the Notes column in that row
+        # Assign 'UWS' to the Notes Column in that Row
         df.loc[index_UWS, 'Notes'] = 'UWS'
+
 
 
     # ----- 'ofs' - Questions asking to complete / begin an 'of' phrase -----
 
-    # --- Complete the Phrase ---
+    # Search through the Actual Question to Find the 'of' Phrase Questions
+    #-> Complete the phrase
+    #-> Begin the (#-word) phrase
+    list_ofs = df.loc[(df['Question'].str.contains('complete the phrase')) |
+                      (df['Question'].str.contains('begin the') & df['Question'].str.contains('phrase'))]
+    num_ofs = len(list_ofs)
 
-    # --- Begin the Phrase ---
+    # Find the Index of Each 'of' Phrase Question
+    for i in range(num_ofs):
+        index_ofs = list_ofs.index[i]
+
+        # Assign 'of' to the Notes Column in that Row
+        df.loc[index_ofs, 'Notes'] = 'of'
 
 
     # ----- 'ADJ' - Questions asking for something an adjective describes -----
@@ -60,6 +74,6 @@ def add_in_notes():
     print(df.head(30))
 
 
-# DELETE WHEN DONE WITH PROGRAM
+# TODO DELETE WHEN DONE WITH PROGRAM
 if __name__ == '__main__':
     add_in_notes()

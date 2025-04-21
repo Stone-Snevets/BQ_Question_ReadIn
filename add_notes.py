@@ -7,13 +7,13 @@ Date: *Enter Date Completed*
 This program adds notes to the following types of questions:
 > TODO acc - Questions that begin with 'According to *insert reference*'
 > Adj - Questions that ask for what a given adjective describes
-> besides - Questions that begin with the word 'besides'
-> TODO convo - Questions asking for a conversation between two people / groups of people
+> besides - Questions that begin with the word 'Besides'
+> convo - Questions asking for a conversation between two people / groups of people
 > noun - Questions that ask for the chapters in which a noun / verb is contained
 > of - Questions that ask the quizzer to complete / begin an 'of' phrase
 > TODO true happened - Questions that begin / end with the phrase 'what is true' / 'what happened'
 > UWS - Quotation Completion / Essence Completion questions
-> TODO words of - Questions that ask for all the words of a person / group of people
+> TODO words of - Questions that ask for the words of a person / group of people
 
 """
 
@@ -70,6 +70,20 @@ def add_in_notes():
 
         # Assign 'besides' to the Notes column in that row
         df.loc[index_besides, 'Notes']  = 'besides'
+
+
+
+    # ----- 'convo' - Questions asking for a conversation between two people / groups of people
+
+    # Search the Actual Question to find conversations
+    list_convo = df.loc[df['Question'].str.contains('conversation')]
+
+    # Find the index of each conversation
+    for i in range(len(list_convo)):
+        index_convo = list_convo.index[i]
+
+        # Assign 'convo' to the Notes column in that row
+        df.loc[index_convo, 'Notes'] = 'convo'
 
 
 

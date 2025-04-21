@@ -30,32 +30,24 @@ def add_in_notes():
     # Begin Adding Notes
 
     # ----- 'UWS' - Quotation Completion / Essence Completion Question -----
-
-    # --- Quotation Completion Questions ---
     # Search through the Question Introductory Remark to find 'QC'
-    list_QC = df.loc[df['Q_Intro'] == 'QC']
-    num_QC = len(list_QC)
+    list_UWS = df.loc[(df['Q_Intro'] == 'QC') | (df['Q_Intro'] == 'EC')]
+    num_UWS = len(list_UWS)
     
     # Find the index of that instance of the intro
-    for i in range(num_QC):
-        index_QC = list_QC.index[i]
+    for i in range(num_UWS):
+        index_UWS = list_UWS.index[i]
 
         # Assign 'UWS' to the Notes column in that row
-        df.loc[index_QC, 'Notes'] = 'UWS'
-
-    # --- Essence Completion Questions ---
-    list_EC = df.loc[df['Q_Intro'] == 'EC']
-    num_EC = len(list_EC)
-    
-    # Find the index of that instance of the intro
-    for i in range(num_EC):
-        index_EC = list_EC.index[i]
-
-        # Assign 'UWS' to the Notes column in that row
-        df.loc[index_EC, 'Notes']= 'UWS'
+        df.loc[index_UWS, 'Notes'] = 'UWS'
 
 
     # ----- 'ofs' - Questions asking to complete / begin an 'of' phrase -----
+
+    # --- Complete the Phrase ---
+
+    # --- Begin the Phrase ---
+
 
     # ----- 'ADJ' - Questions asking for something an adjective describes -----
 

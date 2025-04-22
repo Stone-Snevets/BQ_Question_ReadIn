@@ -44,6 +44,20 @@ def add_in_notes():
     # Begin Adding Notes
 
 
+
+    # ----- 'acc' - Questions that begin with 'According to *insert reference*'
+
+    # Search the Actual Question for ones that start with our key phrase
+    list_acc = df.loc[df['Question'].str.contains('According to (\S+) (\d+):(\d+)', regex = True)]
+
+    # Find the index of each instance
+    for i in range(len(list_acc)):
+        index_acc = list_acc.index[i]
+
+        # Assign 'acc' to the Notes column in that row
+        df.loc[index_acc, 'Notes'] = 'acc'
+
+
     
     # ----- 'ADJ' - Questions asking for something an adjective describes -----
 
@@ -63,7 +77,7 @@ def add_in_notes():
     # ----- 'besides' - Questions that begin with the word 'Besides' -----
 
     # Search the Actual Question to find 'besides' questions
-    list_besides = df.loc[df['Question'].str.contains('Besides')]
+    list_besides = df.loc[df['Question'].str.contains('Besides', case = True)]
 
     # Find the index of each 'besides' question
     for i in range(len(list_besides)):
@@ -136,8 +150,7 @@ def add_in_notes():
     # ----- 'true / happened' - Questions that begin / end with the phrase 'what is true' or 'what happened'
 
     # Search through the Actual Question to find 'what is true' / 'what happened' questions
-    list_true_happened = df.loc[((df['Question'].str.contains('what is true?')) | (df['Question'].str.contains('What is true'))) |
-                                ((df['Question'].str.contains('what happened?')) | (df['Question'].str.contains('What happened')))]
+    list_true_happened = df.loc[(df['Question'].str.contains('what is true|what happened', regex = True))]
     
     # Find the index of each instance of these phrases
     for i in range(len(list_true_happened)):
@@ -159,6 +172,14 @@ def add_in_notes():
 
         # Assign 'UWS' to the Notes column in that row
         df.loc[index_UWS, 'Notes'] = 'UWS'
+
+
+
+    # ----- 'words of' - Questions that ask for the words of a person / group of people
+
+    # Search through the Actual Question to find ones asking for what person / group of people said
+    #-> Exclude ones that start with 'About' and 'Concerning'
+    #--> These are generic and usually ask for what the author of the book being learned says
 
 
 

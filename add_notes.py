@@ -5,7 +5,7 @@ Author: Solomon Stevens
 Date: *Enter Date Completed*
 
 This program adds notes to the following types of questions:
-> TODO acc - Questions that begin with 'According to *insert reference*'
+> acc - Questions that begin with 'According to *insert reference*'
 > Adj - Questions that ask for what a given adjective describes
 > besides - Questions that begin with the word 'Besides'
 > convo - Questions asking for a conversation between two people / groups of people
@@ -180,7 +180,15 @@ def add_in_notes():
     # Search through the Actual Question to find ones asking for what person / group of people said
     #-> Exclude ones that start with 'About' and 'Concerning'
     #--> These are generic and usually ask for what the author of the book being learned says
+    list_words_of = df.loc[df['Question'].str.contains('words of|what did \S+ say|\S+ said what', regex = True) &
+                           (df['Question'].str.contains('About|Concerning', case = True, regex = True) == False)]
+    
+    # Find the index of each instance
+    for i in range(len(list_words_of)):
+        index_words_of = list_words_of.index[i]
 
+        # Assign 'words of' to the Notes column in that row
+        df.loc[index_words_of, 'Notes'] = 'words of'
 
 
 

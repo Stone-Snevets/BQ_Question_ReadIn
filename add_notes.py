@@ -5,16 +5,38 @@ Author: Solomon Stevens
 Date: *Enter Date Completed*
 
 This program adds notes to the following types of questions:
+> TODO A before / after A - Questions that ask for Chapter Analysis that comes before / after other Chapter Analysis
+> TODO A ch - Questions that ask for Chapter Analysis from a chapter
+> TODO A conc - Questions that ask for separate Chapter Analysis answers that have something in common
+-> A concerning
+-> A in A
+-> A same name
+-> A titles
+-> A verb
+> TODO A fv - Questions that have a Chapter Analysis answer but have a question that comes from a verse
+> TODO A sec - Questions that ask for Chapter Analysis from a section
+> TODO A vs - Questions that ask for Chapter Analysis from a verse
 > acc - Questions that begin with 'According to *insert reference*'
 > Adj - Questions that ask for what a given adjective describes
+-> 'What was ADJ'
+> TODO before / after A - Questions that ask for the words of someone before / after Chapter Analysis
+-> Check overwriting by 'words of'
 > besides - Questions that begin with the word 'Besides'
+> TODO conc fv - Questions that require answers from different verses that have something in common
+> TODO conc QE - Questions that ask quizzers to say verses with something in common
 > convo - Questions asking for a conversation between two people / groups of people
+> TODO did what - Questions that contain the phrase 'what did (person) do' or '(person) did what'
+> TODO hd - Questions that begin with 'How does verse #' or 'How do verses #...' or 'How does the #th verse' or 'How do(es) the opening/closing verse(s)'
 > mentioned - Questions that end with the word 'mentioned'
 > noun - Questions that ask for the chapters in which a noun / verb is contained
 > of - Questions that ask the quizzer to complete / begin an 'of' phrase
-> true / happened - Questions that begin / end with the phrase 'what is true' / 'what happened'
+> TODO - respond - Questions that ask how someone responded to either Chapter Analysis or some other event
+> TODO std - Questions that ask the quizzer to say a verse given the reference
+> true / happened - Questions that contain with the phrase 'what is true' / 'what happened'
+> TODO unique word - Questions that give the quizzer a word mentioned only once in the material being studied
 > UWS - Quotation Completion / Essence Completion questions
-> TODO words of - Questions that ask for the words of a person / group of people
+> TODO VTGT - Non-Quote / Non-Essence questions with answers coming from consecutive verses
+> words of - Questions that ask for the words of a person / group of people
 
 """
 
@@ -147,7 +169,7 @@ def add_in_notes():
     
 
 
-    # ----- 'true / happened' - Questions that begin / end with the phrase 'what is true' or 'what happened'
+    # ----- 'true / happened' - Questions that contain with the phrase 'what is true' or 'what happened'
 
     # Search through the Actual Question to find 'what is true' / 'what happened' questions
     list_true_happened = df.loc[(df['Question'].str.contains('what is true|what happened', regex = True))]

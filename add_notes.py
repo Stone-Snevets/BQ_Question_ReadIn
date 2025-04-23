@@ -35,7 +35,7 @@ This program adds notes to the following types of questions:
 > true / happened - Questions that contain with the phrase 'what is true' / 'what happened'
 > TODO unique word - Questions that give the quizzer a word mentioned only once in the material being studied
 > UWS - Quotation Completion / Essence Completion questions
-> TODO VTGT - Non-Quote / Non-Essence questions with answers coming from consecutive verses
+> VTGT - Non-Quote / Non-Essence questions with answers coming from consecutive verses
 > words of - Questions that ask for the words of a person / group of people
 
 """
@@ -259,6 +259,24 @@ def add_in_notes():
 
 
 
+    # ----- 'VTGT' - Non-Quotation / Non-Essence questions that come from consecutive verses
+
+    # Search the Location Introductory Remark to find questions coming from consecutive verses, then...
+    # Search the Question Introductory Remark to rule out all Quotation / Essence Questions
+    list_vtgt = df.loc[(df['Location'].str.contains('C', case = True)) & ((df['Q_Intro'].str.contains('Q|E', regex = True)) == False)]
+    
+    # Find the index of each question with Verses That Go Together (VTGT)
+    for i in range(len(list_vtgt)):
+        index_vtgt = list_vtgt.index[i]
+
+        # Assign 'VTGT' to the Notes column in that row
+        #-> Check if the 'Notes' column in that row is empty
+        if df.loc[index_vtgt, 'Notes'] == '':
+            # If so, then assign 'VTGT'
+            df.loc[index_vtgt, 'Notes'] = 'VTGT'
+    
+    
+    
     # ----- 'words of' - Questions that ask for the words of a person / group of people
 
     # Search through the Actual Question to find ones asking for what person / group of people said
@@ -272,6 +290,7 @@ def add_in_notes():
         index_words_of = list_words_of.index[i]
 
         # Assign 'words of' to the Notes column in that row
+        # NOTE: This may overwrite some questions with the 'VTGT' Note. But 'words of' is more of a narrow search. So this is intentional
         df.loc[index_words_of, 'Notes'] = 'words of'
 
 

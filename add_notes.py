@@ -33,7 +33,7 @@ This program adds notes to the following types of questions:
 > respond - Questions that ask how someone responded to either Chapter Analysis or some other event
 > std - Questions that ask the quizzer to say a verse given the reference
 > true / happened - Questions that contain with the phrase 'what is true' / 'what happened'
-> TODO unique word - Questions that give the quizzer a word mentioned only once in the material being studied
+> unique word - Questions that give the quizzer a word mentioned only once in the material being studied
 > UWS - Quotation Completion / Essence Completion questions
 > VTGT - Non-Quote / Non-Essence questions with answers coming from consecutive verses
 > words of - Questions that ask for the words of a person / group of people
@@ -245,6 +245,20 @@ def add_in_notes():
         
         
         
+    # ----- 'unique word' - Questions that give the quizzer a word mentioned only once in the material being studied
+
+    # Search through the Actual Question to find questions asking quizzers to give 'this verse' or identify 'this chapter'
+    list_unique_word = df.loc[df['Question'].str.contains('this verse.|this chapter.')]
+
+    # Find the index of each unique word question
+    for i in range(len(list_unique_word)):
+        index_unique_word = list_unique_word.index[i]
+
+        # Assign 'unique word' to the Notes column of each instance
+        df.loc[index_unique_word, 'Notes'] = 'unique word'
+    
+    
+    
     # ----- 'UWS' - Quotation Completion / Essence Completion Question -----
 
     # Search through the Question Introductory Remark to find 'QC' or 'EC'

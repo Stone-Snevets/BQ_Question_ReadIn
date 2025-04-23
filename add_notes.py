@@ -25,7 +25,7 @@ This program adds notes to the following types of questions:
 > TODO conc fv - Questions that require answers from different verses that have something in common
 > TODO conc QE - Questions that ask quizzers to say verses with something in common
 > convo - Questions asking for a conversation between two people / groups of people
-> TODO did what - Questions that contain the phrase 'what did (person) do' or '(person) did what'
+> did what - Questions that contain the phrase 'what did (person) do' or '(person) did what'
 > hd - Questions that begin with 'How does verse #' or 'How do verses #...' or 'How does the #th verse' or 'How do(es) the opening/closing verse(s)'
 > mentioned - Questions that end with the word 'mentioned'
 > noun - Questions that ask for the chapters in which a noun / verb is contained
@@ -124,6 +124,20 @@ def add_in_notes():
     
 
 
+    # ----- 'did what' - Questions that ask for something a person / group of people did
+
+    # Search the Actual Question to find 'what did (person) do' or '(person) did what'
+    list_do_what = df.loc[df['Question'].str.contains('what did \S+ do|\S+ did what', regex = True)]
+
+    # Find the index of each question that matches this criteria
+    for i in range(len(list_do_what)):
+        index_do_what = list_do_what.index[i]
+
+        # Assign 'do what' to the Notes column in that row
+        df.loc[index_do_what, 'Notes'] = 'do what'
+    
+    
+    
     # ----- 'hd' - Questions that begin with something like 'How does verse # describe'
 
     # Search through the Actual Question to find these types of questions
@@ -222,7 +236,7 @@ def add_in_notes():
     # Search through the Actual Question to find ones asking for what person / group of people said
     #-> Exclude ones that start with 'About' and 'Concerning'
     #--> These are generic and usually ask for what the author of the book being learned says
-    list_words_of = df.loc[df['Question'].str.contains('words of|what did \S+ say|\S+ said what', regex = True) &
+    list_words_of = df.loc[df['Question'].str.contains('Give all|what did \S+ say|\S+ said what', regex = True) &
                            (df['Question'].str.contains('About|Concerning', case = True, regex = True) == False)]
     
     # Find the index of each instance

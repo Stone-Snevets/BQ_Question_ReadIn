@@ -20,13 +20,13 @@ This program adds notes to the following types of questions:
 > Adj - Questions that ask for what a given adjective describes
 -> 'What was ADJ'
 > TODO before / after A - Questions that ask for the words of someone before / after Chapter Analysis
--> Check overwriting by 'words of'
+-> Check overwriting by 'words of' -> check if Notes = ''
 > besides - Questions that begin with the word 'Besides'
 > TODO conc fv - Questions that require answers from different verses that have something in common
 > TODO conc QE - Questions that ask quizzers to say verses with something in common
 > convo - Questions asking for a conversation between two people / groups of people
 > TODO did what - Questions that contain the phrase 'what did (person) do' or '(person) did what'
-> TODO hd - Questions that begin with 'How does verse #' or 'How do verses #...' or 'How does the #th verse' or 'How do(es) the opening/closing verse(s)'
+> hd - Questions that begin with 'How does verse #' or 'How do verses #...' or 'How does the #th verse' or 'How do(es) the opening/closing verse(s)'
 > mentioned - Questions that end with the word 'mentioned'
 > noun - Questions that ask for the chapters in which a noun / verb is contained
 > of - Questions that ask the quizzer to complete / begin an 'of' phrase
@@ -124,6 +124,26 @@ def add_in_notes():
     
 
 
+    # ----- 'hd' - Questions that begin with something like 'How does verse # describe'
+
+    # Search through the Actual Question to find these types of questions
+    #-> How does verse #
+    #-> How does the #th verse
+    #-> How does the opening / closing verse
+    #-> How do verses # and #
+    #-> How do the opening / closing verses
+    list_hd = df.loc[df['Question'].str.contains('How does verse \d+|How does the \d+|How does the opening|How does the closing|How do verses|How do the opening|How do the closing', regex = True)]
+
+    # Find the index of each 'hd' question
+    for i in range(len(list_hd)):
+        index_hd = list_hd.index[i]
+
+        # Assign 'hd' to the Notes column of each question
+        df.loc[index_hd, 'Notes'] = 'hd'
+
+    
+    
+    
     # ----- 'mentioned' - Questions that end with the word 'mentioned'
 
     # Search through the Actual Question to check the last word

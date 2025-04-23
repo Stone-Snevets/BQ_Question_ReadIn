@@ -30,7 +30,7 @@ This program adds notes to the following types of questions:
 > mentioned - Questions that end with the word 'mentioned'
 > noun - Questions that ask for the chapters in which a noun / verb is contained
 > of - Questions that ask the quizzer to complete / begin an 'of' phrase
-> TODO - respond - Questions that ask how someone responded to either Chapter Analysis or some other event
+> TODO respond - Questions that ask how someone responded to either Chapter Analysis or some other event
 > TODO std - Questions that ask the quizzer to say a verse given the reference
 > true / happened - Questions that contain with the phrase 'what is true' / 'what happened'
 > TODO unique word - Questions that give the quizzer a word mentioned only once in the material being studied
@@ -70,7 +70,7 @@ def add_in_notes():
     # ----- 'acc' - Questions that begin with 'According to *insert reference*'
 
     # Search the Actual Question for ones that start with our key phrase
-    list_acc = df.loc[df['Question'].str.contains('According to (\S+) (\d+):(\d+)', regex = True)]
+    list_acc = df.loc[df['Question'].str.contains('According to \S+ \d+:\d+', regex = True)]
 
     # Find the index of each instance
     for i in range(len(list_acc)):
@@ -203,6 +203,20 @@ def add_in_notes():
     
 
 
+    # ----- 'std' - Quotation / Essence questions that give the quizzer the reference(s) of the verse(s) to say
+
+    # Search through the Actual Question to find 'quote / give in essence verse #' or 'quote / give in essence the # verse'
+    list_std = df.loc[df['Question'].str.contains('Quote verse|Quote the \d+|Give in essence verse|Give in essence the \d+', regex = True)]
+
+    # Find the index of each Standard Quote / Essence Question
+    for i in range(len(list_std)):
+        index_std = list_std.index[i]
+
+        # Assign 'std' to the Notes column in that row
+        df.loc[index_std, 'Notes'] = 'std'
+    
+    
+    
     # ----- 'true / happened' - Questions that contain with the phrase 'what is true' or 'what happened'
 
     # Search through the Actual Question to find 'what is true' / 'what happened' questions

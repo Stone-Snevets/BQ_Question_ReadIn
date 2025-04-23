@@ -30,8 +30,8 @@ This program adds notes to the following types of questions:
 > mentioned - Questions that end with the word 'mentioned'
 > noun - Questions that ask for the chapters in which a noun / verb is contained
 > of - Questions that ask the quizzer to complete / begin an 'of' phrase
-> TODO respond - Questions that ask how someone responded to either Chapter Analysis or some other event
-> TODO std - Questions that ask the quizzer to say a verse given the reference
+> respond - Questions that ask how someone responded to either Chapter Analysis or some other event
+> std - Questions that ask the quizzer to say a verse given the reference
 > true / happened - Questions that contain with the phrase 'what is true' / 'what happened'
 > TODO unique word - Questions that give the quizzer a word mentioned only once in the material being studied
 > UWS - Quotation Completion / Essence Completion questions
@@ -203,6 +203,20 @@ def add_in_notes():
     
 
 
+    # ----- 'respond' - Questions that ask how someone responds to either a Chapter Analysis or an action
+
+    # Search through the Actual Question to find questions asking how someone responds, replies, or answers
+    list_respond = df.loc[df['Question'].str.contains('How [\s+\S+] respond|How [\s+\S+] reply|How [\s+\S+] answer')]
+
+    # Find the index of each responding question
+    for i in range(len(list_respond)):
+        index_respond = list_respond.index[i]
+
+        # Assign 'respond' to the Notes column in that row
+        df.loc[index_respond, 'Notes'] = 'respond'
+    
+    
+    
     # ----- 'std' - Quotation / Essence questions that give the quizzer the reference(s) of the verse(s) to say
 
     # Search through the Actual Question to find 'quote / give in essence verse #' or 'quote / give in essence the # verse'

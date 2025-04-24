@@ -13,6 +13,7 @@ This program adds notes to the following types of questions:
 -> A same name
 -> A titles
 -> A verb
+-> Ref of A (check 'named' at end of question)
 > TODO A fv - Questions that have a Chapter Analysis answer but have a question that comes from a verse
 > TODO A sec - Questions that ask for Chapter Analysis from a section
 > TODO A vs - Questions that ask for Chapter Analysis from a verse
@@ -30,6 +31,7 @@ This program adds notes to the following types of questions:
 > mentioned - Questions that end with the word 'mentioned'
 > noun - Questions that ask for the chapters in which a noun / verb is contained
 > of - Questions that ask the quizzer to complete / begin an 'of' phrase
+> ref of sec - Questions that ask for the references of a section
 > respond - Questions that ask how someone responded to either Chapter Analysis or some other event
 > std - Questions that ask the quizzer to say a verse given the reference
 > true / happened - Questions that contain with the phrase 'what is true' / 'what happened'
@@ -203,6 +205,20 @@ def add_in_notes():
     
 
 
+    # ----- 'ref of sec' - Questions that ask for the references of a section
+
+    # Search through the Actual Question to find questions asking for the references for verses contained in a section
+    list_ref_of_sec = df.loc[df['Question'].str.contains('contained in the section titled')]
+
+    # Find the index of each of these questions
+    for i in range(len(list_ref_of_sec)):
+        index_ref_of_sec = list_ref_of_sec.index[i]
+
+        # Assign 'ref of sec' to the Notes column in that row
+        df.loc[index_ref_of_sec, 'Notes'] = 'ref of sec'
+    
+    
+    
     # ----- 'respond' - Questions that ask how someone responds to either a Chapter Analysis or an action
 
     # Search through the Actual Question to find questions asking how someone responds, replies, or answers

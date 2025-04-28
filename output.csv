@@ -1,161 +1,161 @@
-,Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference,Notes
-0,1,1,10,_,2,sec,					With which philosophers did Paul have a debate?,A 17:18,
-1,1,2,20,2,_,chs,"The word Â“deepÂ” is used to describe what, and the word Â“deeplyÂ” is used to describe what?",A 2:43 / A 17:16,Adj
-2,1,3,30,2,A,Sch,"			Concerning Gentiles, which exclamation and which question is contained?",A 11:3 / A 11:17,A conc
-3,1,4,10,_,_,_,					Who called for lights?,A 16:29,
-4,1,5,20,_,3,_,Circumcision is mentioned in which chapters?,A 7:8,noun
-5,1,6,10,_,_,ch,				What kind of people werenÂ’t among the believers?,A 4:34,
-6,1,7,20,_,4A,Sch,			Which individuals are named?,A 16:1 / A 16:6 / A 16:14,A ch
-7,1,8,30,Q,3,Sch,Quote the verses in which Ananias is named.,A 5:1 / A 5:3 / A 5:5,conc QE
-8,1,9,20,2,C,2Csec,"			The Holy Spirit said what, when?",A 10:19 / A 10:20,words of
-9,1,10,10,_,_,_,					Who prayed very earnestly for Peter?,A 12:5,
-10,1,11,10,_,A,ch,						The opening verse names which geographical location?,A 14:1,A vs
-11,1,12,20,_,2,chs,Who were in bed?,A 5:15 / A 9:33,
-12,1,13,20,Q,_,2Cbk,			Quote verses 12 and 13 from the 2nd chapter.,A 2:12 / A 2:13,std
-13,1,14,30,_,C,2Csec,"			To Ananias, what did Peter say?",A 5:3 / A 5:4,words of
-14,1,15,10,T,2,sec,"						What did the angel tell Peter to, quote, Â“put onÂ”?",A 12:8,
-15,1,16,10,T,C,_,"			How does Luke complete the phrase, quote, Â“joy ofÂ”?",A 2:28,of
-16,1,17,20,T,2C,2Sbk,"Referring to Jesus, what is true of everyone who, quote, Â“believes in himÂ”?",A 10:43 / A 13:39,true / happened
-17,1,18,20,2,C,2Ssec,"			An angel said what, and the Holy Spirit said what?",A 8:26 / A 8:29,words of
-18,1,19,20,T,C,sec,"			What happened after the usual readings from the, quote, Â“books of MosesÂ”?",A 13:15,
-19,1,20,10,_,C,sec,				Leading priests wondered what?,A 5:24,
-20,2,1,10,T,_,sec,"						What did Abraham buy for a, quote, Â“certain priceÂ”?",A 7:16,
-21,2,2,30,3,C,3Sbk,"Some of the crowd assumed what, Moses assumed what, and the jailer assumed what?",A 2:15 / A 7:25 / A 16:27,conc fv
-22,2,3,20,_,2A,Sbk,Which tribes are named?,A 4:36 / A 13:21,A fv
-23,2,4,20,T,A,ch,"			What conclusion did Peter reach after thinking of the, quote, Â“LordÂ’s wordsÂ”?",A 11:17,A before / after A
-24,2,5,10,S,_,_,						The name Â“Bar-JesusÂ” is found in one verse. Give the complete reference for this verse.,A 13:6,unique word
-25,2,6,20,_,C,2Csec,"			About this time, what happened?",A 9:37 / A 9:38,true / happened
-26,2,7,20,2E,_,Sch,			Give in essence the verse that mentions the lying witnessesÂ’ accusations and the verse that mentions StephenÂ’s accusation.,A 7:1 / A 7:54,conc QE
-27,2,8,30,_,C,3Csec,			Give the conversation between the apostles and Jesus.,A 1:6 / A 1:7 / A 1:8,convo
-28,2,9,10,T,_,ch,"						How does Luke complete the phrase, quote, Â“captain ofÂ”?",A 5:24,of
-29,2,10,20,QC,_,ch,"				Finish this verse and the one that follows, quote, Â“This is the message...Â”",A 10:36 / A 10:37,UWS
-30,2,11,10,_,_,_,"						According to Acts 5:26, without what were the apostles arrested?",A 5:26,acc
-31,2,12,20,_,4A,Ssec,			Which individuals are named?,A 5:29 / A 5:34 / A 5:36 / A 5:37,A sec
-32,2,13,10,_,C,ch,						The word Â“gloriousÂ” is used to describe what?,A 2:20,Adj
-33,2,14,20,_,C,2Csec,			Who has spoken?,A 15:17 / A 15:18,VTGT
-34,2,15,30,2Q,_,Sbk,"			Quote the verse in which Alexander is named, and the verse in which Alexandria is named.",A 4:6 / A 6:9,conc QE
-35,2,16,10,_,C,ch,"				Each day, where did the believers worship?",A 2:46,
-36,2,17,20,2,_,chs,"Who was carried in, and who was carried out?",A 3:2 / A 5:10,
-37,2,18,10,T,C,sec,"						For whom is it against the law to enter a, quote, Â“Gentile homeÂ”?",A 10:28,
-38,2,19,20,_,C,2Csec,			What pleased the Jews?,A 12:1 / A 12:2,VTGT
-39,2,20,10,_,2,sec,"					Besides the church in Jerusalem, who chose delegates?",A 15:22,besides
-40,3,1,10,_,_,ch,						Who was CorneliusÂ’s personal attendant?,A 10:7,
-41,3,2,20,T,C,3Csec,"			What happened as Peter took the lame man by the right hand and, quote, Â“helped him upÂ”?",A 3:7 / A 3:8 / A 3:9,VTGT
-42,3,3,30,2,C,2Sbk,"			According to Acts 1:20 and 11:15, Peter continued to say what?",A 1:20 / A 11:15,acc
-43,3,4,10,_,C,_,"						According to Acts 9:30, to where did the believers send Saul?",A 9:30,acc
-44,3,5,20,_,C,2Csec,			Who lived in Caesarea?,A 10:1 / A 10:2,VTGT
-45,3,6,20,2,3,Sbk,"			Who were stirred up, and what was stirred up?",A 13:50 / A 17:13,conc fv
-46,3,7,10,_,2,ch,"						According to liars, Stephen blasphemed whom?",A 6:11,
-47,3,8,30,Q,3,Cch,Quote the verses in which John Mark is named.,A 15:37 / A 15:38 / A 15:39,conc QE
-48,3,9,20,2,A,Sch,		Give the parenthetical statement in which Antioch is named and the parenthetical statement in which Claudius is named.,A 11:26 / A 11:28,A ch
-49,3,10,10,T,C,ch,"						How does Luke complete the phrase, quote, Â“captain ofÂ”?",A 10:1,of
-50,3,11,20,_,C,ch,		How does the 10th verse describe Joseph?,A 7:10,hd
-51,3,12,20,_,2C,2Sbk,What were determined?,A 4:28 / A 17:26,conc fv
-52,3,13,30,_,C,4Csec,			Give all the angelÂ’s words.,A 10:3 / A 10:4 / A 10:5 / A 10:6,words of
-53,3,14,10,T,C,sec,"					Where did Paul and Timothy instruct believers to follow the, quote, Â“decisions made by the apostlesÂ”?",A 16:4,
-54,3,15,10,_,C,sec,				God publicly endorsed whom?,A 2:22,
-55,3,16,20,SQ,_,_,"			The number 3,000 is found in one verse. Quote this verse.",A 2:41,unique word
-56,3,17,20,_,2A,Sch,"			Concerning the Temple, which exclamations are found?",A 5:20 / A 5:25,A conc
-57,3,18,10,T,_,_,"			How does Luke complete the phrase, quote, Â“horrors ofÂ”?",A 2:24,of
-58,3,19,10,_,C,ch,					Who was a man after GodÂ’s own heart?,A 13:22,
-59,3,20,20,_,3C,2Cch,			The council members saw what?,A 4:13 / A 4:14,VTGT
-60,4,1,10,_,C,sec,				Who dared to join the believers?,A 5:13,
-61,4,2,20,_,2A,Sbk,			Which seaports are named?,A 13:4 / A 16:8,A fv
-62,4,3,30,Q,_,3Cbk,"			Quote verses 2, 3, and 4 from the 7th chapter.",A 7:2 / A 7:3 / A 7:4,std
-63,4,4,10,S,_,_,						The unique word Â“basketÂ” is found in one verse. Give the complete reference for this verse.,A 9:25,unique word
-64,4,5,10,_,C,sec,				DavidÂ’s tongue did what?,A 2:26,do what
-65,4,6,20,_,2C,2Schs,"			By ship, what did Paul do?",A 13:13 / A 14:26,do what
-66,4,7,20,QC,_,ch,"				Finish this verse and the one that follows, quote, Â“Soon the news....Â”",A 11:1 / A 11:2,UWS
-67,4,8,30,_,C,2Cch,How do the closing two verses describe the crowd?,A 3:25 / A 3:26,hd
-68,4,9,20,E,2,Sch,					Give in essence the verses in which advice is mentioned.,A 5:38 / A 5:40,mentioned
-69,4,10,10,T,A,ch,"						Which exclamation immediately follows this question, quote, Â“Do you think I am the Messiah?Â”",A 13:25,A ch
-70,4,11,10,T,C,sec,"					What were risked for the, quote, Â“name of our Lord Jesus ChristÂ”?",A 15:26,
-71,4,12,30,T,3,Schs,"How does Luke begin the phrase, quote, Â“of GentilesÂ”?",A 11:3 / A 14:5 / A 15:15,of
-72,4,13,10,_,_,_,						The word Â“devoutÂ” is used to describe whom?,A 8:2,Adj
-73,4,14,20,_,2,chs,			Who sat on a throne?,A 2:30 / A 12:21,
-74,4,15,20,2,3C,sec,			Peter clearly stated what to whom?,A 4:10,
-75,4,16,10,_,_,sec,"					After falling at PeterÂ’s feet, what did Cornelius do?",A 10:25,do what
-76,4,17,20,_,C,2Cch,		How do the opening two verses describe LukeÂ’s first book?,A 1:1 / A 1:2,hd
-77,4,18,20,T,C,sec,"			What was PaulÂ’s response when he had a vision of a man pleading with him, quote, Â“Come over to Macedonia and help us!Â”?",A 16:10,Adj
-78,4,19,10,T,C,sec,"						By whom was Saul authorized to arrest, quote, Â“everyone who calls upon your nameÂ”?",A 9:14,
-79,4,20,20,_,C,2Csec,"			After making many disciples, what did Paul and Barnabas do?",A 14:21 / A 14:22,VTGT
-80,5,1,20,_,C,sec,"			To ancestors, what did God promise?",A 3:25,
-81,5,2,10,_,_,sec,				Who fulfilled what all the prophets had foretold?,A 3:18,
-82,5,3,30,QC,_,ch,"		Finish this verse and the one that follows, quote, Â“Dear brothers,...Â”",A 2:29 / A 2:30,UWS
-83,5,4,20,2Q,_,Sbk,			Quote Acts 2:32 and 3:15.,A 2:32 / A 3:15,conc QE
-84,5,5,10,_,C,sec,				Who would repent of their sins and be forgiven?,A 5:31,
-85,5,6,10,_,C,_,			The word Â“finalÂ” is used to describe what?,A 3:21,Adj
-86,5,7,20,2,_,Sbk,"			What was beautiful, and who was beautiful?",A 3:2 / A 7:20,Adj
-87,5,8,20,T,C,3Csec,"What did David say after exclaiming, quote, Â“No wonder my heart is glad, and my tongue shouts his praises!Â”?",A 2:26 / A 2:27 / A 2:28,VTGT
-88,5,9,30,SQ,2,Sch,			The whole church is mentioned in two verses. Quote these verses.,A 15:4 / A 15:22,mentioned
-89,5,10,10,_,C,sec,					Before whom did Joseph have favor?,A 7:10,
-90,5,11,20,_,5A,Ssec,			Which individuals are named?,A 4:23 / A 4:25 / A 4:27,A sec
-91,5,12,10,_,_,_,"						According to Acts 12:18, among whom was there a great commotion?",A 12:18,acc
-92,5,13,20,2,C,2Cch,		How do verses 11 and 12 describe Jesus?,A 4:11 / A 4:12,hd
-93,5,14,20,SQ,_,_,			Sidon is named in one verse. Quote this verse.,A 12:20,unique word
-94,5,15,30,2,3C,3Csec,"			Coming to his senses, what did Peter say and do?",A 12:11 / A 12:12 / A 12:13,words of
-95,5,16,10,2,A,ch,						The 6th verse names which geographical location and which individual?,A 13:6,A vs
-96,5,17,10,_,C,sec,					DonÂ’t let what apply to you?,A 13:40,
-97,5,18,20,T,2,Sbk,"			How does Luke complete the phrase, quote, Â“city ofÂ”?",A 8:5 / A 16:12,of
-98,5,19,20,_,C,2Csec,"			Even at that hour of the night, what happened?",A 16:33 / A 16:34,true / happened
-99,5,20,10,_,A,sec,						Who was very perplexed?,A 10:17,A fv
-100,6,1,10,_,_,ch,						The word Â“nativeÂ” is used to describe what?,A 2:8,Adj
-101,6,2,20,_,2,Sbk,			The word Â“foreignÂ” is used to describe what?,A 7:6 / A 17:18,Adj
-102,6,3,30,_,5A,Sch,			Which parenthetical statements are contained?,A 1:13 / A 1:19 / A 1:23,A ch
-103,6,4,20,2,C,2Cch,		How do verses 16 and 17 describe God?,A 14:16 / A 14:17,hd
-104,6,5,10,_,C,sec,						Who was an earlier convert to the Jewish faith?,A 6:5,
-105,6,6,10,_,2,sec,				What might be done through the name of Jesus?,A 4:30,
-106,6,7,20,SE,2,chs,			The command Â“walkÂ” is given in two verses. Give in essence these verses.,A 3:6 / A 8:29,
-107,6,8,20,_,3C,2Csec,"			Deeply troubled by all the idols, what did Paul do?",A 17:17 / A 17:18,do what
-108,6,9,10,2,A,ch,						The opening verse names which geographical location and which individual?,A 10:1,A vs
-109,6,10,20,2,C,2Cch,"			According to verses 30 and 31, what did God do?",A 5:30 / A 5:31,do what
-110,6,11,30,T,C,3Csec,"		What did Peter say before asking, quote, Â“So why are you now challenging God by burdening the Gentile believers with a yoke that neither we nor our ancestors were able to bear?Â”",A 15:7 / A 15:8 / A 15:9,VTGT
-111,6,12,20,EC,_,ch,"			Finish in essence this verse and the one that follows, quote, Â“At that time....Â”",A 2:5 / A 2:6,UWS
-112,6,13,10,S,_,_,						The unique word Â“propagandaÂ” is found in one verse. Give the complete reference for this verse.,A 4:17,unique word
-113,6,14,10,_,2,_,"						During the three days Saul was blind, what didnÂ’t he do?",A 9:9,
-114,6,15,20,_,3,_,			Egypt is named in which chapters?,A 2:10,noun
-115,6,16,30,S2E,_,Sbk,			Luke refers to the believers as both followers of the Way and Christians. Give in essence the verse in which believers are called followers of the Way and the verse in which believers were called Christians.,A 9:2 / A 11:26,conc QE
-116,6,17,20,2,C,2Csec,			JamesÂ’ judgment was not to do what but instead do what?,A 15:19 / A 15:20,VTGT
-117,6,18,20,2,C,2Cch,"			According to verses 29 and 30, what did the believers in Antioch do?",A 11:29 / A 11:30,VTGT
-118,6,19,10,_,_,_,					The crowd was prepared to offer sacrifices to whom?,A 14:13,
-119,6,20,10,_,C,sec,					Who stood speechless?,A 9:7,
-120,7,1,10,_,C,sec,						Who pushed Moses aside?,A 7:27,
-121,7,2,20,_,3C,sec,			Barnabas did what?,A 9:27,do what
-122,7,3,20,_,4A,Sch,Which companions are named?,A 13:1 / A 13:13,A fv
-123,7,4,30,_,3C,3Schs,			Which customs are mentioned?,A 6:14 / A 16:21 / A 17:2,mentioned
-124,7,5,10,_,_,_,"						According to Acts 10:43, through what are sins forgiven?",A 10:43,acc
-125,7,6,20,_,2A,Sbk,			Which Herods are named?,A 4:27 / A 12:1,A fv
-126,7,7,10,_,C,sec,					Who welcomed Barnabas and Paul?,A 15:4,
-127,7,8,10,T,A,ch,"						How does Luke complete the phrase, quote, Â“island ofÂ”?",A 4:36,of
-128,7,9,20,3,10A,ch,"The 5th verse names which individuals, which geographical location, and contains which parenthetical statements?",A 6:5,A vs
-129,7,10,30,SE,3,Sch,The conversion of Gentiles is mentioned in three verses. Give in essence these verses.,A 15:3 / A 15:5 / A 15:15,mentioned
-130,7,11,10,T,C,sec,"				How often was the lame man put, quote, Â“beside the Temple gateÂ”?",A 3:2,
-131,7,12,20,_,C,sec,"About drunkenness, what did Peter say?",A 2:15,
-132,7,13,10,_,A,_,			The word Â“NorthernÂ” is used to describe what?,A 16:9,Adj
-133,7,14,20,Q,2,Sch,			Quote the verses in which Troas is named.,A 16:8 / A 16:11,conc QE
-134,7,15,30,2,3A,Sch,"			Concerning ancestors, which Old Testament Scripture and exclamations are contained?",A 7:32 / A 7:51 / A 7:52,A conc
-135,7,16,20,2,4,2Csec,			What roused whom?,A 6:11 / A 6:12,VTGT
-136,7,17,10,_,C,sec,"						Besides Cornelius, who could be saved?",A 11:14,besides
-137,7,18,20,3,C,2Csec,"			Who criticized Peter for what, when?",A 11:2 / A 11:3,VTGT
-138,7,19,10,_,_,_,			Who were questioned?,A 4:9,
-139,7,20,20,T,C,2Csec,"How did Jesus respond to SaulÂ’s question, quote, Â“Who are you, lord?Â”",A 9:5 / A 9:6,VTGT
-140,8,1,10,T,_,ch,"						How does Luke begin the two-word phrase, quote, Â“of GodÂ”?",A 1:3,of
-141,8,2,20,_,5C,ch,"			According to the closing verse, what did Paul and Silas do?",A 16:40,
-142,8,3,30,S,3A,Sbk,"			Including those named as tribes of Israel, three of JacobÂ’s sons are named. Who were they?",A 4:36 / A 7:9 / A 13:21,A conc
-143,8,4,20,SE,2,Sbk,					Those who call on the name of the Lord are mentioned in two verses. Give in essence these verses.,A 2:21 / A 9:14,mentioned
-144,8,5,10,_,C,sec,						Who was Blastus?,A 12:20,
-145,8,6,10,T,_,sec,"					From whom did God take a people, quote, Â“for himselfÂ”?",A 15:14,
-146,8,7,20,Q,_,bk,			Quote verse 20 from the opening chapter.,A 1:20,std
-147,8,8,10,S,_,_,						The unique word Â“objectionÂ” is found in one verse. Give the complete reference for this verse.,A 10:29,unique word
-148,8,9,20,T,C,sec,"What did the others say when they, quote, Â“heard thisÂ”?",A 11:18,
-149,8,10,20,SE,2,Sch,			King Herod is referred to as Â“Herod AgrippaÂ” in two verses. Give in essence these verses.,A 12:1 / A 12:19,conc QE
-150,8,11,30,_,4,_,			The cross is mentioned in which chapters?,_,noun
-151,8,12,10,T,C,sec,"						What did the Israelites tell Aaron to, quote, Â“make usÂ”?",A 7:40,
-152,8,13,20,_,3A,Sch,			Which questions are contained?,A 2:7 / A 2:12 / A 2:37,A ch
-153,8,14,10,_,_,_,"						According to Acts 2:27, among whom wouldnÂ’t the Lord leave DavidÂ’s soul?",A 2:27,acc
-154,8,15,20,_,3,2Sbk,			What were bright?,A 6:15 / A 12:7,conc fv
-155,8,16,30,Q,_,3Cbk,"			Quote verses 9, 10, and 11 from the 3rd chapter.",A 3:9 / A 3:10 / A 3:11,std
-156,8,17,20,_,5C,3Csec,"			Refusing to listen to Moses, what did the ancestors do?",A 7:39 / A 7:40 / A 7:41,VTGT
-157,8,18,10,_,C,sec,				What time is much too early to get drunk?,A 2:15,
-158,8,19,20,_,2C,sec,"Upon arriving in Antioch, what did Paul and Barnabas do?",A 14:27,
-159,8,20,10,_,C,sec,					What spread throughout that region?,A 13:49,
+Set_Num,Q_Num,Pt_Val,Q_Intro,A_Intro,Location,Question,Ans_Reference,Notes
+1,1,10,_,2,sec,					With which philosophers did Paul have a debate?,A 17:18,
+1,2,20,2,_,chs,"The word “deep” is used to describe what, and the word “deeply” is used to describe what?",A 2:43 / A 17:16,conc fv
+1,3,30,2,A,Sch,"			Concerning Gentiles, which exclamation and which question is contained?",A 11:3 / A 11:17,A conc
+1,4,10,_,_,_,					Who called for lights?,A 16:29,
+1,5,20,_,3,_,Circumcision is mentioned in which chapters?,A 7:8,noun
+1,6,10,_,_,ch,				What kind of people weren’t among the believers?,A 4:34,
+1,7,20,_,4A,Sch,			Which individuals are named?,A 16:1 / A 16:6 / A 16:14,A ch
+1,8,30,Q,3,Sch,Quote the verses in which Ananias is named.,A 5:1 / A 5:3 / A 5:5,conc QE
+1,9,20,2,C,2Csec,"			The Holy Spirit said what, when?",A 10:19 / A 10:20,words of
+1,10,10,_,_,_,					Who prayed very earnestly for Peter?,A 12:5,
+1,11,10,_,A,ch,						The opening verse names which geographical location?,A 14:1,A vs
+1,12,20,_,2,chs,Who were in bed?,A 5:15 / A 9:33,conc fv
+1,13,20,Q,_,2Cbk,			Quote verses 12 and 13 from the 2nd chapter.,A 2:12 / A 2:13,std
+1,14,30,_,C,2Csec,"			To Ananias, what did Peter say?",A 5:3 / A 5:4,words of
+1,15,10,T,2,sec,"						What did the angel tell Peter to, quote, “put on”?",A 12:8,
+1,16,10,T,C,_,"			How does Luke complete the phrase, quote, “joy of”?",A 2:28,of
+1,17,20,T,2C,2Sbk,"Referring to Jesus, what is true of everyone who, quote, “believes in him”?",A 10:43 / A 13:39,true / happened
+1,18,20,2,C,2Ssec,"			An angel said what, and the Holy Spirit said what?",A 8:26 / A 8:29,words of
+1,19,20,T,C,sec,"			What happened after the usual readings from the, quote, “books of Moses”?",A 13:15,true / happened
+1,20,10,_,C,sec,				Leading priests wondered what?,A 5:24,
+2,1,10,T,_,sec,"						What did Abraham buy for a, quote, “certain price”?",A 7:16,
+2,2,30,3,C,3Sbk,"Some of the crowd assumed what, Moses assumed what, and the jailer assumed what?",A 2:15 / A 7:25 / A 16:27,conc fv
+2,3,20,_,2A,Sbk,Which tribes are named?,A 4:36 / A 13:21,A fv
+2,4,20,T,A,ch,"			What conclusion did Peter reach after thinking of the, quote, “Lord’s words”?",A 11:17,A before / after A
+2,5,10,S,_,_,						The name “Bar-Jesus” is found in one verse. Give the complete reference for this verse.,A 13:6,unique word
+2,6,20,_,C,2Csec,"			About this time, what happened?",A 9:37 / A 9:38,true / happened
+2,7,20,2E,_,Sch,			Give in essence the verse that mentions the lying witnesses’ accusations and the verse that mentions Stephen’s accusation.,A 7:1 / A 7:54,conc QE
+2,8,30,_,C,3Csec,			Give the conversation between the apostles and Jesus.,A 1:6 / A 1:7 / A 1:8,convo
+2,9,10,T,_,ch,"						How does Luke complete the phrase, quote, “captain of”?",A 5:24,of
+2,10,20,QC,_,ch,"				Finish this verse and the one that follows, quote, “This is the message...”",A 10:36 / A 10:37,UWS
+2,11,10,_,_,_,"						According to Acts 5:26, without what were the apostles arrested?",A 5:26,acc
+2,12,20,_,4A,Ssec,			Which individuals are named?,A 5:29 / A 5:34 / A 5:36 / A 5:37,A sec
+2,13,10,_,C,ch,						The word “glorious” is used to describe what?,A 2:20,Adj
+2,14,20,_,C,2Csec,			Who has spoken?,A 15:17 / A 15:18,VTGT
+2,15,30,2Q,_,Sbk,"			Quote the verse in which Alexander is named, and the verse in which Alexandria is named.",A 4:6 / A 6:9,conc QE
+2,16,10,_,C,ch,"				Each day, where did the believers worship?",A 2:46,
+2,17,20,2,_,chs,"Who was carried in, and who was carried out?",A 3:2 / A 5:10,conc fv
+2,18,10,T,C,sec,"						For whom is it against the law to enter a, quote, “Gentile home”?",A 10:28,
+2,19,20,_,C,2Csec,			What pleased the Jews?,A 12:1 / A 12:2,VTGT
+2,20,10,_,2,sec,"					Besides the church in Jerusalem, who chose delegates?",A 15:22,besides
+3,1,10,_,_,ch,						Who was Cornelius’s personal attendant?,A 10:7,
+3,2,20,T,C,3Csec,"			What happened as Peter took the lame man by the right hand and, quote, “helped him up”?",A 3:7 / A 3:8 / A 3:9,true / happened
+3,3,30,2,C,2Sbk,"			According to Acts 1:20 and 11:15, Peter continued to say what?",A 1:20 / A 11:15,conc fv
+3,4,10,_,C,_,"						According to Acts 9:30, to where did the believers send Saul?",A 9:30,acc
+3,5,20,_,C,2Csec,			Who lived in Caesarea?,A 10:1 / A 10:2,VTGT
+3,6,20,2,3,Sbk,"			Who were stirred up, and what was stirred up?",A 13:50 / A 17:13,conc fv
+3,7,10,_,2,ch,"						According to liars, Stephen blasphemed whom?",A 6:11,
+3,8,30,Q,3,Cch,Quote the verses in which John Mark is named.,A 15:37 / A 15:38 / A 15:39,conc QE
+3,9,20,2,A,Sch,		Give the parenthetical statement in which Antioch is named and the parenthetical statement in which Claudius is named.,A 11:26 / A 11:28,A conc
+3,10,10,T,C,ch,"						How does Luke complete the phrase, quote, “captain of”?",A 10:1,of
+3,11,20,_,C,ch,		How does the 10th verse describe Joseph?,A 7:10,hd
+3,12,20,_,2C,2Sbk,What were determined?,A 4:28 / A 17:26,conc fv
+3,13,30,_,C,4Csec,			Give all the angel’s words.,A 10:3 / A 10:4 / A 10:5 / A 10:6,words of
+3,14,10,T,C,sec,"					Where did Paul and Timothy instruct believers to follow the, quote, “decisions made by the apostles”?",A 16:4,
+3,15,10,_,C,sec,				God publicly endorsed whom?,A 2:22,
+3,16,20,SQ,_,_,"			The number 3,000 is found in one verse. Quote this verse.",A 2:41,unique word
+3,17,20,_,2A,Sch,"			Concerning the Temple, which exclamations are found?",A 5:20 / A 5:25,A conc
+3,18,10,T,_,_,"			How does Luke complete the phrase, quote, “horrors of”?",A 2:24,of
+3,19,10,_,C,ch,					Who was a man after God’s own heart?,A 13:22,
+3,20,20,_,3C,2Cch,			The council members saw what?,A 4:13 / A 4:14,VTGT
+4,1,10,_,C,sec,				Who dared to join the believers?,A 5:13,
+4,2,20,_,2A,Sbk,			Which seaports are named?,A 13:4 / A 16:8,A fv
+4,3,30,Q,_,3Cbk,"			Quote verses 2, 3, and 4 from the 7th chapter.",A 7:2 / A 7:3 / A 7:4,std
+4,4,10,S,_,_,						The unique word “basket” is found in one verse. Give the complete reference for this verse.,A 9:25,unique word
+4,5,10,_,C,sec,				David’s tongue did what?,A 2:26,do what
+4,6,20,_,2C,2Schs,"			By ship, what did Paul do?",A 13:13 / A 14:26,do what
+4,7,20,QC,_,ch,"				Finish this verse and the one that follows, quote, “Soon the news....”",A 11:1 / A 11:2,UWS
+4,8,30,_,C,2Cch,How do the closing two verses describe the crowd?,A 3:25 / A 3:26,hd
+4,9,20,E,2,Sch,					Give in essence the verses in which advice is mentioned.,A 5:38 / A 5:40,conc QE
+4,10,10,T,A,ch,"						Which exclamation immediately follows this question, quote, “Do you think I am the Messiah?”",A 13:25,A before / after A
+4,11,10,T,C,sec,"					What were risked for the, quote, “name of our Lord Jesus Christ”?",A 15:26,
+4,12,30,T,3,Schs,"How does Luke begin the phrase, quote, “of Gentiles”?",A 11:3 / A 14:5 / A 15:15,of
+4,13,10,_,_,_,						The word “devout” is used to describe whom?,A 8:2,Adj
+4,14,20,_,2,chs,			Who sat on a throne?,A 2:30 / A 12:21,conc fv
+4,15,20,2,3C,sec,			Peter clearly stated what to whom?,A 4:10,
+4,16,10,_,_,sec,"					After falling at Peter’s feet, what did Cornelius do?",A 10:25,do what
+4,17,20,_,C,2Cch,		How do the opening two verses describe Luke’s first book?,A 1:1 / A 1:2,hd
+4,18,20,T,C,sec,"			What was Paul’s response when he had a vision of a man pleading with him, quote, “Come over to Macedonia and help us!”?",A 16:10,respond
+4,19,10,T,C,sec,"						By whom was Saul authorized to arrest, quote, “everyone who calls upon your name”?",A 9:14,
+4,20,20,_,C,2Csec,"			After making many disciples, what did Paul and Barnabas do?",A 14:21 / A 14:22,VTGT
+5,1,20,_,C,sec,"			To ancestors, what did God promise?",A 3:25,
+5,2,10,_,_,sec,				Who fulfilled what all the prophets had foretold?,A 3:18,
+5,3,30,QC,_,ch,"		Finish this verse and the one that follows, quote, “Dear brothers,...”",A 2:29 / A 2:30,UWS
+5,4,20,2Q,_,Sbk,			Quote Acts 2:32 and 3:15.,A 2:32 / A 3:15,conc QE
+5,5,10,_,C,sec,				Who would repent of their sins and be forgiven?,A 5:31,
+5,6,10,_,C,_,			The word “final” is used to describe what?,A 3:21,Adj
+5,7,20,2,_,Sbk,"			What was beautiful, and who was beautiful?",A 3:2 / A 7:20,conc fv
+5,8,20,T,C,3Csec,"What did David say after exclaiming, quote, “No wonder my heart is glad, and my tongue shouts his praises!”?",A 2:26 / A 2:27 / A 2:28,VTGT
+5,9,30,SQ,2,Sch,			The whole church is mentioned in two verses. Quote these verses.,A 15:4 / A 15:22,conc QE
+5,10,10,_,C,sec,					Before whom did Joseph have favor?,A 7:10,
+5,11,20,_,5A,Ssec,			Which individuals are named?,A 4:23 / A 4:25 / A 4:27,A sec
+5,12,10,_,_,_,"						According to Acts 12:18, among whom was there a great commotion?",A 12:18,acc
+5,13,20,2,C,2Cch,		How do verses 11 and 12 describe Jesus?,A 4:11 / A 4:12,hd
+5,14,20,SQ,_,_,			Sidon is named in one verse. Quote this verse.,A 12:20,unique word
+5,15,30,2,3C,3Csec,"			Coming to his senses, what did Peter say and do?",A 12:11 / A 12:12 / A 12:13,words of
+5,16,10,2,A,ch,						The 6th verse names which geographical location and which individual?,A 13:6,A vs
+5,17,10,_,C,sec,					Don’t let what apply to you?,A 13:40,
+5,18,20,T,2,Sbk,"			How does Luke complete the phrase, quote, “city of”?",A 8:5 / A 16:12,of
+5,19,20,_,C,2Csec,"			Even at that hour of the night, what happened?",A 16:33 / A 16:34,true / happened
+5,20,10,_,A,sec,						Who was very perplexed?,A 10:17,A fv
+6,1,10,_,_,ch,						The word “native” is used to describe what?,A 2:8,Adj
+6,2,20,_,2,Sbk,			The word “foreign” is used to describe what?,A 7:6 / A 17:18,conc fv
+6,3,30,_,5A,Sch,			Which parenthetical statements are contained?,A 1:13 / A 1:19 / A 1:23,A ch
+6,4,20,2,C,2Cch,		How do verses 16 and 17 describe God?,A 14:16 / A 14:17,hd
+6,5,10,_,C,sec,						Who was an earlier convert to the Jewish faith?,A 6:5,
+6,6,10,_,2,sec,				What might be done through the name of Jesus?,A 4:30,
+6,7,20,SE,2,chs,			The command “walk” is given in two verses. Give in essence these verses.,A 3:6 / A 8:29,
+6,8,20,_,3C,2Csec,"			Deeply troubled by all the idols, what did Paul do?",A 17:17 / A 17:18,do what
+6,9,10,2,A,ch,						The opening verse names which geographical location and which individual?,A 10:1,A vs
+6,10,20,2,C,2Cch,"			According to verses 30 and 31, what did God do?",A 5:30 / A 5:31,do what
+6,11,30,T,C,3Csec,"		What did Peter say before asking, quote, “So why are you now challenging God by burdening the Gentile believers with a yoke that neither we nor our ancestors were able to bear?”",A 15:7 / A 15:8 / A 15:9,VTGT
+6,12,20,EC,_,ch,"			Finish in essence this verse and the one that follows, quote, “At that time....”",A 2:5 / A 2:6,UWS
+6,13,10,S,_,_,						The unique word “propaganda” is found in one verse. Give the complete reference for this verse.,A 4:17,unique word
+6,14,10,_,2,_,"						During the three days Saul was blind, what didn’t he do?",A 9:9,
+6,15,20,_,3,_,			Egypt is named in which chapters?,A 2:10,noun
+6,16,30,S2E,_,Sbk,			Luke refers to the believers as both followers of the Way and Christians. Give in essence the verse in which believers are called followers of the Way and the verse in which believers were called Christians.,A 9:2 / A 11:26,conc QE
+6,17,20,2,C,2Csec,			James’ judgment was not to do what but instead do what?,A 15:19 / A 15:20,VTGT
+6,18,20,2,C,2Cch,"			According to verses 29 and 30, what did the believers in Antioch do?",A 11:29 / A 11:30,VTGT
+6,19,10,_,_,_,					The crowd was prepared to offer sacrifices to whom?,A 14:13,
+6,20,10,_,C,sec,					Who stood speechless?,A 9:7,
+7,1,10,_,C,sec,						Who pushed Moses aside?,A 7:27,
+7,2,20,_,3C,sec,			Barnabas did what?,A 9:27,do what
+7,3,20,_,4A,Sch,Which companions are named?,A 13:1 / A 13:13,A fv
+7,4,30,_,3C,3Schs,			Which customs are mentioned?,A 6:14 / A 16:21 / A 17:2,mentioned
+7,5,10,_,_,_,"						According to Acts 10:43, through what are sins forgiven?",A 10:43,acc
+7,6,20,_,2A,Sbk,			Which Herods are named?,A 4:27 / A 12:1,A fv
+7,7,10,_,C,sec,					Who welcomed Barnabas and Paul?,A 15:4,
+7,8,10,T,A,ch,"						How does Luke complete the phrase, quote, “island of”?",A 4:36,of
+7,9,20,3,10A,ch,"The 5th verse names which individuals, which geographical location, and contains which parenthetical statements?",A 6:5,A vs
+7,10,30,SE,3,Sch,The conversion of Gentiles is mentioned in three verses. Give in essence these verses.,A 15:3 / A 15:5 / A 15:15,conc QE
+7,11,10,T,C,sec,"				How often was the lame man put, quote, “beside the Temple gate”?",A 3:2,
+7,12,20,_,C,sec,"About drunkenness, what did Peter say?",A 2:15,
+7,13,10,_,A,_,			The word “Northern” is used to describe what?,A 16:9,Adj
+7,14,20,Q,2,Sch,			Quote the verses in which Troas is named.,A 16:8 / A 16:11,conc QE
+7,15,30,2,3A,Sch,"			Concerning ancestors, which Old Testament Scripture and exclamations are contained?",A 7:32 / A 7:51 / A 7:52,A conc
+7,16,20,2,4,2Csec,			What roused whom?,A 6:11 / A 6:12,VTGT
+7,17,10,_,C,sec,"						Besides Cornelius, who could be saved?",A 11:14,besides
+7,18,20,3,C,2Csec,"			Who criticized Peter for what, when?",A 11:2 / A 11:3,VTGT
+7,19,10,_,_,_,			Who were questioned?,A 4:9,
+7,20,20,T,C,2Csec,"How did Jesus respond to Saul’s question, quote, “Who are you, lord?”",A 9:5 / A 9:6,VTGT
+8,1,10,T,_,ch,"						How does Luke begin the two-word phrase, quote, “of God”?",A 1:3,of
+8,2,20,_,5C,ch,"			According to the closing verse, what did Paul and Silas do?",A 16:40,
+8,3,30,S,3A,Sbk,"			Including those named as tribes of Israel, three of Jacob’s sons are named. Who were they?",A 4:36 / A 7:9 / A 13:21,A conc
+8,4,20,SE,2,Sbk,					Those who call on the name of the Lord are mentioned in two verses. Give in essence these verses.,A 2:21 / A 9:14,conc QE
+8,5,10,_,C,sec,						Who was Blastus?,A 12:20,
+8,6,10,T,_,sec,"					From whom did God take a people, quote, “for himself”?",A 15:14,
+8,7,20,Q,_,bk,			Quote verse 20 from the opening chapter.,A 1:20,std
+8,8,10,S,_,_,						The unique word “objection” is found in one verse. Give the complete reference for this verse.,A 10:29,unique word
+8,9,20,T,C,sec,"What did the others say when they, quote, “heard this”?",A 11:18,
+8,10,20,SE,2,Sch,			King Herod is referred to as “Herod Agrippa” in two verses. Give in essence these verses.,A 12:1 / A 12:19,conc QE
+8,11,30,_,4,_,			The cross is mentioned in which chapters?,_,noun
+8,12,10,T,C,sec,"						What did the Israelites tell Aaron to, quote, “make us”?",A 7:40,
+8,13,20,_,3A,Sch,			Which questions are contained?,A 2:7 / A 2:12 / A 2:37,A ch
+8,14,10,_,_,_,"						According to Acts 2:27, among whom wouldn’t the Lord leave David’s soul?",A 2:27,acc
+8,15,20,_,3,2Sbk,			What were bright?,A 6:15 / A 12:7,conc fv
+8,16,30,Q,_,3Cbk,"			Quote verses 9, 10, and 11 from the 3rd chapter.",A 3:9 / A 3:10 / A 3:11,std
+8,17,20,_,5C,3Csec,"			Refusing to listen to Moses, what did the ancestors do?",A 7:39 / A 7:40 / A 7:41,VTGT
+8,18,10,_,C,sec,				What time is much too early to get drunk?,A 2:15,
+8,19,20,_,2C,sec,"Upon arriving in Antioch, what did Paul and Barnabas do?",A 14:27,
+8,20,10,_,C,sec,					What spread throughout that region?,A 13:49,

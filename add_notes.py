@@ -21,7 +21,7 @@ This program adds notes to the following types of questions:
 > desc - Questions that begin with the word describe
 > did what - Questions that contain the phrase 'what did (person) do' or '(person) did what'
 > hd - Questions that begin with 'How does verse #' or 'How do verses #...' or 'How does the #th verse' or 'How do(es) the opening/closing verse(s)'
-> TODO ifs - Questions that ask for questions having to do with the word 'if'
+> if - Questions that ask for questions having to do with the word 'if'
 > mentioned - Questions that end with the word 'mentioned'
 > noun - Questions that ask for the chapters in which a noun / verb is contained
 > of - Questions that ask the quizzer to complete / begin an 'of' phrase
@@ -329,6 +329,22 @@ def add_in_notes():
         # Assign 'hd' to the Notes column of each question
         df.loc[index_hd, 'Notes'] = 'hd'
 
+    
+    
+    
+    # ----- 'if' - Questions that have to do with the word 'if'
+
+    # Search through the Actual Question to find all questions having to do with this word
+    #-> 'Under what condition'
+    #-> 'which conditional if statement'
+    list_if = df.loc[df['Question'].str.contains('nder what condition|hich conditional')]
+
+    # Find the index of each 'if'
+    for i in range(len(list_if)):
+        index_if = list_if.index[i]
+
+        # Assign 'if' to the Notes column in that row
+        df.loc[index_if, 'Notes'] = 'if'
     
     
     

@@ -5,22 +5,16 @@ Author: Solomon Stevens
 Date: *Enter Date Completed*
 
 This program adds notes to the following types of questions:
-> TODO A before / after A - Questions that ask for Chapter Analysis that comes before / after other Chapter Analysis
-> TODO A ch - Questions that ask for Chapter Analysis from a chapter
-> TODO A conc - Questions that ask for separate Chapter Analysis answers that have something in common
--> A concerning
--> A in A
--> A same name
--> A titles
--> A verb
--> Ref of A (check 'named' at end of question)
-> TODO A fv - Questions that have a Chapter Analysis answer but have a question that comes from a verse
-> TODO A sec - Questions that ask for Chapter Analysis from a section
-> TODO A vs - Questions that ask for Chapter Analysis from a verse
+> A before / after A - Questions that ask for Chapter Analysis that comes before / after other Chapter Analysis
+> A ch - Questions that ask for Chapter Analysis from a chapter
+> A conc - Questions that ask for separate Chapter Analysis answers that have something in common
+> A fv - Questions that have a Chapter Analysis answer but have a question that comes from a verse
+> A sec - Questions that ask for Chapter Analysis from a section
+> A vs - Questions that ask for Chapter Analysis from a verse
 > acc - Questions that begin with 'According to *insert reference*'
 > Adj - Questions that ask for what a given adjective describes
--> 'What was ADJ'
-> TODO before / after A - Questions that ask for the words of someone before / after Chapter Analysis
+-> TODO 'What was ADJ'
+> before / after A - Questions that ask for the words of someone before / after Chapter Analysis
 -> Check overwriting by 'words of' -> check if Notes = ''
 > besides - Questions that begin with the word 'Besides'
 > TODO conc fv - Questions that require answers from different verses that have something in common
@@ -69,6 +63,119 @@ def add_in_notes():
 
 
 
+    # ----- 'A before / after A' - Questions that ask for Chapter Analysis that comes immediately before / after other Chapter Analysis
+
+    # Search through the Answer Introductory Remark to find all Chapter Analysis then...
+    # Search through the Actual Question for the words 'after, before, follow, precede, procede'
+    list_A_before_after_A = df.loc[(df['A_Intro'].str.contains('A', case = True)) & (df['Question'].str.contains('after|before|follow|precede|procede', regex = True))]
+
+    # Find the index of all applicable questions
+    for i in range(len(list_A_before_after_A)):
+        index_A_before_after_A = list_A_before_after_A.index[i]
+
+        # Assign 'A before / after A' to the Notes column in that row
+        df.loc[index_A_before_after_A, 'Notes'] = 'A before / after A'
+    
+    
+    
+    # ----- 'A ch' - Questions that ask for Chapter Analysis from a chapter
+
+    # Search through the Answer Introductory Remark to find all Chapter Analysis then...
+    # Search through the Location Indroductory Remark to find 'ch'
+    #-> Check if the Actual Question is directly asking for Chapter Analysis
+    # If 'ch' is not in the Location Introductory Remark, check the Actual Question for the word 'chapter'
+    list_A_ch = df.loc[(df['A_Intro'].str.contains('A', case = True)) & 
+                        (((df['Location'].str.contains('ch')) & (df['Question'].str.contains('individual|geographical|parenthetical|exclamation|Testament|question', regex = True))) |
+                        df['Question'].str.contains('chapter'))]
+
+    # Find the index of all applicable questions
+    for i in range(len(list_A_ch)):
+        index_A_ch = list_A_ch.index[i]
+
+        # Assign 'A vs' to the Notes column in that row
+        df.loc[index_A_ch, 'Notes'] = 'A ch'
+    
+    
+    
+    # ----- 'A conc' - Questions that ask for Separate Chapter Analysis that have something in common
+    #-> A #-word
+    #-> A concerning
+    #-> A in A
+    #-> A titles
+    #-> A verb
+    #-> Ref of A
+
+    # Search through the Answer Introductory Remark to find all Chapter Analysis then...
+    # Search through the Actual Question for one of the types of concordance questions we are looking for
+    list_A_conc = df.loc[(df['A_Intro'].str.contains('A', case = True)) & 
+                       ((df['Question'].str.contains('\d+[- ]word')) |                                                                      # A #-word
+                       (df['Question'].str.contains('oncerning')) |                                                                         # A concerning
+                       ((df['Question'].str.contains('Which&named?')) & (df['Question'].str.contains('individual|geographical') == False)) |# A titles
+                       ((df['Location'].str.contains('C|S', case = True)) & (df['Question'].str.contains('Who', case = True))) |            # A verb
+                       (df['Question'].str.contains('references for the verses&named')))]                                                   # Ref of A
+
+    # Find the index of all applicable questions
+    for i in range(len(list_A_conc)):
+        index_A_conc = list_A_conc.index[i]
+
+        # Assign 'A conc' to the Notes column in that row
+        df.loc[index_A_conc, 'Notes'] = 'A conc'
+    
+    
+    
+    # ----- 'A fv' - Questions that ask for Chapter Analysis, but the question comes from the verse
+
+    # Search through the Answer Introductory Remark to find all Chapter Analysis
+    list_A_fv = df.loc[df['A_Intro'].str.contains('A', case = True)]
+
+    # Find the index of all applicable questions
+    for i in range(len(list_A_fv)):
+        index_A_fv = list_A_fv.index[i]
+
+        # Assign 'A vs' to the Notes column in that row
+        #-> Check if the Notes column is still blank
+        if df.loc[index_A_fv, 'Notes'] == '':
+            #-> If so, Assign 'A fv' to it
+            df.loc[index_A_fv, 'Notes'] = 'A fv'
+    
+    
+    
+    # ----- 'A sec' - Questions that ask for Chapter Analysis from a section
+
+    # Search through the Answer Introductory Remark to find all Chapter Analysis then...
+    # Search through the Location Indroductory Remark to find 'sec'
+    #-> Check if the Actual Question is directly asking for Chapter Analysis
+    # If 'sec' is not in the Location Introductory Remark, check the Actual Question for the word 'section'
+    list_A_sec = df.loc[(df['A_Intro'].str.contains('A', case = True)) & 
+                        (((df['Location'].str.contains('sec')) & (df['Question'].str.contains('individual|geographical|parenthetical|exclamation|Testament|question', regex = True))) |
+                        df['Question'].str.contains('section'))]
+
+    # Find the index of all applicable questions
+    for i in range(len(list_A_sec)):
+        index_A_sec = list_A_sec.index[i]
+
+        # Assign 'A vs' to the Notes column in that row
+        # NOTE: This will overwrite some questions marked 'A fv'.  Since 'A fv' is basically for all Chapter Analysis Questions that previously weren't marked, overwriting them with the correct label is acceptable
+        df.loc[index_A_sec, 'Notes'] = 'A sec'
+    
+    
+    
+    # ----- 'A vs' - Questions that ask for Chapter Analysis from a verse
+
+    # Search through the Answer Introductory Remark to find all Chapter Analysis then...
+    # Search through the Actual Question for the word 'verse'
+    list_A_vs = df.loc[(df['A_Intro'].str.contains('A', case = True)) & (df['Question'].str.contains('verse'))]
+
+    # Find the index of all applicable questions
+    for i in range(len(list_A_vs)):
+        index_A_vs = list_A_vs.index[i]
+
+        # Assign 'A vs' to the Notes column in that row
+        # NOTE: This will overwrite some questions marked 'A fv'.  Since 'A fv' is basically for all Chapter Analysis Questions that previously weren't marked, overwriting them with the correct label is acceptable
+        df.loc[index_A_vs, 'Notes'] = 'A vs'
+    
+    
+    
     # ----- 'acc' - Questions that begin with 'According to *insert reference*'
 
     # Search the Actual Question for ones that start with our key phrase
@@ -98,6 +205,21 @@ def add_in_notes():
 
 
 
+    # ----- 'before / after A' - Questions that ask for non-Chapter Analysis answers that come immediately before / after Chapter Analysis
+
+    # Search through the Actual Question for the word 'before / after' then...
+    # Search through the Actual Question for the word 'immediately'
+    list_before_after_A = df.loc[(df['Question'].str.contains('before|after')) & (df['Question'].str.contains('immediately'))]
+
+    # Find the index of all applicable questions
+    for i in range(len(list_before_after_A)):
+        index_before_after_A = list_before_after_A.index[i]
+
+        # Assign 'before / after A' to the Notes column in that row
+        df.loc[index_before_after_A, 'Notes'] = 'before / after A'
+    
+    
+    
     # ----- 'besides' - Questions that begin with the word 'Besides' -----
 
     # Search the Actual Question to find 'besides' questions
@@ -326,7 +448,7 @@ def add_in_notes():
 
 
     # Write the Dataframe to the File we Received
-    print(df.head(30))
+    print(df.head(40))
 
 
 # TODO DELETE WHEN DONE WITH PROGRAM

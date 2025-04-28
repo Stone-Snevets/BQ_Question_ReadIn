@@ -17,8 +17,8 @@ This program adds notes to the following types of questions:
 > before / after A - Questions that ask for the words of someone before / after Chapter Analysis
 -> Check overwriting by 'words of' -> check if Notes = ''
 > besides - Questions that begin with the word 'Besides'
-> TODO conc fv - Questions that require answers from different verses that have something in common
-> TODO conc QE - Questions that ask quizzers to say verses with something in common
+> conc fv - Questions that require answers from different verses that have something in common
+> conc QE - Questions that ask quizzers to say verses with something in common
 > convo - Questions asking for a conversation between two people / groups of people
 > did what - Questions that contain the phrase 'what did (person) do' or '(person) did what'
 > hd - Questions that begin with 'How does verse #' or 'How do verses #...' or 'How does the #th verse' or 'How do(es) the opening/closing verse(s)'
@@ -234,6 +234,41 @@ def add_in_notes():
 
 
 
+    # ----- 'conc fv' - Questions that ask for something similar in multiple verses -----
+
+    # Search the Location Introductory Remark to find all the Separate / Consecutive verse answers then...
+    # Searth the Question Introductory Remark to exclude all Quotation / Essence Questions
+    list_conc_fv = df.loc[(df['Location'].str.contains('C|S', case = True)) &
+                          (df['Q_Intro'].str.contains('Q|E') == False)]
+    
+    # Find the index of each of these questions
+    for i in range(len(list_conc_fv)):
+        index_conc_fv = list_conc_fv.index[i]
+
+        # Assign 'conc QE' to the Notes column in that row
+        #-> Check if the Notes column is already occupied by 'A conc'
+        if df.loc[index_conc_fv, 'Notes'] == '':
+            # If not, assign 'conc fv' to it
+            df.loc[index_conc_fv, 'Notes'] = 'conc fv'
+    
+    
+    
+    # ----- 'conc QE' - Questions that ask the quizzer to say more than one verse with something in common -----
+
+    # Search the Location Introductory Remark to find all the Separate / Consecutive verse answers then...
+    # Search the Question Introductory Remark to find all Quotation / Essence Questions
+    list_conc_qe = df.loc[(df['Location'].str.contains('C|S', case = True)) &
+                          (df['Q_Intro'].str.contains('Q|E'))]
+    
+    # Find the index of each of these questions
+    for i in range(len(list_conc_qe)):
+        index_conc_qe = list_conc_qe.index[i]
+
+        # Assign 'conc QE' to the Notes column in that row
+        df.loc[index_conc_qe, 'Notes'] = 'conc QE'
+    
+    
+    
     # ----- 'convo' - Questions asking for a conversation between two people / groups of people
 
     # Search the Actual Question to find conversations
@@ -365,6 +400,7 @@ def add_in_notes():
         index_std = list_std.index[i]
 
         # Assign 'std' to the Notes column in that row
+        # NOTE: This is intended to overwrite some conc QE questions since these are not technically concordance quesitons
         df.loc[index_std, 'Notes'] = 'std'
     
     
@@ -423,7 +459,8 @@ def add_in_notes():
 
         # Assign 'VTGT' to the Notes column in that row
         #-> Check if the 'Notes' column in that row is empty
-        if df.loc[index_vtgt, 'Notes'] == '':
+        #-> Check if we need to overwrite a question labeled 'conc fv'
+        if ((df.loc[index_vtgt, 'Notes'] == '') | (df.loc[index_vtgt, 'Notes'] == 'conc fv')):
             # If so, then assign 'VTGT'
             df.loc[index_vtgt, 'Notes'] = 'VTGT'
     

@@ -13,9 +13,7 @@ This program adds notes to the following types of questions:
 > A vs - Questions that ask for Chapter Analysis from a verse
 > acc - Questions that begin with 'According to *insert reference*'
 > Adj - Questions that ask for what a given adjective describes
--> TODO 'What was ADJ'
 > before / after A - Questions that ask for the words of someone before / after Chapter Analysis
--> Check overwriting by 'words of' -> check if Notes = ''
 > besides - Questions that begin with the word 'Besides'
 > conc fv - Questions that require answers from different verses that have something in common
 > conc QE - Questions that ask quizzers to say verses with something in common
@@ -194,7 +192,8 @@ def add_in_notes():
 
     # Search through the Actual Question to find Adjective questions
     #-> 'The word (adjective) is used to describe what/who/whom?'
-    list_adj = df.loc[df['Question'].str.contains('is used to describe')]
+    #-> 'What is/was (adjective)?
+    list_adj = df.loc[df['Question'].str.contains('is used to describe|What is \S+?|What was \S+?')]
 
     # Find the index of each Adjective question
     for i in range(len(list_adj)):

@@ -18,8 +18,10 @@ This program adds notes to the following types of questions:
 > conc fv - Questions that require answers from different verses that have something in common
 > conc QE - Questions that ask quizzers to say verses with something in common
 > convo - Questions asking for a conversation between two people / groups of people
+> desc - Questions that begin with the word describe
 > did what - Questions that contain the phrase 'what did (person) do' or '(person) did what'
 > hd - Questions that begin with 'How does verse #' or 'How do verses #...' or 'How does the #th verse' or 'How do(es) the opening/closing verse(s)'
+> TODO ifs - Questions that ask for questions having to do with the word 'if'
 > mentioned - Questions that end with the word 'mentioned'
 > noun - Questions that ask for the chapters in which a noun / verb is contained
 > of - Questions that ask the quizzer to complete / begin an 'of' phrase
@@ -282,6 +284,20 @@ def add_in_notes():
     
 
 
+    # ----- 'desc' - Questions that begin with the word 'Describe'
+
+    # Search through the Actual Question to find all questions that begin with the word 'Describe'
+    list_desc = df.loc[df['Question'].str.contains('Describe', case = True)]
+
+    # Find the index of all questions that begin with 'Describe'
+    for i in range(len(list_desc)):
+        index_desc = list_desc.index[i]
+
+        # Assign 'desc' to the Notes column in that row
+        df.loc[index_desc, 'Notes'] = 'desc'
+    
+    
+    
     # ----- 'did what' - Questions that ask for something a person / group of people did
 
     # Search the Actual Question to find 'what did (person) do' or '(person) did what'

@@ -516,7 +516,7 @@ def add_in_notes():
 
 
     # Write the Dataframe to the File we Received
-    print(df.head(40))
+    df.to_csv(FILE_RECEIVED)
 
 
 # TODO DELETE WHEN DONE WITH PROGRAM

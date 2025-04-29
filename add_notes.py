@@ -2,7 +2,7 @@
 Function to automatically include notes about some of the questions in the set that is received
 
 Author: Solomon Stevens
-Date: *Enter Date Completed*
+Date: April 29th, 2025
 
 This program adds notes to the following types of questions:
 > A before / after A - Questions that ask for Chapter Analysis that comes before / after other Chapter Analysis
@@ -11,6 +11,7 @@ This program adds notes to the following types of questions:
 > A fv - Questions that have a Chapter Analysis answer but have a question that comes from a verse
 > A sec - Questions that ask for Chapter Analysis from a section
 > A vs - Questions that ask for Chapter Analysis from a verse
+> about - Questions that ask for what someone said about something
 > acc - Questions that begin with 'According to *insert reference*'
 > Adj - Questions that ask for what a given adjective describes
 > before / after A - Questions that ask for the words of someone before / after Chapter Analysis
@@ -18,7 +19,7 @@ This program adds notes to the following types of questions:
 > conc fv - Questions that require answers from different verses that have something in common
 > conc QE - Questions that ask quizzers to say verses with something in common
 > convo - Questions asking for a conversation between two people / groups of people
-> desc - Questions that begin with the word describe
+> desc - Questions that begin with the word 'Describe'
 > did what - Questions that contain the phrase 'what did (person) do' or '(person) did what'
 > hd - Questions that begin with 'How does verse #' or 'How do verses #...' or 'How does the #th verse' or 'How do(es) the opening/closing verse(s)'
 > if - Questions that ask for questions having to do with the word 'if'
@@ -114,7 +115,7 @@ def add_in_notes():
                        ((df['Question'].str.contains('\d+[- ]word')) |                                                                      # A #-word
                        (df['Question'].str.contains('oncerning')) |                                                                         # A concerning
                        (df['Question'].str.contains(' in ')) |                                                                              # A in A
-                       ((df['Question'].str.contains('Which&named\?')) & (df['Question'].str.contains('individual|geographical') == False)) |# A titles
+                       ((df['Question'].str.contains('Which \S+ are named\?')) & (df['Question'].str.contains('individual|geographical') == False)) |# A titles
                        ((df['Location'].str.contains('C|S', case = True)) & (df['Question'].str.contains('Who', case = True))) |            # A verb
                        (df['Question'].str.contains('references for the verses&named')))]                                                   # Ref of A
 
@@ -180,10 +181,25 @@ def add_in_notes():
     
     
     
+    # ----- 'about' - Questions that ask for what someone said ABOUT something
+
+    # Search through the Actual Question to find question that begin with 'About' or 'Concerning'
+    list_about = df.loc[df['Question'].str.contains('hat did .+ say|\S+ said what') &
+                           (df['Question'].str.contains('About|Concerning', case = True))]
+    
+    # Find the index of each instance
+    for i in range(len(list_about)):
+        index_about = list_about.index[i]
+
+        # Assign 'about' to the Notes column in that row
+        df.loc[index_about, 'Notes'] = 'about'
+    
+    
+    
     # ----- 'acc' - Questions that begin with 'According to *insert reference*'
 
     # Search the Actual Question for ones that start with our key phrase
-    list_acc = df.loc[df['Question'].str.contains('According to \S+ \d+:\d+')]
+    list_acc = df.loc[df['Question'].str.contains('According to \S+ \d+:\d+|According to the \S+ verse')]
 
     # Find the index of each instance
     for i in range(len(list_acc)):
@@ -213,7 +229,7 @@ def add_in_notes():
     # ----- 'before / after A' - Questions that ask for non-Chapter Analysis answers that come immediately before / after Chapter Analysis
 
     # Search through the Actual Question for the word 'before / after' then...
-    # Search through the Actual Question for the word 'immediately'
+    # Search through the Actual Question to indicate we are coming before / after Chapter Analysis
     list_before_after_A = df.loc[(df['Question'].str.contains('before|after', case = False)) & (df['Question'].str.contains('ask|exclaim|Testament|parenthetical'))]
 
     # Find the index of all applicable questions
@@ -241,9 +257,9 @@ def add_in_notes():
 
     # ----- 'conc fv' - Questions that ask for something similar in multiple verses -----
 
-    # Search the Location Introductory Remark to find all the Separate / Consecutive verse answers then...
+    # Search the Location Introductory Remark to find all the Separate verse answers then...
     # Searth the Question Introductory Remark to exclude all Quotation / Essence Questions
-    list_conc_fv = df.loc[(df['Location'].str.contains('C|S|chs|bks|secs', case = True)) &
+    list_conc_fv = df.loc[(df['Location'].str.contains('S|chs|bks|secs', case = True)) &
                           (df['Q_Intro'].str.contains('Q|E') == False)]
     
     # Find the index of each of these questions
@@ -253,7 +269,7 @@ def add_in_notes():
         # Assign 'conc QE' to the Notes column in that row
         #-> Check if the quesiton is labeled Chapter Analysis
         #-> Avoid overwriting adjectives
-        if (('A' not in df.loc[index_conc_fv, 'A_Intro']) & (df.loc[index_conc_fv, 'Notes'] != 'ADJ')):
+        if (('A' not in df.loc[index_conc_fv, 'A_Intro']) & (df.loc[index_conc_fv, 'Notes'] != 'Adj')):
             # If not, assign 'conc fv' to it
             df.loc[index_conc_fv, 'Notes'] = 'conc fv'
     
@@ -263,7 +279,7 @@ def add_in_notes():
 
     # Search the Location Introductory Remark to find all the Separate / Consecutive verse answers then...
     # Search the Question Introductory Remark to find all Quotation / Essence Questions
-    list_conc_qe = df.loc[(df['Location'].str.contains('C|S', case = True)) &
+    list_conc_qe = df.loc[(df['Location'].str.contains('C|S|chs|bks|secs', case = True)) &
                           (df['Q_Intro'].str.contains('Q|E'))]
     
     # Find the index of each of these questions
@@ -306,7 +322,7 @@ def add_in_notes():
     # ----- 'did what' - Questions that ask for something a person / group of people did
 
     # Search the Actual Question to find 'what did (person) do' or '(person) did what'
-    list_do_what = df.loc[df['Question'].str.contains('what did \S+ do|\S+ did what')]
+    list_do_what = df.loc[df['Question'].str.contains('what did .+ do|.+ did what')]
 
     # Find the index of each question that matches this criteria
     for i in range(len(list_do_what)):
@@ -415,7 +431,7 @@ def add_in_notes():
     # ----- 'respond' - Questions that ask how someone responds to either a Chapter Analysis or an action
 
     # Search through the Actual Question to find questions asking how someone responds, replies, or answers
-    list_respond = df.loc[df['Question'].str.contains('How [\s+\S+] respond|How [\s+\S+] reply|How [\s+\S+] answer|response')]
+    list_respond = df.loc[df['Question'].str.contains('How .+ respond|How .+ reply|How .+ answer|response')]
 
     # Find the index of each responding question
     for i in range(len(list_respond)):
@@ -495,8 +511,7 @@ def add_in_notes():
 
         # Assign 'VTGT' to the Notes column in that row
         #-> Check if the 'Notes' column in that row is empty
-        #-> Check if we need to overwrite a question labeled 'conc fv'
-        if ((df.loc[index_vtgt, 'Notes'] == '') | (df.loc[index_vtgt, 'Notes'] == 'conc fv')):
+        if (df.loc[index_vtgt, 'Notes'] == ''):
             # If so, then assign 'VTGT'
             df.loc[index_vtgt, 'Notes'] = 'VTGT'
     
@@ -507,7 +522,7 @@ def add_in_notes():
     # Search through the Actual Question to find ones asking for what person / group of people said
     #-> Exclude ones that start with 'About' and 'Concerning'
     #--> These are generic and usually ask for what the author of the book being learned says
-    list_words_of = df.loc[df['Question'].str.contains('Give all|what did \S+ say|\S+ said what') &
+    list_words_of = df.loc[df['Question'].str.contains('Give all|hat did .+ say|\S+ said what') &
                            (df['Question'].str.contains('About|Concerning', case = True) == False)]
     
     # Find the index of each instance
@@ -528,6 +543,3 @@ def add_in_notes():
 # TODO DELETE WHEN DONE WITH PROGRAM
 if __name__ == '__main__':
     add_in_notes()
-
-
-# 5,8 / 6,2 / 6,7

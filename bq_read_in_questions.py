@@ -550,16 +550,23 @@ def get_question_file():
 
    
    # Check if we Add in Notes and/or Concordance
+   #-> Notes
    if add_notes == 1:
-      print('* Include Notes')
+      print('\n* Including Notes')
       # Call the 'add_notes' File to Add in Notes
       import add_notes
 
       # Run the Function to Add in the Notes
       add_notes.add_in_notes()
 
+   #-> Concordance
    if include_concordance == 1:
-      print('* Include Concordance')
+      print('\n* Including Concordance')
+      # Call in the 'add_concordance' File to Add in the Concordance
+      import add_concordance
+
+      # Run the Function to Add in the Concordance
+      add_concordance.add_in_conc()
 
 
 

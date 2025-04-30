@@ -538,8 +538,3 @@ def add_in_notes():
     # Write the Dataframe to the File we Received
     #-> Set index = False to avoid additional index columns
     df.to_csv(FILE_RECEIVED, index = False, encoding='latin')
-
-
-# TODO DELETE WHEN DONE WITH PROGRAM
-if __name__ == '__main__':
-    add_in_notes()

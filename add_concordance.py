@@ -70,12 +70,18 @@ def add_in_conc():
             # If it's there, assign that number the the 'Conc' column
             df.loc[index_conc, 'Conc'] = re.search('(\d+)', df.loc[index_conc, 'Q_Intro']).group(1)
 
+        # If it's not there, Check the Location Intro for a Number
+        if re.search('\d+', df.loc[index_conc, 'Location']) != None:
+            # If it's there, assign that number the the 'Conc' column
+            df.loc[index_conc, 'Conc'] = re.search('(\d+)', df.loc[index_conc, 'Location']).group(1)
+
         # If not, assign a '1' to the 'Conc' column
         else:
             df.loc[index_conc, 'Conc'] = '1'
     
-    # Write the dataframe to the file we received
-    print(df.head())
+    # Write the Dataframe to the File we Received
+    #-> Set index = False to avoid additional index columns
+    df.to_csv(FILE_RECEIVED, index = False, encoding='latin')
 
 
 # TODO DELETE WHEN DONE WITH PROGRAM

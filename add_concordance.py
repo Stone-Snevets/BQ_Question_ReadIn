@@ -36,8 +36,12 @@ def add_in_conc():
     # Find all Concordance Questions
     #-> Check if the 'Notes' column was generated
     if 'Notes' in df.columns:
-        # If so, find all rows where the 'Notes' column reads 'conc'
-        list_conc = df.loc[(df['Notes'] == 'A conc') | (df['Notes'] == 'conc QE') | (df['Notes'] == 'conc fv')]
+        # If so, find all rows where the 'Notes' column reads 'conc', 'of', or 'Adj'
+        list_conc = df.loc[(df['Notes'] == 'A conc') | 
+                           (df['Notes'] == 'conc QE') | 
+                           (df['Notes'] == 'conc fv') |
+                           ((df['Notes'] == 'of') & (df['Location'].str.contains('S|C|chs|secs|bks'))) |
+                           ((df['Notes'] == 'Adj') & (df['Location'].str.contains('S|C|chs|secs|bks')))]
 
     #-> If not find all concordance questions manually
     #--> A concordance: Concordance questions with Chapter Analysis answers
@@ -45,14 +49,16 @@ def add_in_conc():
     #--> conc QE: Concordance questions that ask the quizzer to Quote / give in Essence the verses
     else:
         list_conc = df.loc[(df['A_Intro'].str.contains('A', case = True)) & 
-                    ((df['Question'].str.contains('\d+[- ]word')) |                                                                                 # A #-word
-                     (df['Question'].str.contains('oncerning')) |                                                                                   # A concerning
-                     (df['Question'].str.contains(' in ')) |                                                                                        # A in A
-                     ((df['Question'].str.contains('Which \S+ are named\?')) & (df['Question'].str.contains('individual|geographical') == False)) | # A titles
-                     ((df['Location'].str.contains('C|S', case = True)) & (df['Question'].str.contains('Who', case = True))) |                      # A verb
-                     (df['Question'].str.contains('references for the verses&named'))) |                                                             # Ref of A
-                     ((df['Location'].str.contains('S|chs|bks|secs', case = True)) & (df['Q_Intro'].str.contains('Q|E') == False)) |                # conc fv
-                     ((df['Location'].str.contains('C|S|chs|bks|secs', case = True)) & (df['Q_Intro'].str.contains('Q|E')))]                       # conc QE
+                    ((df['Question'].str.contains('\d+[- ]word')) |                                                                                                             # A #-word
+                     (df['Question'].str.contains('oncerning')) |                                                                                                               # A concerning
+                     (df['Question'].str.contains(' in ')) |                                                                                                                    # A in A
+                     ((df['Question'].str.contains('Which \S+ are named\?')) & (df['Question'].str.contains('individual|geographical') == False)) |                             # A titles
+                     ((df['Location'].str.contains('C|S', case = True)) & (df['Question'].str.contains('Who', case = True))) |                                                  # A verb
+                     (df['Question'].str.contains('references for the verses&named'))) |                                                                                        # Ref of A
+                     ((df['Location'].str.contains('S|chs|bks|secs', case = True)) & (df['Q_Intro'].str.contains('Q|E') == False)) |                                            # conc fv
+                     ((df['Location'].str.contains('C|S|chs|bks|secs', case = True)) & (df['Q_Intro'].str.contains('Q|E')) |                                                    # conc QE
+                     (((df['Question'].str.contains('complete the phrase')) | df['Question'].str.contains('begin the')) & (df['Location'].str.contains('S|C|chs|secs|bks'))) |  # ofs
+                     ((df['Question'].str.contains('is used to describe')) & (df['Location'].str.contains('S|C|chs|secs|bks'))))]                                               # Adj
 
     
     # For each Concordance Question
@@ -66,12 +72,12 @@ def add_in_conc():
             df.loc[index_conc, 'Conc'] = re.search('(\d+)', df.loc[index_conc,'A_Intro']).group(1)
 
         # If it's not there, Check the Question Intro for a Number
-        if re.search('\d+', df.loc[index_conc, 'Q_Intro']) != None:
+        elif re.search('\d+', df.loc[index_conc, 'Q_Intro']) != None:
             # If it's there, assign that number the the 'Conc' column
             df.loc[index_conc, 'Conc'] = re.search('(\d+)', df.loc[index_conc, 'Q_Intro']).group(1)
 
         # If it's not there, Check the Location Intro for a Number
-        if re.search('\d+', df.loc[index_conc, 'Location']) != None:
+        elif re.search('\d+', df.loc[index_conc, 'Location']) != None:
             # If it's there, assign that number the the 'Conc' column
             df.loc[index_conc, 'Conc'] = re.search('(\d+)', df.loc[index_conc, 'Location']).group(1)
 

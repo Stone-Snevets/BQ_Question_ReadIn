@@ -31,6 +31,43 @@ def add_in_conc():
 
     # Begin Adding Concordance
 
+
+    # Find all Concordance Questions
+    #-> Check if the 'Notes' column was generated
+    if 'Notes' in df.columns:
+        # If so, find all rows where the 'Notes' column reads 'conc'
+        list_conc = df.loc[(df['Notes'] == 'A conc') | (df['Notes'] == 'conc QE') | (df['Notes'] == 'conc fv')]
+
+    #-> If not find all concordance questions manually
+    #--> A concordance: Concordance questions with Chapter Analysis answers
+    #--> conc fv: Concordance questions that come from the verse(s)
+    #--> conc QE: Concordance questions that ask the quizzer to Quote / give in Essence the verses
+    else:
+        list_conc = df.loc[(df['A_Intro'].str.contains('A', case = True)) & 
+                    ((df['Question'].str.contains('\d+[- ]word')) |                                                                                 # A #-word
+                     (df['Question'].str.contains('oncerning')) |                                                                                   # A concerning
+                     (df['Question'].str.contains(' in ')) |                                                                                        # A in A
+                     ((df['Question'].str.contains('Which \S+ are named\?')) & (df['Question'].str.contains('individual|geographical') == False)) | # A titles
+                     ((df['Location'].str.contains('C|S', case = True)) & (df['Question'].str.contains('Who', case = True))) |                      # A verb
+                     (df['Question'].str.contains('references for the verses&named'))) |                                                             # Ref of A
+                     ((df['Location'].str.contains('S|chs|bks|secs', case = True)) & (df['Q_Intro'].str.contains('Q|E') == False)) |                # conc fv
+                     ((df['Location'].str.contains('C|S|chs|bks|secs', case = True)) & (df['Q_Intro'].str.contains('Q|E')))]                       # conc QE
+
+    
+    # For each Concordance Question
+    for i in range(len(list_conc)):
+        # Grab the index of each Concordance Question
+        index_conc = list_conc.index[i]
+
+        # Check the Answer Intro for a Number
+            # If it's there, assign that number to the 'Conc' column
+
+        # If it's not there, Check the Question Intro for a Number
+            # If it's there, assign that number the the 'Conc' column
+
+        # If not, assign a '1' to the 'Conc' column
+    
+    # Write the dataframe to the file we received
     print(df.head())
 
 

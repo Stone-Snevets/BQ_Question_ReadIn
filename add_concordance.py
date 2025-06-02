@@ -49,7 +49,7 @@ def add_in_conc():
     #--> conc QE: Concordance questions that ask the quizzer to Quote / give in Essence the verses
     else:
         list_conc = df.loc[(df['A_Intro'].str.contains('A', case = True)) & 
-                    ((df['Question'].str.contains('\d+[- ]word')) |                                                                                                             # A #-word
+                    ((df['Question'].str.contains('-word')) |                                                                                                             # A #-word
                      (df['Question'].str.contains('oncerning')) |                                                                                                               # A concerning
                      (df['Question'].str.contains(' in ')) |                                                                                                                    # A in A
                      ((df['Question'].str.contains('Which \S+ are named\?')) & (df['Question'].str.contains('individual|geographical') == False)) |                             # A titles
@@ -58,7 +58,8 @@ def add_in_conc():
                      ((df['Location'].str.contains('S|chs|bks|secs', case = True)) & (df['Q_Intro'].str.contains('Q|E') == False)) |                                            # conc fv
                      ((df['Location'].str.contains('C|S|chs|bks|secs', case = True)) & (df['Q_Intro'].str.contains('Q|E')) |                                                    # conc QE
                      (((df['Question'].str.contains('complete the phrase')) | df['Question'].str.contains('begin the')) & (df['Location'].str.contains('S|C|chs|secs|bks'))) |  # ofs
-                     ((df['Question'].str.contains('is used to describe')) & (df['Location'].str.contains('S|C|chs|secs|bks'))))]                                               # Adj
+                     ((df['Question'].str.contains('is used to describe')) & (df['Location'].str.contains('S|C|chs|secs|bks'))) |                                               # Adjs
+                     ((df['Question'].st.contains('hat is true|hat happened')) & (df['Location'].str.contains('S|C|chs|secs|bks'))))]                                           # true / happened
 
     
     # For each Concordance Question

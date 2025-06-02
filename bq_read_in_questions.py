@@ -359,7 +359,7 @@ def process_questions(text_of_input_file):
   
   
          # Copy Over Question
-         q_index = re.search('\n(.+)', text_of_input_file[q_begins:ref_index.start()])
+         q_index = re.search('\n(|\s+)(.+)', text_of_input_file[q_begins:ref_index.start()])
          
          # If q_index doesn't exist, go to the next reference to expand the horizon
          #-> The question itself may have started with a reference
@@ -371,10 +371,10 @@ def process_questions(text_of_input_file):
             ref_index = re.search('\n(|\s+)(\[?)(\S+) (\d+):(\d+)', text_of_input_file)
 
             # Recheck the question index
-            q_index = re.search('\n(.+)', text_of_input_file[q_begins:ref_index.start()])
+            q_index = re.search('\n(|\s+)(.+)', text_of_input_file[q_begins:ref_index.start()])
 
          # Grab the contents of the question index
-         question = q_index.group(1)
+         question = q_index.group(2)
 
 
          # Check if the reference is still after the new point value

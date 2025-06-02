@@ -23,7 +23,7 @@ This program adds notes to the following types of questions:
 > did what - Questions that contain the phrase 'what did (person) do' or '(person) did what'
 > hd - Questions that begin with 'How does verse #' or 'How do verses #...' or 'How does the #th verse' or 'How do(es) the opening/closing verse(s)'
 > if - Questions that ask for questions having to do with the word 'if'
-> mentioned - Questions that end with the word 'mentioned'
+> mentioned - Questions that end with the word 'mentioned' or 'named'
 > noun - Questions that ask for the chapters in which a noun / verb is contained
 > of - Questions that ask the quizzer to complete / begin an 'of' phrase
 > ref of sec - Questions that ask for the references of a section
@@ -112,7 +112,7 @@ def add_in_notes():
     # Search through the Answer Introductory Remark to find all Chapter Analysis then...
     # Search through the Actual Question for one of the types of concordance questions we are looking for
     list_A_conc = df.loc[(df['A_Intro'].str.contains('A', case = True)) & 
-                       ((df['Question'].str.contains('\d+[- ]word')) |                                                                      # A #-word
+                       ((df['Question'].str.contains('-word')) |                                                                      # A #-word
                        (df['Question'].str.contains('oncerning')) |                                                                         # A concerning
                        (df['Question'].str.contains(' in ')) |                                                                              # A in A
                        ((df['Question'].str.contains('Which \S+ are named\?')) & (df['Question'].str.contains('individual|geographical') == False)) |# A titles
@@ -369,17 +369,20 @@ def add_in_notes():
     
     
     
-    # ----- 'mentioned' - Questions that end with the word 'mentioned'
+    # ----- 'mentioned' - Questions that end with the word 'mentioned' or 'named'
 
     # Search through the Actual Question to check the last word
-    list_mentioned = df.loc[df['Question'].str.contains('mentioned\?')]
+    list_mentioned = df.loc[df['Question'].str.contains('mentioned\?|named\?')]
 
     # Find the index of each Adjective question
     for i in range(len(list_mentioned)):
         index_mentioned = list_mentioned.index[i]
 
         # Assign 'Adj' to the Notes column in that row
-        df.loc[index_mentioned, 'Notes'] = 'mentioned'
+        #-> Make sure Notes column is empty
+        if df.loc[index_mentioned, 'Notes'] == '':
+            # If so, assign 'mentioned' to it
+            df.loc[index_mentioned, 'Notes'] = 'mentioned'
 
 
 
@@ -467,7 +470,10 @@ def add_in_notes():
         index_true_happened = list_true_happened.index[i]
 
         # Assign 'true / happened' to the Notes column in that row
-        df.loc[index_true_happened, 'Notes'] = 'true / happened'
+        #-> Check if Notes column is empty
+        if df.loc[index_true_happened, 'Notes'] == '':
+            # if yes, assign 'true / happened to it
+            df.loc[index_true_happened, 'Notes'] = 'true / happened'
         
         
         
@@ -531,7 +537,10 @@ def add_in_notes():
 
         # Assign 'words of' to the Notes column in that row
         # NOTE: This may overwrite some questions with the 'VTGT' Note. But 'words of' is more of a narrow search. So this is intentional
-        df.loc[index_words_of, 'Notes'] = 'words of'
+        # Check if Notes already has 'before / after A'... this we don't want to overwrite
+        if df.loc[index_words_of, 'Notes'] != 'before / after A':
+            # If not, assign 'words of'
+            df.loc[index_words_of, 'Notes'] = 'words of'
 
 
 
